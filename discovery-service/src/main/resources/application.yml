@@ -1,0 +1,12 @@
+server:
+  port: 8090
+#Every Eureka server is also a client
+# So when it runs it tries to regiter
+# itself to the server. These two properties
+# are preventing eureka to try to register it self
+# and generating errors on startup
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+

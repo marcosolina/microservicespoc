@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    active:
+    - ${MARCO_MENU_PROFILE:local}
+

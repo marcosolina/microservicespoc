@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/restourantmenu
+    username: '{cipher}4051c3ff0554583d3085385d9e585e4996c95388fa1d172a0c1e4c324e4258c4'
+    password: '{cipher}23c2c6801e52d3803535989a4a1a2b8ce12c89b04c2107c278326e747a0db59e'

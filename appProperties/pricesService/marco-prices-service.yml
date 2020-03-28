@@ -1,0 +1,11 @@
+server:
+  port: 8083
+  
+rest:
+  request:
+    service:
+      dishes:
+        protocol: https
+        host: marco-dishes-service
+        findDishByName: /dishes/api
+        findAllDishes: /dishes/api/all

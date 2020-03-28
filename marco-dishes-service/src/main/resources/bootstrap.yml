@@ -1,0 +1,4 @@
+spring:
+  profiles:
+    active:
+    - ${MARCO_DISHES_PROFILE:local}

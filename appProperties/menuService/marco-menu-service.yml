@@ -1,0 +1,21 @@
+server:
+  port: 8084
+  
+rest:
+  request:
+    service:
+      dishes:
+        protocol: https
+        host: marco-dishes-service
+        findDishByName: /dishes/api
+        findAllDishes: /dishes/api/all
+      prices:
+        protocol: https
+        host: marco-prices-service
+        findPriceByName: /prices/api
+        findAllPrices: /prices/api/all
+      ingredients:
+        protocol: https
+        host: marco-ingredients-service
+        findIngredientsByName: /ingredients/api
+        findAllIngredients: /ingredients/api/all

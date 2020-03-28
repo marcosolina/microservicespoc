@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: marco-dishes-service
+server:
+  servlet:
+    context-path: /dishes
+    
+# I am telling at spring boot where is the eureka server
+eureka:
+  client:
+    serviceUrl:
+      #try the value from the system props, or get the fall back
+      defaultZone: ${IXICO_EUREKA_SERVER:http://localhost:8090/eureka}

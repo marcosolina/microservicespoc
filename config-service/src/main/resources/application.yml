@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://devgit.ixidev.net/msolina/testmarco.git
+          search-paths:
+          - 'microservicesPoc/appProperties/dishesService/'
+          - 'microservicesPoc/appProperties/ingredientsProperties/'
+          - 'microservicesPoc/appProperties/pricesService/'
+          
+
+server:
+  port: 8888
+  # I am telling at spring boot where is the eureka server
+eureka:
+  client:
+    serviceUrl:
+      #try the value from the system props, or get the fall back
+      defaultZone: ${IXICO_EUREKA_SERVER:http://localhost:8090/eureka}
