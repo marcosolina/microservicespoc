@@ -46,7 +46,7 @@ public class Swagger {
     private ApiInfo apiEndPointsInfo() {
         return new ApiInfoBuilder().title("Marco Dishes service POC")
             .description("This is a personal test project to play with Spring Boot and the Microservice architecture")
-            .contact(new Contact("Marco Solina", "https://ixico.com/", "msolina@ixico.com"))
+            .contact(new Contact("Marco Solina", "https://marco.selfip.net", "marcosolina@gmail.com"))
             .license("Apache 2.0")
             .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
             .version("1.0.0")
