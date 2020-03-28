@@ -3,6 +3,7 @@ package com.marco.menuservice.services.interfaces;
 import java.util.List;
 
 import com.marco.menuservice.dto.ApiMenu;
+import com.marco.menuservice.dto.ApiMenus;
 import com.marco.menuservice.model.Menu;
 
 /**
@@ -17,4 +18,6 @@ public interface ModellingServiceInt {
     public List<Menu> fromApiMenuToMenuList(ApiMenu apiMenu);
 
     public ApiMenu fromMenuListToApiMenu(List<Menu> menuList);
+
+    public ApiMenus fromMenuListToApiMenus(List<Menu> menuList);
 }

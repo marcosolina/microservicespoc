@@ -8,6 +8,15 @@ public class ApiMenu implements Serializable {
     private static final long serialVersionUID = 1L;
     private String menuName;
     private Set<String> dishes;
+    
+    public ApiMenu() {
+        
+    }
+    
+    public ApiMenu(String menuName, Set<String> dishes) {
+        this.menuName = menuName;
+        this.dishes = dishes;
+    }
 
     public boolean addDishName(String dishName) {
         if (this.dishes == null) {

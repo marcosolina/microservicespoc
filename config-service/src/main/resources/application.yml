@@ -5,11 +5,12 @@ spring:
     config:
       server:
         git:
-          uri: https://devgit.ixidev.net/msolina/testmarco.git
+          uri: https://github.com/marcosolina/microservicespoc.git
           search-paths:
-          - 'microservicesPoc/appProperties/dishesService/'
-          - 'microservicesPoc/appProperties/ingredientsProperties/'
-          - 'microservicesPoc/appProperties/pricesService/'
+          - 'appProperties/dishesService/'
+          - 'appProperties/ingredientsProperties/'
+          - 'appProperties/pricesService/'
+          - 'appProperties/menuService/'
           
 
 server:
