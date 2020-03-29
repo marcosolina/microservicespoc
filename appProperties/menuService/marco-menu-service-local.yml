@@ -9,7 +9,3 @@ rest:
     service:
       dishes:
         protocol: http
-      prices:
-        protocol: http
-      ingredients:
-        protocol: http

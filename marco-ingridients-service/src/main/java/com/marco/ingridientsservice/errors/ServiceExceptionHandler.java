@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class ServiceExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(value = { MarcoException.class })
-    public ResponseEntity<ApiErrors> handleIxicoExceptions(MarcoException ex, WebRequest request) {
+    public ResponseEntity<ApiErrors> handleMarcoExceptions(MarcoException ex, WebRequest request) {
         return new ResponseEntity<>(new ApiErrors(ex.getErrors(), ex.getMessage()), ex.getHttpStatus());
     }
 

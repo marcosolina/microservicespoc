@@ -70,7 +70,7 @@ public class BusinsessLogicImpl implements BusinsessLogicInt {
     public boolean deleteAllDishesForMenu(String menuName) throws MarcoException {
         List<Menu> list = repo.findByIdMenuName(menuName);
         if (list == null || list.isEmpty()) {
-            throw errServ.buildSimpleExceptionWithStatus(HttpStatus.CONFLICT, "MENU0004", menuName);
+            throw errServ.buildSimpleExceptionWithStatus(HttpStatus.NOT_FOUND, "MENU0004", menuName);
         }
         repo.deleteByIdMenuName(menuName);
         return true;
