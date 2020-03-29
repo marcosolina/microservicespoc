@@ -8,7 +8,6 @@ This is my microservice test project. I will play here when I want to learn some
 ### Architecture
 ![Architecture](./misc/images/Microservices_Exercise.png)
 
-
 Current list of implemented things:
 
 * Postman HTTP Requests ![Postman](./misc/images/Postman.png)
