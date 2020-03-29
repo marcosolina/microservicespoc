@@ -12,8 +12,8 @@ import com.marco.dishesservice.services.implementations.ModellingServiceImpl;
 import com.marco.dishesservice.services.interfaces.ModellingServiceInt;
 
 /**
- * This class provides some unit tests for the Model service TODO add some bad
- * scenarios
+ * This class provides some unit tests for the Model service <br>
+ * TODO add some bad scenarios
  * 
  * @author msolina
  *

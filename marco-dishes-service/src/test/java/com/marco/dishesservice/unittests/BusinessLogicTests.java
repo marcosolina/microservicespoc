@@ -25,8 +25,8 @@ import com.marco.dishesservice.services.interfaces.BusinsessLogicInt;
 import com.marco.dishesservice.services.interfaces.ErrorServiceInt;
 
 /**
- * This class provides the Unit tests for the Business Logic service TODO add
- * some bad scenarios
+ * This class provides the Unit tests for the Business Logic service <br>
+ * TODO add some bad scenarios
  * 
  * @author msolina
  *
@@ -43,6 +43,9 @@ public class BusinessLogicTests {
     @Mock
     private ErrorServiceInt errService;
 
+    /*
+     * Some hard coded dishes
+     */
     private int dishNumber = 0;
     private String name = "ONE";
     private List<Dish> dishes = Arrays.asList(new Dish("ONE", 1), new Dish("TWO", 2));

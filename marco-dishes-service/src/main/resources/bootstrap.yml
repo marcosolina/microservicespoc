@@ -1,4 +1,4 @@
 spring:
   profiles:
     active:
-    - ${MARCO_DISHES_PROFILE:local}
+    - ${MARCO_DISHES_PROFILE:local} # Try to use the profile defined as system property. If not, "local" will be the default profile

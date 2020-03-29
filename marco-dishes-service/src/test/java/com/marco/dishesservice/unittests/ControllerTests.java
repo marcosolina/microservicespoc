@@ -24,10 +24,9 @@ import com.marco.dishesservice.model.Dish;
 import com.marco.dishesservice.services.interfaces.BusinsessLogicInt;
 import com.marco.dishesservice.services.interfaces.ModellingServiceInt;
 
-
 /**
- * This class provides the Unit tests for the controller TODO add some bad
- * scenarios
+ * This class provides the Unit tests for the controller <br>
+ * TODO add some bad scenarios
  * 
  * @author msolina
  *
@@ -42,7 +41,6 @@ public class ControllerTests {
     private ModellingServiceInt msi;
 
     private int dishNumber = 0;
-
     private List<Dish> dishes = Arrays.asList(new Dish("ONE", 1), new Dish("TWO", 2));
     private List<ApiDish> apiDishes = Arrays.asList(new ApiDish("ONE", 1), new ApiDish("TWO", 2));
 

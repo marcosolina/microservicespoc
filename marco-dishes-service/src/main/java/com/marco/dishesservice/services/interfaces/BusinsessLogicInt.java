@@ -7,7 +7,7 @@ import com.marco.dishesservice.errors.MarcoException;
 import com.marco.dishesservice.model.Dish;
 
 /**
- * This interface allow the CRUD operation in the DATABASE
+ * This interface performs the business logic
  * 
  * @author msolina
  *

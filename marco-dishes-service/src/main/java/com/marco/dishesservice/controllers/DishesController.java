@@ -44,14 +44,14 @@ public class DishesController {
     private ModellingServiceInt msi;
 
     /**
-     * It returns the list of all the dises
+     * It returns the list of all the dishes
      * 
      * @return
      * @throws MarcoException
      */
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Returns a list off all the dishes", response = ApiDishes.class, responseContainer = "List", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ApiDishes> getAllDishes() throws MarcoException {
+    public ResponseEntity<ApiDishes> getAllDishes(){
         ApiDishes dishes = new ApiDishes();
 
         bli.findAllDish().stream().map(dish -> msi.fromDishToApiDish(dish)).forEach(dishes::addApiDish);

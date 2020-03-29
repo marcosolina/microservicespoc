@@ -17,8 +17,8 @@ import com.marco.dishesservice.services.interfaces.ErrorServiceInt;
 import com.marco.dishesservice.services.interfaces.MessageServiceInt;
 
 /**
- * This class provides some unit tests for the Dish Error service TODO add some
- * bad scenarios
+ * This class provides some unit tests for the Dish Error service <br>
+ * TODO add some bad scenarios
  * 
  * @author msolina
  *

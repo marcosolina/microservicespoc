@@ -13,18 +13,18 @@ public interface ErrorServiceInt {
     /**
      * It creates a {@link ServiceError} with the provided error code
      * 
-     * @param code
-     * @param param
-     * @return
+     * @param code -> Error code
+     * @param param -> Optional parameters
+     * @return {@link ServiceError}
      */
     public ServiceError buildError(String code, String... param);
 
     /**
      * It creates a {@link MarcoException} with the provided code
      * 
-     * @param code
-     * @param param
-     * @return
+     * @param code -> Error code
+     * @param param -> Optional parameters
+     * @return {@link MarcoException}
      */
     public MarcoException buildSimpleException(String code, String... param);
 }

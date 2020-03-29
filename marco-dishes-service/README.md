@@ -10,4 +10,4 @@ This micro service provides the Rest APIs to:
 
 Utils:
 
-* http://localhost:8081/dishes/swagger-ui.html - API Documentation
+* http://[server][:serverport]/dishes/swagger-ui.html - API Documentation

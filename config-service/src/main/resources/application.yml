@@ -5,8 +5,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/marcosolina/microservicespoc.git
-          search-paths:
+          uri: https://github.com/marcosolina/microservicespoc.git #Repository that hosts the properties
+          search-paths: #list of folders to use when retrieving the properties
           - 'appProperties/dishesService/'
           - 'appProperties/ingredientsProperties/'
           - 'appProperties/pricesService/'
@@ -14,7 +14,7 @@ spring:
           
 
 server:
-  port: 8888
+  port: 8888 #Port to use when running this service
   # I am telling at spring boot where is the eureka server
 eureka:
   client:
