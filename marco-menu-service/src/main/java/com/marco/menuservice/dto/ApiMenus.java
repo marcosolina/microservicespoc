@@ -18,16 +18,13 @@ public class ApiMenus implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "List of menus")
-    private List<ApiMenu> menus;
+    private List<ApiMenu> menus = new ArrayList<>();
 
     public List<ApiMenu> getMenus() {
         return menus;
     }
 
     public boolean addMenu(ApiMenu menu) {
-        if (menus == null) {
-            menus = new ArrayList<>();
-        }
         return menus.add(menu);
     }
 

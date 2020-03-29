@@ -1,6 +1,7 @@
 package com.marco.menuservice.unittests;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.when;
 
@@ -56,6 +57,7 @@ public class MenuControllerTests {
     public void insertMenu() throws MarcoException {
         when(msi.fromApiMenuToMenuList(ArgumentMatchers.any())).thenReturn(Arrays.asList(menu1, menu2));
         when(bli.insertMenu(ArgumentMatchers.any())).thenReturn(true);
+        when(bli.checkIfDishExistInDishesService(ArgumentMatchers.anyString())).thenReturn(true);
 
         ResponseEntity<Void> resp = controller.insertMenu(apiMenu);
         assertThat(resp.getStatusCode()).isEqualTo(HttpStatus.CREATED);
@@ -72,9 +74,19 @@ public class MenuControllerTests {
     }
 
     @Test
+    public void getMenu() throws MarcoException {
+        when(bli.findDishesForMenu(menuName)).thenReturn(Arrays.asList(menu1, menu2));
+        when(msi.fromMenuListToApiMenu(ArgumentMatchers.any())).thenReturn(apiMenu);
+
+        ResponseEntity<ApiMenu> resp = controller.getMenu(menuName);
+        assertEquals(HttpStatus.OK, resp.getStatusCode());
+        assertFalse(resp.getBody().getDishes().isEmpty());
+    }
+
+    @Test
     public void deleteMenu() throws MarcoException {
         when(bli.deleteAllDishesForMenu(menuName)).thenReturn(true);
-        
+
         ResponseEntity<Void> resp = controller.deleteMenu(menuName);
         assertThat(resp.getStatusCode()).isEqualTo(HttpStatus.OK);
     }

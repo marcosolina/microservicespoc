@@ -33,9 +33,7 @@ public class ModellingServiceImpl implements ModellingServiceInt {
     public List<Ingredient> fromApiDishToDish(ApiDishRecipe recipe) {
         List<Ingredient> list = new ArrayList<>();
 
-        recipe.getIngredients().stream().forEach(ingName -> {
-            list.add(new Ingredient().setId(new IngredientPk(recipe.getDishName(), ingName)));
-        });
+        recipe.getIngredients().stream().forEach(ingName -> list.add(new Ingredient().setId(new IngredientPk(recipe.getDishName(), ingName))));
 
         return list;
     }

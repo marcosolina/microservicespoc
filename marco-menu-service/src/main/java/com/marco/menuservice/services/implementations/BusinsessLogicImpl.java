@@ -63,7 +63,11 @@ public class BusinsessLogicImpl implements BusinsessLogicInt {
 
     @Override
     public List<Menu> findDishesForMenu(String menuName) throws MarcoException {
-        return repo.findByIdMenuName(menuName);
+        List<Menu> list = repo.findByIdMenuName(menuName);
+        if(list == null || list.isEmpty()) {
+            throw errServ.buildSimpleExceptionWithStatus(HttpStatus.NOT_FOUND, "MENU0004", menuName);
+        }
+        return list;
     }
 
     @Override

@@ -8,9 +8,11 @@ This is my microservice test project. I will play here when I want to learn some
 ### Architecture
 ![Architecture](./misc/images/Microservices_Exercise.png)
 
+
 Current list of implemented things:
 
-* Discovery Service
+* Postman HTTP Requests ![Postman](./misc/images/Postman.png)
+* Discovery Service ![Postman](./misc/images/Eureka.png)
 * Configuration Service
 
   * Encrypted properties
@@ -20,21 +22,25 @@ Current list of implemented things:
   * Swagger documentation
   * Unit Tests
   * SQL init scripts
+  * Multi language support
 * Ingredients Service
 
   * Swagger documentation
   * Unit Tests
   * SQL init scripts
+  * Multi language support
 * Prices Service
 
   * Swagger documentation
   * Unit Tests
   * SQL init scripts
+  * Multi language support
 * Menu Service
 
   * Swagger documentation
   * Unit Tests
   * SQL init scripts
+  * Multi language support
 
 ### Todo
 These are the things that I plan to add when I have time:
