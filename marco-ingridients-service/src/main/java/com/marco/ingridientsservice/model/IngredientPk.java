@@ -4,6 +4,12 @@ import java.io.Serializable;
 
 import javax.persistence.Embeddable;
 
+/**
+ * Standard JPA key
+ * 
+ * @author msolina
+ *
+ */
 @Embeddable
 public class IngredientPk implements Serializable {
     private static final long serialVersionUID = 1L;

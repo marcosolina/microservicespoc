@@ -30,5 +30,14 @@ public interface ErrorServiceInt {
      */
     public MarcoException buildSimpleException(String code, String... param);
 
+    /**
+     * It creates a {@link MarcoException} with the provided {@link HttpStatus}
+     * and code
+     * 
+     * @param status
+     * @param code
+     * @param param
+     * @return
+     */
     public MarcoException buildSimpleExceptionWithStatus(HttpStatus status, String code, String... param);
 }

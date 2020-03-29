@@ -27,7 +27,18 @@ import com.marco.menuservice.model.MenuPk;
  *
  */
 public interface MenusRepo extends CrudRepository<Menu, MenuPk> {
+    /**
+     * It returns a list {@link Menu} that matches provided menu name
+     * 
+     * @param menuName
+     * @return
+     */
     List<Menu> findByIdMenuName(String menuName);
 
+    /**
+     * It deletes all the {@link Menu} that matches provided menu name
+     * 
+     * @param menuName
+     */
     void deleteByIdMenuName(String menuName);
 }

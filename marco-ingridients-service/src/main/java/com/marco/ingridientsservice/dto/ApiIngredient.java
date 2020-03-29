@@ -2,9 +2,22 @@ package com.marco.ingridientsservice.dto;
 
 import java.io.Serializable;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+/**
+ * This class represents the definition of a single ingredient
+ * 
+ * @author msolina
+ *
+ */
+@ApiModel(value = "Ingridient representation", description = "It represents a single ingredient for the specific dish")
 public class ApiIngredient implements Serializable {
     private static final long serialVersionUID = 1L;
+    @ApiModelProperty(value = "Dish name")
     private String dishName;
+
+    @ApiModelProperty(value = "Ingredient required for this dish")
     private String ingredientName;
 
     public ApiIngredient() {

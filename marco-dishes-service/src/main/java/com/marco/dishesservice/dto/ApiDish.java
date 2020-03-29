@@ -3,6 +3,7 @@ package com.marco.dishesservice.dto;
 import java.io.Serializable;
 
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Pojo used in the Rest API
@@ -13,7 +14,9 @@ import io.swagger.annotations.ApiModel;
 @ApiModel(value = "ApiDish", description = "This object represents the dish definition")
 public class ApiDish implements Serializable {
     private static final long serialVersionUID = 1L;
+    @ApiModelProperty(value = "Name of the dish")
     private String name;
+    @ApiModelProperty(value = "Calories of the dish")
     private Integer calories;
 
     public ApiDish() {

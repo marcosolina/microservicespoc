@@ -8,7 +8,7 @@ import com.marco.ingridientsservice.dto.ApiRecipes;
 import com.marco.ingridientsservice.model.Ingredient;
 
 /**
- * Simple service to help the controller to retrieve the data from the data
+ * Simple service to helps the controller to retrieve the data from the data
  * source
  * 
  * @author msolina
@@ -17,28 +17,38 @@ import com.marco.ingridientsservice.model.Ingredient;
 public interface ModellingServiceInt {
 
     /**
-     * It converts a DB Dish {@link Dish} into an API Dish {@link ApiDish}
+     * It converts a DB List of {@link Ingredient} into an API ApiDishRecipe
+     * {@link ApiDishRecipe}
      * 
-     * @param dish
+     * @param List
+     *            of ingredients
      * @return
      */
     public ApiDishRecipe fromDishToApiDish(List<Ingredient> ingredients);
-    
+
+    /**
+     * It converts a DB List of {@link Ingredient} into an API ApiRecipes
+     * {@link ApiRecipes}
+     * 
+     * @param ingredients
+     * @return
+     */
     public ApiRecipes fromDishListToApiRecipes(List<Ingredient> ingredients);
 
     /**
-     * It converts an API Dish {@link ApiDish} into a DB Dish {@link Dish}
+     * It converts an API recipe {@link ApiDishRecipe} into a DB list of {@link Ingredient}
      * 
-     * @param apiDish
-     * @return
+     * @param recipe
+     * @return List<Ingredient>
      */
     public List<Ingredient> fromApiDishToDish(ApiDishRecipe recipe);
-    
+
     /**
-     * It converts the API ingredient {@link }
+     * It converts the API {@link ApiIngredient} into a DB {@link Ingredient}
+     * 
      * @param apiIngredient
      * @return
      */
     public Ingredient fromApiIngredientToIngredient(ApiIngredient apiIngredient);
-    
+
 }

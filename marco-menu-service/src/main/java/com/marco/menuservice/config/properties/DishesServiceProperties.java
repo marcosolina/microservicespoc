@@ -3,6 +3,12 @@ package com.marco.menuservice.config.properties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Standard Spring properties class
+ * 
+ * @author msolina
+ *
+ */
 @Configuration
 @ConfigurationProperties("rest.request.service.dishes")
 public class DishesServiceProperties {

@@ -1,5 +1,11 @@
 package com.marco.pricesservice.servicies.interfaces;
 
+/**
+ * It reads the messages defined in the resource folder of this project
+ * 
+ * @author msolina
+ *
+ */
 public interface MessageServiceInt {
 
     /**
@@ -7,8 +13,10 @@ public interface MessageServiceInt {
      * the HTTP call, or the default one
      * 
      * @param code
+     *            -> message code
      * @param args
-     * @return
+     *            -> Optional arguments
+     * @return {@link String}
      */
     public String getMessage(String code, String... args);
 

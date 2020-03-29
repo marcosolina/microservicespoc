@@ -3,18 +3,25 @@ package com.marco.pricesservice.servicies.interfaces;
 import java.net.URL;
 import java.util.Map;
 
-import org.springframework.http.HttpHeaders;
 import org.springframework.web.reactive.function.client.ClientResponse;
 
+/**
+ * This interface provides the API to perform HTTP requests to a different
+ * Service
+ * 
+ * @author msolina
+ *
+ */
 public interface RestClientInt {
 
     /**
-     * 
-     * @see {@link HttpHeaders}
+     * It performs a GET request
      * 
      * @param url
      * @param headers
+     *            (can be null)
      * @param queryParameters
+     *            (can be null)
      * @return
      */
     public ClientResponse performGetRequest(URL url, Map<String, String> headers, Map<String, String> queryParameters);
@@ -25,6 +32,7 @@ public interface RestClientInt {
      * @param <T>
      * @param response
      * @param clazz
+     *            -> Class to use when parsing the response body
      * @return
      */
     public <T> T getBodyFromResponse(ClientResponse response, Class<T> clazz);

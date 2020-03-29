@@ -1,5 +1,8 @@
 package com.marco.pricesservice.controllers;
 
+/**
+ * Standard Spring controller
+ */
 import java.util.Iterator;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,9 @@ import com.marco.pricesservice.errors.MarcoException;
 import com.marco.pricesservice.servicies.interfaces.BusinsessLogicInt;
 import com.marco.pricesservice.servicies.interfaces.ModellingServiceInt;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
 @RestController
 @RequestMapping("/api")
 public class PricesController {
@@ -37,7 +43,8 @@ public class PricesController {
      * @throws MarcoException
      */
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ApiPrices> getAllDishes() throws MarcoException {
+    @ApiOperation(value = "Returns all the prices", produces = MediaType.APPLICATION_JSON_VALUE, response = ApiPrices.class)
+    public ResponseEntity<ApiPrices> getAllPrices() throws MarcoException {
         ApiPrices prices = new ApiPrices();
 
         bli.getAllPrices().stream().map(price -> msi.fromPriceToApiPrice(price)).forEach(prices::addApiPrice);
@@ -56,24 +63,28 @@ public class PricesController {
     }
 
     @GetMapping(value = "/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ApiPrice> findByName(@PathVariable("name") String name) throws MarcoException {
+    @ApiOperation(value = "Returns a single price", produces = MediaType.APPLICATION_JSON_VALUE, response = ApiPrice.class)
+    public ResponseEntity<ApiPrice> findByName(@ApiParam(value = "Name of the price to retrieve", required = true)  @PathVariable("name") String name) throws MarcoException {
         return new ResponseEntity<>(msi.fromPriceToApiPrice(bli.getPriceForDishName(name)), HttpStatus.OK);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> insertDish(@RequestBody ApiPrice apiPrice) throws MarcoException {
+    @ApiOperation(value = "Inserts a price", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> insertPrice(@RequestBody ApiPrice apiPrice) throws MarcoException {
         bli.insertPrice(msi.fromApiPriceToPrice(apiPrice));
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> updateDish(@RequestBody ApiPrice apiPrice) throws MarcoException {
+    @ApiOperation(value = "Updates a price", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> updatePrice(@RequestBody ApiPrice apiPrice) throws MarcoException {
         bli.updatePrice(msi.fromApiPriceToPrice(apiPrice));
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @DeleteMapping("/{name}")
-    public ResponseEntity<Void> deleteDish(@PathVariable("name") String name) throws MarcoException {
+    @ApiOperation(value = "Deletes a price")
+    public ResponseEntity<Void> deletePrice(@ApiParam(value = "Name of the price to delete", required = true)  @PathVariable("name") String name) throws MarcoException {
         bli.deletePriceForDishName(name);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

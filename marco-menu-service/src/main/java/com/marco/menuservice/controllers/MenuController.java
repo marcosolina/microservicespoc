@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,15 @@ import com.marco.menuservice.model.Menu;
 import com.marco.menuservice.services.interfaces.BusinsessLogicInt;
 import com.marco.menuservice.services.interfaces.ModellingServiceInt;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
+/**
+ * Standard Spring controller
+ * 
+ * @author msolina
+ *
+ */
 @RestController
 @RequestMapping("/api")
 public class MenuController {
@@ -31,23 +41,25 @@ public class MenuController {
     private ModellingServiceInt msi;
 
     @PostMapping()
+    @ApiOperation(value = "Inserts a new Menu", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> insertMenu(@RequestBody ApiMenu menu) throws MarcoException {
         List<Menu> menuList = msi.fromApiMenuToMenuList(menu);
         Iterator<Menu> iter = menuList.iterator();
         while (iter.hasNext()) {
             bli.insertMenu(iter.next());
         }
-        return new ResponseEntity<Void>(HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping("/all")
+    @ApiOperation(value = "Returns a list off all the Menus", response = ApiMenus.class, responseContainer = "List", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ApiMenus> getAllMenus() {
         List<Menu> menuList = bli.findAllMenus();
         return new ResponseEntity<>(msi.fromMenuListToApiMenus(menuList), HttpStatus.OK);
     }
 
     @DeleteMapping("/{menuName}")
-    public ResponseEntity<Void> deleteMenu(@PathVariable("menuName") String menuName) throws MarcoException {
+    public ResponseEntity<Void> deleteMenu(@ApiParam(value = "Name of the menu to delete", required = true) @PathVariable("menuName") String menuName) throws MarcoException {
         bli.deleteAllDishesForMenu(menuName);
         return new ResponseEntity<>(HttpStatus.OK);
     }

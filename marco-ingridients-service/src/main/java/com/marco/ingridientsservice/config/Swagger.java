@@ -36,18 +36,16 @@ public class Swagger {
     @Bean
     public Docket swaggerConfiguration() {
         return new Docket(DocumentationType.SWAGGER_2).select()
-            .apis(RequestHandlerSelectors.basePackage("com.marco.dishesservice.controllers"))
+            .apis(RequestHandlerSelectors.basePackage("com.marco.ingridientsservice.controllers"))
             .paths(PathSelectors.regex("/.*"))
             .build().apiInfo(apiEndPointsInfo());
     }
     
     
     private ApiInfo apiEndPointsInfo() {
-        return new ApiInfoBuilder().title("Marco Dishes service POC")
+        return new ApiInfoBuilder().title("Marco Ingredients service POC")
             .description("This is a personal test project to play with Spring Boot and the Microservice architecture")
             .contact(new Contact("Marco Solina", "https://marco.selfip.net", "marcosolina@gmail.com"))
-            .license("Apache 2.0")
-            .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
             .version("1.0.0")
             .build();
     }

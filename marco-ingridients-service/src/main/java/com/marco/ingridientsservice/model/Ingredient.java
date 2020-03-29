@@ -4,6 +4,12 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+/**
+ * Standard JPA entity
+ * 
+ * @author msolina
+ *
+ */
 @Entity
 @Table(name = "INGREDIENTS")
 public class Ingredient {

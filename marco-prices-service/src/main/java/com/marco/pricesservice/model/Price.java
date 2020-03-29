@@ -7,8 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * This class represent the Dish. It provides the dish name and the amount of
- * calories
+ * Standard JPA Entity
  * 
  * @author msolina
  *

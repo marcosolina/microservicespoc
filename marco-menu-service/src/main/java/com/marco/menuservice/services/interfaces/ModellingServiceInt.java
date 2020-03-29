@@ -15,9 +15,27 @@ import com.marco.menuservice.model.Menu;
  */
 public interface ModellingServiceInt {
 
+    /**
+     * It converts the {@link ApiMenu} into a list of {@link Menu}
+     * 
+     * @param apiMenu
+     * @return
+     */
     public List<Menu> fromApiMenuToMenuList(ApiMenu apiMenu);
 
+    /**
+     * It converts a list of {@link Menu} into an {@link ApiMenu}
+     * 
+     * @param menuList
+     * @return
+     */
     public ApiMenu fromMenuListToApiMenu(List<Menu> menuList);
 
+    /**
+     * It converts a list of {@link Menu} into an {@link ApiMenus}
+     * 
+     * @param menuList
+     * @return
+     */
     public ApiMenus fromMenuListToApiMenus(List<Menu> menuList);
 }

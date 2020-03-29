@@ -3,6 +3,7 @@ package com.marco.pricesservice.dto;
 import java.io.Serializable;
 
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Pojo used in the Rest API
@@ -13,8 +14,14 @@ import io.swagger.annotations.ApiModel;
 @ApiModel(value = "ApiPrice", description = "This object represents the price of a dish")
 public class ApiPrice implements Serializable {
     private static final long serialVersionUID = 1L;
+    
+    @ApiModelProperty(value = "Name of the dish")
     private String dishName;
+    
+    @ApiModelProperty(value = "Price of the dish")
     private Integer price;
+    
+    @ApiModelProperty(value = "It indicates if the dish is available in the Dishes server")
     private boolean available;
 
     public ApiPrice() {

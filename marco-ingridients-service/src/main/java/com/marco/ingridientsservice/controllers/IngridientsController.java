@@ -4,6 +4,7 @@ import java.util.Iterator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,15 @@ import com.marco.ingridientsservice.services.interfaces.BusinsessLogicInt;
 import com.marco.ingridientsservice.services.interfaces.ErrorServiceInt;
 import com.marco.ingridientsservice.services.interfaces.ModellingServiceInt;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
+/**
+ * Standard Spring controller
+ * 
+ * @author msolina
+ *
+ */
 @RestController()
 @RequestMapping("/api")
 public class IngridientsController {
@@ -30,23 +40,25 @@ public class IngridientsController {
 
     @Autowired
     private ModellingServiceInt msi;
-    
+
     @Autowired
     private ErrorServiceInt errServ;
 
-    @PostMapping
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "It inserts the recepy in the system", response = Void.class, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> insertIngredient(@RequestBody ApiDishRecipe apiRecepy) throws MarcoException {
         Iterator<String> iter = apiRecepy.getIngredients().iterator();
-        if(!bli.checkIfDishExistInDishesService(apiRecepy.getDishName())) {
+        if (!bli.checkIfDishExistInDishesService(apiRecepy.getDishName())) {
             throw errServ.buildSimpleExceptionWithStatus(HttpStatus.BAD_GATEWAY, "ING0004", apiRecepy.getDishName());
         }
-        while(iter.hasNext()) {
+        while (iter.hasNext()) {
             bli.insertIngredient(msi.fromApiIngredientToIngredient(new ApiIngredient(apiRecepy.getDishName(), iter.next())));
         }
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @GetMapping("/all")
+    @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "It returns the list of all the available recepies", response = ApiRecipes.class, consumes = MediaType.APPLICATION_JSON_VALUE, responseContainer = "List")
     public ResponseEntity<ApiRecipes> getAllRecipies() throws MarcoException {
         ApiRecipes recipes = msi.fromDishListToApiRecipes(bli.findAllIngredients());
         Iterator<ApiDishRecipe> iterator = recipes.getRecipes().iterator();
@@ -57,15 +69,17 @@ public class IngridientsController {
         return new ResponseEntity<>(recipes, HttpStatus.OK);
     }
 
-    @GetMapping("/{dishName}")
-    public ResponseEntity<ApiDishRecipe> getDishRecipy(@PathVariable("dishName") String dishName) throws MarcoException {
+    @GetMapping(value = "/{dishName}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "It returns the recepy for the specific dish", response = ApiDishRecipe.class, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<ApiDishRecipe> getDishRecipy(@ApiParam(value = "Name of the dish of which you whant retrieve the recepy", required = true) @PathVariable("dishName") String dishName) throws MarcoException {
         ApiDishRecipe recipe = msi.fromDishToApiDish(bli.findIngredients(dishName));
         recipe.setAvailable(bli.checkIfDishExistInDishesService(dishName));
         return new ResponseEntity<>(recipe, HttpStatus.OK);
     }
 
     @DeleteMapping("/{dishName}")
-    public ResponseEntity<Void> deleteRecepy(@PathVariable("dishName") String dishName) throws MarcoException {
+    @ApiOperation(value = "It deletes the recepy for the specific dish", response = Void.class)
+    public ResponseEntity<Void> deleteRecepy(@ApiParam(value = "Name of the dish of which you want to delete the recepy", required = true) @PathVariable("dishName") String dishName) throws MarcoException {
         bli.deleteIngredients(dishName);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
