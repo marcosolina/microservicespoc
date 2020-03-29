@@ -8,10 +8,6 @@ This micro service provides the Rest APIs to:
 * Update a price
 * Delete a price 
 
-### TODOs
-
-* Write all the unit tests
-
 Utils:
 
 * http://[server][:serverport]/dishes/swagger-ui.html - API Documentation
