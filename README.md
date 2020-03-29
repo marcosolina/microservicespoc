@@ -4,6 +4,14 @@ This is my microservice test project. I will play here when I want to learn some
 ### Requirements
 * JDK 8
 * PostgresSQL server
+* Docker
+* Docker compose
+
+
+~~~~
+# To run the docker container
+$ docker-compose -f /path/to/the/project/misc/Docker/docker-compose.yml up
+~~~~
 
 ### Architecture
 ![Architecture](./misc/images/Microservices_Exercise.png)
@@ -12,6 +20,7 @@ Current list of implemented things:
 
 * Postman HTTP Requests ![Postman](./misc/images/Postman.png)
 * Discovery Service ![Postman](./misc/images/Eureka.png)
+* Postgres SQL runnin in a docker container
 * Configuration Service
 
   * Encrypted properties

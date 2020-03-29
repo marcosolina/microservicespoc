@@ -88,7 +88,7 @@
 							"query": [
 								{
 									"key": "",
-									"value": null,
+									"value": "",
 									"disabled": true
 								}
 							]
@@ -628,6 +628,58 @@
 								"menus",
 								"api",
 								"Marco"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ConfigServer",
+			"item": [
+				{
+					"name": "Encrypt Property",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "password"
+						},
+						"url": {
+							"raw": "http://localhost:8888/encrypt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"encrypt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Decrypt Property",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "996e9e70ec65de1b771f43e9c72f3c184d446d9eee778ec03dc276d5af4d6517"
+						},
+						"url": {
+							"raw": "http://localhost:8888/decrypt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"decrypt"
 							]
 						}
 					},
