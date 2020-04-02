@@ -11,6 +11,7 @@ spring:
           - 'appProperties/ingredientsProperties/'
           - 'appProperties/pricesService/'
           - 'appProperties/menuService/'
+          - 'appProperties/securityService/'
           
 
 server:
