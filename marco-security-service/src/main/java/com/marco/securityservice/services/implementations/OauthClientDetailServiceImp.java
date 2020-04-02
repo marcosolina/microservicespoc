@@ -20,7 +20,7 @@ public class OauthClientDetailServiceImp implements OauthClientDetailServiceInt 
 
     @Value("${spring.data.mongodb.database}")
     private String dbName;
-    @Value("${com.ixico.database.collenctions.oauthclients}")
+    @Value("${com.marco.securityservice.database.collenctions.oauthclients}")
     private String collentionName;
 
     private <T> MongoCollection<T> getMongoDbCollention(String cName, Class<T> documentClass) {

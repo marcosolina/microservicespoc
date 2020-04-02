@@ -30,7 +30,7 @@ public class UserServiceImp implements UserServiceInt {
 
     @Value("${spring.data.mongodb.database}")
     private String dbName;
-    @Value("${com.ixico.database.collenctions.users}")
+    @Value("${com.marco.securityservice.database.collenctions.users}")
     private String collentionName;
 
     private <T> MongoCollection<T> getMongoDbCollention(String cName, Class<T> documentClass) {
