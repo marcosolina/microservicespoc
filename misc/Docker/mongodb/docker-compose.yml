@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  mongodb:
+    image: mongodb
+    build:
+      context: .
+    ports:
+      - "27017:27017"
+      - "27018:27018"
+      - "27019:27019"
