@@ -1,75 +1,135 @@
 package com.marco.securityservice.model;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
- * @see <a href=
- *      "https://www.baeldung.com/spring-security-oauth-dynamic-client-registration">OAuth2.0
- *      and Dynamic Client Registration</a>
+ * This class represent the Document that will be stored in the database. This
+ * has the definition of the clients which are authorised to use our service
+ * 
  * @author msolina
  *
  */
-
 public class OauthClientsDocument {
 
-    /*
-     * There are other fields that I can add, but I don't need them at the
-     * moment. Please refer to the link in the class java doc . You will learn
-     * what they are when needed
-     */
-    private String client_id;//primary key
-    private String client_secret;
-    private List<String> scopes;
-    private List<String> authorized_grant_types;
-    private Integer access_token_validity;
-    private Integer refresh_token_validity;
+    private String clientId;//primary key
+    private String clientSecret;
+    private Set<String> resourceIds = new HashSet<>();
+    private boolean secretRequired;
+    private boolean scoped;
+    private Set<String> scope = new HashSet<>();
+    private Set<String> authorizedGrantTypes = new HashSet<>();
+    private Set<String> registeredRedirectUri = new HashSet<>();
+    private Set<String> authorities = new HashSet<>();
+    private Integer accessTokenValiditySeconds;
+    private Integer refreshTokenValiditySeconds;
+    private boolean autoApprove;
+    private Map<String, Object> additionalInformation = new HashMap<>();
 
-    public String getClient_id() {
-        return client_id;
+    public String getClientId() {
+        return clientId;
     }
 
-    public void setClient_id(String client_id) {
-        this.client_id = client_id;
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
     }
 
-    public String getClient_secret() {
-        return client_secret;
+    public String getClientSecret() {
+        return clientSecret;
     }
 
-    public void setClient_secret(String client_secret) {
-        this.client_secret = client_secret;
+    public void setClientSecret(String clientSecret) {
+        this.clientSecret = clientSecret;
     }
 
-    public List<String> getScopes() {
-        return scopes;
+    public Set<String> getResourceIds() {
+        return resourceIds;
     }
 
-    public void setScopes(List<String> scopes) {
-        this.scopes = scopes;
+    public void setResourceIds(Set<String> resourceIds) {
+        this.resourceIds = resourceIds;
     }
 
-    public List<String> getAuthorized_grant_types() {
-        return authorized_grant_types;
+    public boolean isSecretRequired() {
+        return secretRequired;
     }
 
-    public void setAuthorized_grant_types(List<String> authorized_grant_types) {
-        this.authorized_grant_types = authorized_grant_types;
+    public void setSecretRequired(boolean secretRequired) {
+        this.secretRequired = secretRequired;
     }
 
-    public Integer getAccess_token_validity() {
-        return access_token_validity;
+    public boolean isScoped() {
+        return scoped;
     }
 
-    public void setAccess_token_validity(Integer access_token_validity) {
-        this.access_token_validity = access_token_validity;
+    public void setScoped(boolean scoped) {
+        this.scoped = scoped;
     }
 
-    public Integer getRefresh_token_validity() {
-        return refresh_token_validity;
+    public Set<String> getScope() {
+        return scope;
     }
 
-    public void setRefresh_token_validity(Integer refresh_token_validity) {
-        this.refresh_token_validity = refresh_token_validity;
+    public void setScope(Set<String> scope) {
+        this.scope = scope;
+    }
+
+    public Set<String> getAuthorizedGrantTypes() {
+        return authorizedGrantTypes;
+    }
+
+    public void setAuthorizedGrantTypes(Set<String> authorizedGrantTypes) {
+        this.authorizedGrantTypes = authorizedGrantTypes;
+    }
+
+    public Set<String> getRegisteredRedirectUri() {
+        return registeredRedirectUri;
+    }
+
+    public void setRegisteredRedirectUri(Set<String> registeredRedirectUri) {
+        this.registeredRedirectUri = registeredRedirectUri;
+    }
+
+    public Set<String> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(Set<String> authorities) {
+        this.authorities = authorities;
+    }
+
+    public Integer getAccessTokenValiditySeconds() {
+        return accessTokenValiditySeconds;
+    }
+
+    public void setAccessTokenValiditySeconds(Integer accessTokenValiditySeconds) {
+        this.accessTokenValiditySeconds = accessTokenValiditySeconds;
+    }
+
+    public Integer getRefreshTokenValiditySeconds() {
+        return refreshTokenValiditySeconds;
+    }
+
+    public void setRefreshTokenValiditySeconds(Integer refreshTokenValiditySeconds) {
+        this.refreshTokenValiditySeconds = refreshTokenValiditySeconds;
+    }
+
+    public boolean isAutoApprove() {
+        return autoApprove;
+    }
+
+    public void setAutoApprove(boolean autoApprove) {
+        this.autoApprove = autoApprove;
+    }
+
+    public Map<String, Object> getAdditionalInformation() {
+        return additionalInformation;
+    }
+
+    public void setAdditionalInformation(Map<String, Object> additionalInformation) {
+        this.additionalInformation = additionalInformation;
     }
 
 }

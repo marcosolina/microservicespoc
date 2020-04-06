@@ -14,6 +14,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.marco.securityservice.services.interfaces.UserServiceInt;
 
+/**
+ * Standard Spring security class
+ * 
+ * @author msolina
+ *
+ */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -23,6 +29,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private PasswordEncoder psswEncoder;
 
+    /**
+     * Exposing the Authentication Manager, so it can be used somewhere else,
+     * for example in the Authorization Server Config class
+     */
     @Override
     @Bean
     protected AuthenticationManager authenticationManager() throws Exception {
@@ -31,12 +41,29 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailService).passwordEncoder(psswEncoder);
+        /*
+         * Fetching the App user details using the custom Service, and the password encoder
+         */
+        auth
+            .userDetailsService(userDetailService)
+            .passwordEncoder(psswEncoder);
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/oauth/token").permitAll().anyRequest().authenticated().and().csrf().disable().httpBasic().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        /*
+         * Configuring Spring security to allow everybody to reach the URL
+         * to use in order to generate a Token. All the other requests needs to be 
+         * authenticated
+         */
+        http
+        .authorizeRequests()
+            .antMatchers(HttpMethod.POST, "/oauth/token").permitAll()
+            .anyRequest().authenticated()
+        .and()
+            .csrf().disable()   
+            .httpBasic().disable()
+            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); 
 
     }
 

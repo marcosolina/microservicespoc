@@ -2,8 +2,15 @@ package com.marco.securityservice.model;
 
 import java.util.List;
 
+/**
+ * This represents the Document in the DB which will contain the information of
+ * the users of our applications
+ * 
+ * @author msolina
+ *
+ */
 public class UserDocument {
-    private String userName;
+    private String userName;//unique key
     private String password;
     private List<String> authorities;
 
