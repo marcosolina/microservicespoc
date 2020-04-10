@@ -14,9 +14,11 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 import com.marco.securityservice.services.implementations.ApiModelServiceImp;
+import com.marco.securityservice.services.implementations.CustomTokenStoreImp;
 import com.marco.securityservice.services.implementations.OauthClientDetailServiceImp;
 import com.marco.securityservice.services.implementations.UserServiceImp;
 import com.marco.securityservice.services.interfaces.ApiModelServiceInt;
+import com.marco.securityservice.services.interfaces.CustomTokenStoreInt;
 import com.marco.securityservice.services.interfaces.OauthClientDetailServiceInt;
 import com.marco.securityservice.services.interfaces.UserServiceInt;
 import com.mongodb.client.MongoClient;
@@ -28,12 +30,14 @@ public class Beans {
     private String dbHost;
     @Value("${spring.data.mongodb.port}")
     private String dbPort;
-
+    
     @Autowired
     private AppProperties properties;
 
     /**
-     * It returns the instance of the MongoDb client
+     * It returns the instance of the MongoDb client.
+     * You can use this bean to get the MongoDB connection if
+     * you need to perform some custom queries 
      * 
      * @return
      */
@@ -46,7 +50,7 @@ public class Beans {
     public UserServiceInt getUserServiceInt() {
         return new UserServiceImp();
     }
-
+    
     @Bean
     public OauthClientDetailServiceInt getOauthClientDetailServiceInt() {
         return new OauthClientDetailServiceImp();
@@ -57,15 +61,26 @@ public class Beans {
         return new BCryptPasswordEncoder();
     }
 
+
     @Bean
     public JwtAccessTokenConverter tokenEnhancer() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         converter.setSigningKey(properties.getPrivateKey());
         return converter;
     }
+    
+    @Bean
+    public CustomTokenStoreInt getCustomTokenStoreInt() {
+        return new CustomTokenStoreImp();
+    }
 
+    
     @Bean
     public JwtTokenStore tokenStore() {
+        /*
+         * If you need to create a castom token store
+         * https://blog.couchbase.com/custom-token-store-spring-securtiy-oauth2/
+         */
         return new JwtTokenStore(tokenEnhancer());
     }
 
@@ -74,6 +89,12 @@ public class Beans {
         return new ApiModelServiceImp();
     }
 
+    /**
+     * This block will allow us to make requests using CORS (Cross-Origin Resource Sharing)
+     * 
+     * @see <a href="https://blog.couchbase.com/spring-security-oauth2_authentication/">Spring security tutorial</a>
+     * @return
+     */
     @Bean
     public FilterRegistrationBean<CorsFilter> corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -87,5 +108,4 @@ public class Beans {
         bean.setOrder(0);
         return bean;
     }
-
 }

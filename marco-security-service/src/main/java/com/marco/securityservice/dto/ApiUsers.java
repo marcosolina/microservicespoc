@@ -4,6 +4,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class if used to exchange information with the REST API
+ * 
+ * @author msolina
+ *
+ */
 public class ApiUsers implements Serializable {
     private static final long serialVersionUID = 1L;
     private List<ApiUser> users;

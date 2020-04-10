@@ -3,6 +3,12 @@ package com.marco.securityservice.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Standard Spring class to retrieve some properties
+ * 
+ * @author msolina
+ *
+ */
 @Configuration
 @ConfigurationProperties("com.marco.securityservice.security")
 public class AppProperties {

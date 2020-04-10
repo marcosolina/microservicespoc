@@ -10,10 +10,17 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
-import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
+import com.marco.securityservice.services.interfaces.CustomTokenStoreInt;
 import com.marco.securityservice.services.interfaces.OauthClientDetailServiceInt;
 
+/**
+ * This is the Authorization Server configuration
+ * 
+ * 
+ * @author msolina
+ *
+ */
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
@@ -27,27 +34,42 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     private JwtAccessTokenConverter tokenConverter;
 
     @Autowired
-    private JwtTokenStore tokenStore;
+    private CustomTokenStoreInt customTokenStore;
 
     @Autowired
     private OauthClientDetailServiceInt oauthService;
 
     @Override
     public void configure(ClientDetailsServiceConfigurer configurer) throws Exception {
-        //https://www.devglan.com/spring-security/spring-boot-security-oauth2-example
-        //https://www.devglan.com/tutorials/spring-security-tutorial?baseUrl=https%3A%2F%2Fwww.devglan.com%2F
+        /*
+         * Fetching the client details using a custom Client detail service
+         */
         configurer.withClientDetails(oauthService);
-
     }
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()").passwordEncoder(passwEncoder);
+        /*
+         * I don't really know where spring used the following properties, but I
+         * had a look at default value inside the security object, and the
+         * default is "denyAll()". So by default nobody can pass the security. I
+         * am also specifying the password encoder, as we want the password to
+         * do not be in clear text
+         */
+        security
+            .tokenKeyAccess("permitAll()")
+            .checkTokenAccess("isAuthenticated()")
+            .passwordEncoder(passwEncoder);
     }
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints.authenticationManager(authenticationManager).tokenStore(tokenStore).accessTokenConverter(tokenConverter);
+        /*
+         * Telling to Spring Boot to use my custom logic
+         */
+        endpoints
+            .authenticationManager(authenticationManager)
+            .tokenStore(customTokenStore)
+            .accessTokenConverter(tokenConverter);
     }
-
 }

@@ -1,13 +1,28 @@
 server:
   port: 8085
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: marcosecurity
+      repositories:
+        type: auto
+  application:
+    name: marco-security-service
+        
+server:
+  servlet:
+    context-path: /security
   
 com:
   marco:
     securityservice:
       database:
         collenctions:
-          users: Users 
-          oauthclients: OauthClients
+          users: users 
+          oauthclients: oauthClients
       security:
         privateKey: ${JWT_SIGN_KEY:mySuperSecretKey} # to sign the JWT token
         resourceId: resource_id # not clear what is this for
+        
+        

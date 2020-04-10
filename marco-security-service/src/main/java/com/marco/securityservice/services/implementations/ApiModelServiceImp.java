@@ -5,6 +5,7 @@ import com.marco.securityservice.model.UserDocument;
 import com.marco.securityservice.services.interfaces.ApiModelServiceInt;
 
 public class ApiModelServiceImp implements ApiModelServiceInt {
+
     @Override
     public ApiUser fromUserDocumentToApiUser(UserDocument user) {
         ApiUser u = new ApiUser();

@@ -3,6 +3,12 @@ package com.marco.securityservice.dto;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * This class is used to exhange the information with the REST API
+ * 
+ * @author msolina
+ *
+ */
 public class ApiUser implements Serializable {
     private static final long serialVersionUID = 1L;
     private String userName;
@@ -36,6 +42,5 @@ public class ApiUser implements Serializable {
     public void setAuthorities(List<String> authorities) {
         this.authorities = authorities;
     }
-
 
 }

@@ -75,11 +75,11 @@ public class UserServiceImp implements UserServiceInt {
     @Override
     public boolean deleteUser(String userId) {
         MongoCollection<UserDocument> collection = getMongoDbCollention(collentionName, UserDocument.class);
-
+        
         BasicDBObject query = new BasicDBObject();
         query.put("userName", userId);
         DeleteResult result = collection.deleteOne(query);
-
+        
         return result.getDeletedCount() != 0;
     }
 
