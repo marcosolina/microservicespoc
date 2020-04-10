@@ -1,5 +1,5 @@
 server:
-  port: 8091
+  port: 8761
 #Every Eureka server is also a client
 # So when it runs it tries to regiter
 # itself to the server. These two properties
@@ -9,4 +9,5 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+    
 
