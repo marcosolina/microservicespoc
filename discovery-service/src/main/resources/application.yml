@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 8091
 #Every Eureka server is also a client
 # So when it runs it tries to regiter
 # itself to the server. These two properties
