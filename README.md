@@ -10,7 +10,7 @@ This is my microservice test project. I will play here when I want to learn some
 
 ~~~~
 # To run the docker container
-$ docker-compose -f /path/to/the/project/misc/Docker/docker-compose.yml up
+$ docker-compose -f /path/to/the/project/misc/Docker/docker-compose-db-and-keycloak.yml up
 ~~~~
 
 ### Architecture
@@ -20,7 +20,9 @@ Current list of implemented things:
 
 * Postman HTTP Requests ![Postman](./misc/images/Postman.png)
 * Discovery Service ![Postman](./misc/images/Eureka.png)
-* Postgres SQL runnin in a docker container
+* Postgres SQL running in a docker container
+* MongoDB running in a docker container
+* Keycloak running in a docker container
 * Configuration Service
 
   * Encrypted properties
