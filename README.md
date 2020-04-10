@@ -24,6 +24,7 @@ Current list of implemented things:
 * MongoDB running in a docker container
 * Keycloak running in a docker container
 * Configuration Service
+* ![Keycloak](https://www.youtube.com/watch?v=KrOd5wIkqls)
 
   * Encrypted properties
   * Properties per profiles

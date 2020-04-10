@@ -2,12 +2,6 @@ server:
   port: 8081
 
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8091/auth/realms/marcorealm
-          jwk-set-uri: http://localhost:8091/auth/realms/marcorealm/protocol/openid-connect/certs
   datasource:
     url: jdbc:postgresql://localhost:5432/restourantmenu
     username: '{cipher}4051c3ff0554583d3085385d9e585e4996c95388fa1d172a0c1e4c324e4258c4'
