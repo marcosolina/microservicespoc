@@ -1,5 +1,7 @@
 package com.marco.marcoreactui.config;
 
+import java.util.List;
+
 import org.keycloak.adapters.springsecurity.KeycloakConfiguration;
 import org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationProvider;
 import org.keycloak.adapters.springsecurity.config.KeycloakWebSecurityConfigurerAdapter;
@@ -14,8 +16,14 @@ import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy;
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
 
+import com.marco.marcoreactui.model.ResourcesDocument;
+import com.marco.marcoreactui.repositories.ResourcesDocumentRepository;
+
 @KeycloakConfiguration
 public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter{
+	
+	@Autowired
+	private ResourcesDocumentRepository repo;
 
 	/**
      * Registers the KeycloakAuthenticationProvider with the authentication manager.
@@ -73,12 +81,29 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
+        
+        /*
+         * Permit to all some URLs
+         */
         http
             .authorizeRequests()
-            .antMatchers("/app").hasAnyRole("user", "admin")
-            .antMatchers("/admin").hasAnyRole("admin")
-            .antMatchers("/logout", "/resources/**").permitAll()
-        	.anyRequest().authenticated();
+            .antMatchers("/", "/logout", "/resources/**").permitAll();
+        
+        /*
+         * Configure the resources defined in the DB
+         */
+        List<ResourcesDocument> list = repo.findAll();
+        for(ResourcesDocument rd : list) {
+        	String [] roles = rd.getRoles().toArray(new String[rd.getRoles().size()]);
+        	http.authorizeRequests().antMatchers(rd.getResource()).hasAnyRole(roles);
+        }
+        
+        /*
+         * All the other request should at least be authenticated
+         */
+        http
+        .authorizeRequests()
+        .anyRequest().authenticated();
     }
 
 }
