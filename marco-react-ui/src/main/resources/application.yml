@@ -1,6 +1,9 @@
 server:
   servlet:
     context-path: /reactui
+  error:
+    whitelabel:
+      enabled: false
     
 # I am telling at spring boot where is the eureka server
 eureka:
