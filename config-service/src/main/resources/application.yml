@@ -6,12 +6,13 @@ spring:
       server:
         git:
           uri: https://github.com/marcosolina/microservicespoc.git #Repository that hosts the properties
+          default-label: ${GIT_REPO_BRANCH:master}
           search-paths: #list of folders to use when retrieving the properties
           - 'appProperties/dishesService/'
           - 'appProperties/ingredientsProperties/'
           - 'appProperties/pricesService/'
           - 'appProperties/menuService/'
-          - 'appProperties/securityService/'
+          - 'appProperties/reactUi/'
           
 
 server:
@@ -21,4 +22,4 @@ eureka:
   client:
     serviceUrl:
       #try the value from the system props, or get the fall back
-      defaultZone: ${MARCO_EUREKA_SERVER:http://localhost:8090/eureka}
+      defaultZone: ${MARCO_EUREKA_SERVER:http://localhost:8761/eureka}

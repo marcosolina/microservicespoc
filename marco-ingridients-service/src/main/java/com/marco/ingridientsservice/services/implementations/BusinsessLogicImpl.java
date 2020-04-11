@@ -50,7 +50,12 @@ public class BusinsessLogicImpl implements BusinsessLogicInt {
 
     @Override
     public List<Ingredient> findIngredients(String dishName) throws MarcoException {
-        return repo.findByIdDishName(dishName);
+    	List<Ingredient> list = repo.findByIdDishName(dishName);  
+    	if(list == null || list.isEmpty()) {
+    		throw errServ.buildSimpleExceptionWithStatus(HttpStatus.NOT_FOUND, "ING0004", dishName);
+    	}
+    	
+        return list;
     }
 
     @Override

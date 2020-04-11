@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active:
+    - ${MARCO_REACT_UI_PROFILE:local} # Try to use the profile defined as system property. If not, "local" will be the default profile
+  application:
+    name: marco-react-ui
