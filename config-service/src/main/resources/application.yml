@@ -12,7 +12,7 @@ spring:
           - 'appProperties/ingredientsProperties/'
           - 'appProperties/pricesService/'
           - 'appProperties/menuService/'
-          - 'appProperties/securityService/'
+          - 'appProperties/reactUi/'
           
 
 server:

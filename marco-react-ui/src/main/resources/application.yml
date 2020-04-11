@@ -1,3 +1,8 @@
+server:
+  servlet:
+    context-path: /reactui
+
+
 keycloak:
   realm: marco-realm # the name of the realm, required;
   resource: marco-react-ui # the client-id of the application, required;
