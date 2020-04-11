@@ -1,33 +1,9 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/restourantmenu
-    username: postgres
-    password: postgres
   application:
     name: marco-dishes-service
-  jackson:
-    serialization:
-      write-dates-as-timestamps: false
-    deserialization:
-# deals with single and multi-valued JWT claims
-      accept-single-value-as-array: true
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8091/auth/realms/marcorealm
-
-keycloak:
-  clientId: dishes-service
-
-
 server:
   servlet:
     context-path: /dishes
-  port: 8081
-    
-    
-    
     
 # I am telling at spring boot where is the eureka server
 eureka:
