@@ -12,6 +12,17 @@ This is my microservice test project. I will play here when I want to learn some
 $ docker-compose -f ${/path/to/the/project}/misc/Docker/docker-compose-db-and-keycloak.yml up
 ~~~~
 
+### Initial configuration
+Once you have started the docker containers, you have to perform some initial steps to configure Mongo DB and Keycloak:
+
+* Inside the ./misc/Docker/mongodb folder you will find the "init.sql" file, copy the content of this file and use it to setup Mongo DB.
+* Inside the ./misc/Keycloak folder you will find the initial configuration. [Login in into KeyCloak](http://localhost:8091) with:
+  * Username: admin
+  * Password: password
+  
+  and create a new "realm" with the file that you will find in the previous mentioned folder.
+
+
 ### Architecture
 ![Architecture](./misc/images/Microservices_Exercise.png)
 
