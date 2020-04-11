@@ -13,7 +13,7 @@ $ docker-compose -f ${/path/to/the/project}/misc/Docker/docker-compose-db-and-ke
 ~~~~
 
 ### Initial configuration
-Once you have started the docker containers, you have to perform some initial steps to configure Mongo DB and Keycloak:
+Once you have started the docker containers, you have to perform some initial steps to configure Keycloak:
 
 * Inside the ./misc/Keycloak folder you will find the initial configuration. [Login in into KeyCloak](http://localhost:8091) with:
   * Username: admin
