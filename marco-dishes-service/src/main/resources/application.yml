@@ -24,6 +24,7 @@ keycloak:
 server:
   servlet:
     context-path: /dishes
+  port: 8081
     
     
     

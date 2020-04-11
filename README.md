@@ -24,34 +24,33 @@ Current list of implemented things:
 * MongoDB running in a docker container
 * Keycloak running in a docker container
 * Configuration Service
-* ![Keycloak](https://www.youtube.com/watch?v=KrOd5wIkqls)
-
   * Encrypted properties
   * Properties per profiles
 * Dishes Service
-
   * Swagger documentation
   * Unit Tests
   * SQL init scripts
   * Multi language support
 * Ingredients Service
-
   * Swagger documentation
   * Unit Tests
   * SQL init scripts
   * Multi language support
 * Prices Service
-
   * Swagger documentation
   * Unit Tests
   * SQL init scripts
   * Multi language support
 * Menu Service
-
   * Swagger documentation
   * Unit Tests
   * SQL init scripts
   * Multi language support
+* Keycloak - I am using Keycloak to manage users authentication and authorisation. I used the following tutorials:
+  * [Keycloak - what it is](https://www.youtube.com/watch?v=KrOd5wIkqls)
+  * [Keycloak Realm - Users Config](https://www.thomasvitale.com/keycloak-configuration-authentication-authorisation/)
+  * [Keycloak Single Sign On SSO - Client Config](https://www.thomasvitale.com/keycloak-authentication-flow-sso-client/)
+  * [Spring security with Keycloak](https://www.thomasvitale.com/spring-security-keycloak/)
 
 ### Todo
 These are the things that I plan to add when I have time:
