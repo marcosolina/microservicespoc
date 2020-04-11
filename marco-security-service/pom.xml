@@ -16,7 +16,7 @@
 	<description>Marco security Service</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 		<spring-cloud.version>Hoxton.SR3</spring-cloud.version>
 		<jwt.version>1.1.0.RELEASE</jwt.version>
 	</properties>

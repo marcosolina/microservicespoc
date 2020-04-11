@@ -64,7 +64,7 @@ public class ModellingServiceImpl implements ModellingServiceInt {
         ApiRecipes recipes = new ApiRecipes();
         map.forEach((k, v) -> recipes.addRecipe(new ApiDishRecipe(k, v)));
 
-        return recipes;
+        return recipes != null ? recipes : new ApiRecipes();
     }
 
 }

@@ -65,7 +65,9 @@ public class PricesController {
     @GetMapping(value = "/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Returns a single price", produces = MediaType.APPLICATION_JSON_VALUE, response = ApiPrice.class)
     public ResponseEntity<ApiPrice> findByName(@ApiParam(value = "Name of the price to retrieve", required = true)  @PathVariable("name") String name) throws MarcoException {
-        return new ResponseEntity<>(msi.fromPriceToApiPrice(bli.getPriceForDishName(name)), HttpStatus.OK);
+    	ApiPrice price = msi.fromPriceToApiPrice(bli.getPriceForDishName(name));
+    	price.setAvailable(checkIfDishAvailable(name));
+        return new ResponseEntity<>(price, HttpStatus.OK);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)

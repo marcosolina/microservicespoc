@@ -18,7 +18,7 @@ public class ApiRecipes implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "List of recipes")
-    private List<ApiDishRecipe> recipes;
+    private List<ApiDishRecipe> recipes = new ArrayList<>();
 
     public ApiRecipes() {
     }
