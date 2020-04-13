@@ -17,6 +17,7 @@ import com.marco.pricesservice.repositories.PriceRepository;
 import com.marco.pricesservice.servicies.interfaces.BusinsessLogicInt;
 import com.marco.pricesservice.servicies.interfaces.ErrorServiceInt;
 import com.marco.pricesservice.servicies.interfaces.RestClientInt;
+import com.marco.pricesservice.utils.PricesConstants;
 
 @Transactional
 public class BusinsessLogicImpl implements BusinsessLogicInt {
@@ -29,11 +30,10 @@ public class BusinsessLogicImpl implements BusinsessLogicInt {
 
     @Autowired
     private DishesServiceProperties prpDishServ;
-
+    
     @Autowired
     private RestClientInt restClient;
-
-
+    
     @Override
     public Price getPriceForDishName(String dishName) throws MarcoException {
         return repo.findByDishName(dishName).orElseThrow(()-> errServ.buildSimpleExceptionWithStatus(HttpStatus.NOT_FOUND, "PRI0001", dishName));
@@ -77,7 +77,7 @@ public class BusinsessLogicImpl implements BusinsessLogicInt {
     public boolean checkIfDishExistInDishesService(String dishName) throws MarcoException {
         try {
             URL url = new URL(prpDishServ.getProtocol(), prpDishServ.getHost(), prpDishServ.getFindDishByName(dishName));
-            ClientResponse resp = restClient.performGetRequest(url, null, null);
+            ClientResponse resp = restClient.performGetRequest(PricesConstants.TOKEN_DISHES_REGISTRATION_ID, url, null, null);
             return resp != null && resp.statusCode() == HttpStatus.OK;
         } catch (MalformedURLException e) {
             throw errServ.buildSimpleExceptionWithStatus(HttpStatus.BAD_GATEWAY, "PRI0005", dishName);

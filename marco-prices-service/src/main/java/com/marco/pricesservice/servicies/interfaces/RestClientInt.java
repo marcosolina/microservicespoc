@@ -17,6 +17,8 @@ public interface RestClientInt {
     /**
      * It performs a GET request
      * 
+     * @param client registration ID
+     * 			  (can be null
      * @param url
      * @param headers
      *            (can be null)
@@ -24,7 +26,7 @@ public interface RestClientInt {
      *            (can be null)
      * @return
      */
-    public ClientResponse performGetRequest(URL url, Map<String, String> headers, Map<String, String> queryParameters);
+    public ClientResponse performGetRequest(String clientRegistrationID, URL url, Map<String, String> headers, Map<String, String> queryParameters);
 
     /**
      * It returns the body representation of the HTTP response

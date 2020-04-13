@@ -20,7 +20,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		/*
 		 * Standard spring security
 		 */
-		http.sessionManagement()
+		http.csrf().disable()
+			.sessionManagement()
 			.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and().authorizeRequests()
 			//TODO read those from the DB
