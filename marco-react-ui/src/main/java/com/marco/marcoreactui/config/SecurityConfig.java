@@ -93,13 +93,10 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter{
          * Configure the resources defined in the DB
          */
         List<ResourcesDocument> list = repo.findAll();
-        System.out.println("####### Start 1");
         for(ResourcesDocument rd : list) {
-        	System.out.println("####### Start 2");
         	String [] roles = rd.getRoles().toArray(new String[rd.getRoles().size()]);
         	http.authorizeRequests().antMatchers(rd.getResource()).hasAnyRole(roles);
         }
-        System.out.println("####### Start 3");
         
         /*
          * All the other request should at least be authenticated
