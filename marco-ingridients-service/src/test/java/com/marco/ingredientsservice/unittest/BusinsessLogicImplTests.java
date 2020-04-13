@@ -96,7 +96,7 @@ public class BusinsessLogicImplTests {
         when(prpDishServ.getProtocol()).thenReturn("http");
         when(prpDishServ.getHost()).thenReturn("host");
         when(prpDishServ.getFindDishByName(dishName)).thenReturn("dummy");
-        when(restClient.performGetRequest(ArgumentMatchers.any(), ArgumentMatchers.any(), ArgumentMatchers.any())).thenReturn(ClientResponse.create(HttpStatus.OK).build());
+        when(restClient.performGetRequest(ArgumentMatchers.anyString(), ArgumentMatchers.any(), ArgumentMatchers.any(), ArgumentMatchers.any())).thenReturn(ClientResponse.create(HttpStatus.OK).build());
 
         assertTrue(service.checkIfDishExistInDishesService(dishName));
     }

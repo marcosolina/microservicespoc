@@ -1,11 +1,9 @@
 package com.marco.ingridientsservice.config;
 
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.web.reactive.function.client.WebClient;
 
 import com.marco.ingridientsservice.services.implementations.BusinsessLogicImpl;
 import com.marco.ingridientsservice.services.implementations.ErrorServiceImpl;
@@ -27,12 +25,6 @@ import com.marco.ingridientsservice.utils.Utils;
  */
 @Configuration
 public class Spring {
-    
-    @Bean
-    @LoadBalanced
-    public WebClient.Builder getWebClientBuilder(){
-        return WebClient.builder();
-    }
     
     @Bean
     public RestClientInt getRestClientInt() {
