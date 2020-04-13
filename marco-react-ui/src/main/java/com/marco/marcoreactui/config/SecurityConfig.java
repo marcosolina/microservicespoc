@@ -9,6 +9,7 @@ import org.keycloak.adapters.springsecurity.management.HttpSessionManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper;
@@ -91,6 +92,7 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter{
         
         /*
          * Configure the resources defined in the DB
+         * TODO put in the DB the HTTP Method
          */
         List<ResourcesDocument> list = repo.findAll();
         for(ResourcesDocument rd : list) {
@@ -98,12 +100,20 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter{
         	http.authorizeRequests().antMatchers(rd.getResource()).hasAnyRole(roles);
         }
         
+        http.authorizeRequests()
+        .antMatchers(HttpMethod.GET, "/dishes/**").hasRole("READ")
+        .antMatchers(HttpMethod.PUT, "/dishes/**").hasRole("SAVE")
+        .antMatchers(HttpMethod.POST, "/dishes/**").hasRole("SAVE")
+        .antMatchers(HttpMethod.DELETE, "/dishes/**").hasRole("DELETE")
+        ;
+        
         /*
          * All the other request should at least be authenticated
          */
         http
         .authorizeRequests()
-        .anyRequest().authenticated();
+        .anyRequest().authenticated()
+        .and().csrf().disable();;
     }
 
 }
