@@ -15,11 +15,28 @@ $ docker-compose -f ${/path/to/the/project}/misc/Docker/docker-compose-db-and-ke
 ### Initial configuration
 Once you have started the docker containers, you have to perform some initial steps to configure Keycloak:
 
-* Inside the ./misc/Keycloak folder you will find the initial configuration. [Login in into KeyCloak](http://localhost:8091) with:
+* Connect to the Docker container that is running the Keycloak server and import the initial realm
+~~~~
+# Retriever the container ID
+$ docker ps
+
+# SSH into the container
+$ docker exec -it <containerID> /bin/bash
+
+# Run the following command inside the container
+$ /opt/jboss/keycloak/bin/standalone.sh -Dkeycloak.profile.feature.upload_scripts=enabled -Djboss.socket.binding.port-offset=100 -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=realm-export.json -Dkeycloak.migration.strategy=OVERWRITE_EXISTING
+
+# Once the import is complete press CTRL + c to quit jboss
+# Press one more time CTRL + c to leave the container
+# Now restart the container
+~~~~
+
+
+* [Login in into KeyCloak](http://localhost:8091) with:
   * Username: admin
   * Password: password
   
-  and create a new "realm" with the file that you will find in the previous mentioned folder.
+  You have to generete the client secrets and update the configuration of the services
 
 
 ### Architecture

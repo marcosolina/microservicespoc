@@ -43,6 +43,7 @@ services:
        - DB_ADDR=marco-db
     depends_on:
        - marco-db
+    
        
 
       
