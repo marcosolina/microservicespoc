@@ -23,7 +23,7 @@ Once you have started the docker containers, you have to perform some initial st
 
 
 ### Architecture
-![Architecture](./misc/images/Microservices_Exercise.png)
+![Architecture](./misc/images/Microservices_diagram.png)
 
 Current list of implemented things:
 
