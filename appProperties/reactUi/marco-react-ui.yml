@@ -9,3 +9,16 @@ spring:
       database: reactui
       repositories:
         type: auto
+        
+        
+rest:
+  request:
+    service:
+      dishes:
+        protocol: https
+        host: marco-dishes-service
+        findDishByName: /dishes/api
+        findAllDishes: /dishes/api/all
+        deleteDish: /dishes/api
+        insertDish: /dishes/api
+        updateDish: /dishes/api
