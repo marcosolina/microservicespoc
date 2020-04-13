@@ -11,6 +11,26 @@
 				{
 					"name": "Get All Dishes",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaTnN6QXFwNEJaeVc4X3JIb0h4Wjgwcmdvc0ZZNFlqT1NhdTNHXzR6U2M4In0.eyJleHAiOjE1ODY3MjgwODAsImlhdCI6MTU4NjcyNzc4MCwianRpIjoiMjllZDg5ODAtMjJmZS00ZWVhLTkxNDEtZWI3MGU3NmEzN2E4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDkxL2F1dGgvcmVhbG1zL21hcmNvLXJlYWxtIiwiYXVkIjpbImRpc2hlcy1zZXJ2aWNlIiwiYWNjb3VudCJdLCJzdWIiOiJhMTllNTk3Ny0zMGVmLTQ2NjItYTg5NS0xNTRiYjg0YWFjNmMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJwcmljZXMtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiI2N2E0OTUwYi00OTVmLTQ5ODItODE5My0zM2ZlMjdhYjQyZjAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODA4MyJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJkaXNoZXMtc2VydmljZSI6eyJyb2xlcyI6WyJTQVZFX0RJU0giLCJSRUFEX0RJU0giLCJERUxFVEVfRElTSCJdfSwicHJpY2VzLXNlcnZpY2UiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImNsaWVudElkIjoicHJpY2VzLXNlcnZpY2UiLCJjbGllbnRIb3N0IjoiMTcyLjMwLjAuMSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXByaWNlcy1zZXJ2aWNlIiwiY2xpZW50QWRkcmVzcyI6IjE3Mi4zMC4wLjEifQ.PC3HYPJmO-Q3fY2HTHBGzJATEo9DQ6jbmqYZU0uH5f9JbYk_DzDLcc8dmoPEO-JIMOZjOcjuKfT-nqZvC1kdgD-cZ1fg3P1C5W4RCw-1D43K2PYsuM92GH-xC7G15EzLrYEZ59owiAVwdb9e4b1-oKyoiFhdykxd97TfMb2naxR3Y7pJgJIetW2DLRgSyTCgjxLrq5ikKlOreTBJZM5XE-sU340xGLPotlWiWyKv8V7Jj0Mu_39RDA6iF13aaqSxm_fnGEiteJGOM5TscjaxcJiBvU9Ld8VSfQrQl3BoLzOPZ0z22pLlArtsHLDYGFdM6_kUmulwJxLtSwgdEBaYiQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -38,6 +58,26 @@
 				{
 					"name": "Get Single Dish",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaTnN6QXFwNEJaeVc4X3JIb0h4Wjgwcmdvc0ZZNFlqT1NhdTNHXzR6U2M4In0.eyJleHAiOjE1ODY3MjgwODAsImlhdCI6MTU4NjcyNzc4MCwianRpIjoiMjllZDg5ODAtMjJmZS00ZWVhLTkxNDEtZWI3MGU3NmEzN2E4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDkxL2F1dGgvcmVhbG1zL21hcmNvLXJlYWxtIiwiYXVkIjpbImRpc2hlcy1zZXJ2aWNlIiwiYWNjb3VudCJdLCJzdWIiOiJhMTllNTk3Ny0zMGVmLTQ2NjItYTg5NS0xNTRiYjg0YWFjNmMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJwcmljZXMtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiI2N2E0OTUwYi00OTVmLTQ5ODItODE5My0zM2ZlMjdhYjQyZjAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODA4MyJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJkaXNoZXMtc2VydmljZSI6eyJyb2xlcyI6WyJTQVZFX0RJU0giLCJSRUFEX0RJU0giLCJERUxFVEVfRElTSCJdfSwicHJpY2VzLXNlcnZpY2UiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImNsaWVudElkIjoicHJpY2VzLXNlcnZpY2UiLCJjbGllbnRIb3N0IjoiMTcyLjMwLjAuMSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXByaWNlcy1zZXJ2aWNlIiwiY2xpZW50QWRkcmVzcyI6IjE3Mi4zMC4wLjEifQ.PC3HYPJmO-Q3fY2HTHBGzJATEo9DQ6jbmqYZU0uH5f9JbYk_DzDLcc8dmoPEO-JIMOZjOcjuKfT-nqZvC1kdgD-cZ1fg3P1C5W4RCw-1D43K2PYsuM92GH-xC7G15EzLrYEZ59owiAVwdb9e4b1-oKyoiFhdykxd97TfMb2naxR3Y7pJgJIetW2DLRgSyTCgjxLrq5ikKlOreTBJZM5XE-sU340xGLPotlWiWyKv8V7Jj0Mu_39RDA6iF13aaqSxm_fnGEiteJGOM5TscjaxcJiBvU9Ld8VSfQrQl3BoLzOPZ0z22pLlArtsHLDYGFdM6_kUmulwJxLtSwgdEBaYiQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -65,6 +105,26 @@
 				{
 					"name": "Delete Single Dish",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaTnN6QXFwNEJaeVc4X3JIb0h4Wjgwcmdvc0ZZNFlqT1NhdTNHXzR6U2M4In0.eyJleHAiOjE1ODY3MjgwODAsImlhdCI6MTU4NjcyNzc4MCwianRpIjoiMjllZDg5ODAtMjJmZS00ZWVhLTkxNDEtZWI3MGU3NmEzN2E4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDkxL2F1dGgvcmVhbG1zL21hcmNvLXJlYWxtIiwiYXVkIjpbImRpc2hlcy1zZXJ2aWNlIiwiYWNjb3VudCJdLCJzdWIiOiJhMTllNTk3Ny0zMGVmLTQ2NjItYTg5NS0xNTRiYjg0YWFjNmMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJwcmljZXMtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiI2N2E0OTUwYi00OTVmLTQ5ODItODE5My0zM2ZlMjdhYjQyZjAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODA4MyJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJkaXNoZXMtc2VydmljZSI6eyJyb2xlcyI6WyJTQVZFX0RJU0giLCJSRUFEX0RJU0giLCJERUxFVEVfRElTSCJdfSwicHJpY2VzLXNlcnZpY2UiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImNsaWVudElkIjoicHJpY2VzLXNlcnZpY2UiLCJjbGllbnRIb3N0IjoiMTcyLjMwLjAuMSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXByaWNlcy1zZXJ2aWNlIiwiY2xpZW50QWRkcmVzcyI6IjE3Mi4zMC4wLjEifQ.PC3HYPJmO-Q3fY2HTHBGzJATEo9DQ6jbmqYZU0uH5f9JbYk_DzDLcc8dmoPEO-JIMOZjOcjuKfT-nqZvC1kdgD-cZ1fg3P1C5W4RCw-1D43K2PYsuM92GH-xC7G15EzLrYEZ59owiAVwdb9e4b1-oKyoiFhdykxd97TfMb2naxR3Y7pJgJIetW2DLRgSyTCgjxLrq5ikKlOreTBJZM5XE-sU340xGLPotlWiWyKv8V7Jj0Mu_39RDA6iF13aaqSxm_fnGEiteJGOM5TscjaxcJiBvU9Ld8VSfQrQl3BoLzOPZ0z22pLlArtsHLDYGFdM6_kUmulwJxLtSwgdEBaYiQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [
 							{
@@ -99,6 +159,26 @@
 				{
 					"name": "Add Single Dish",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaTnN6QXFwNEJaeVc4X3JIb0h4Wjgwcmdvc0ZZNFlqT1NhdTNHXzR6U2M4In0.eyJleHAiOjE1ODY3MjgwODAsImlhdCI6MTU4NjcyNzc4MCwianRpIjoiMjllZDg5ODAtMjJmZS00ZWVhLTkxNDEtZWI3MGU3NmEzN2E4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDkxL2F1dGgvcmVhbG1zL21hcmNvLXJlYWxtIiwiYXVkIjpbImRpc2hlcy1zZXJ2aWNlIiwiYWNjb3VudCJdLCJzdWIiOiJhMTllNTk3Ny0zMGVmLTQ2NjItYTg5NS0xNTRiYjg0YWFjNmMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJwcmljZXMtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiI2N2E0OTUwYi00OTVmLTQ5ODItODE5My0zM2ZlMjdhYjQyZjAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODA4MyJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJkaXNoZXMtc2VydmljZSI6eyJyb2xlcyI6WyJTQVZFX0RJU0giLCJSRUFEX0RJU0giLCJERUxFVEVfRElTSCJdfSwicHJpY2VzLXNlcnZpY2UiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImNsaWVudElkIjoicHJpY2VzLXNlcnZpY2UiLCJjbGllbnRIb3N0IjoiMTcyLjMwLjAuMSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXByaWNlcy1zZXJ2aWNlIiwiY2xpZW50QWRkcmVzcyI6IjE3Mi4zMC4wLjEifQ.PC3HYPJmO-Q3fY2HTHBGzJATEo9DQ6jbmqYZU0uH5f9JbYk_DzDLcc8dmoPEO-JIMOZjOcjuKfT-nqZvC1kdgD-cZ1fg3P1C5W4RCw-1D43K2PYsuM92GH-xC7G15EzLrYEZ59owiAVwdb9e4b1-oKyoiFhdykxd97TfMb2naxR3Y7pJgJIetW2DLRgSyTCgjxLrq5ikKlOreTBJZM5XE-sU340xGLPotlWiWyKv8V7Jj0Mu_39RDA6iF13aaqSxm_fnGEiteJGOM5TscjaxcJiBvU9Ld8VSfQrQl3BoLzOPZ0z22pLlArtsHLDYGFdM6_kUmulwJxLtSwgdEBaYiQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -134,6 +214,26 @@
 				{
 					"name": "Update Single Dish",
 					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaTnN6QXFwNEJaeVc4X3JIb0h4Wjgwcmdvc0ZZNFlqT1NhdTNHXzR6U2M4In0.eyJleHAiOjE1ODY3MjgwODAsImlhdCI6MTU4NjcyNzc4MCwianRpIjoiMjllZDg5ODAtMjJmZS00ZWVhLTkxNDEtZWI3MGU3NmEzN2E4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDkxL2F1dGgvcmVhbG1zL21hcmNvLXJlYWxtIiwiYXVkIjpbImRpc2hlcy1zZXJ2aWNlIiwiYWNjb3VudCJdLCJzdWIiOiJhMTllNTk3Ny0zMGVmLTQ2NjItYTg5NS0xNTRiYjg0YWFjNmMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJwcmljZXMtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiI2N2E0OTUwYi00OTVmLTQ5ODItODE5My0zM2ZlMjdhYjQyZjAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODA4MyJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInVzZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJkaXNoZXMtc2VydmljZSI6eyJyb2xlcyI6WyJTQVZFX0RJU0giLCJSRUFEX0RJU0giLCJERUxFVEVfRElTSCJdfSwicHJpY2VzLXNlcnZpY2UiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImNsaWVudElkIjoicHJpY2VzLXNlcnZpY2UiLCJjbGllbnRIb3N0IjoiMTcyLjMwLjAuMSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXByaWNlcy1zZXJ2aWNlIiwiY2xpZW50QWRkcmVzcyI6IjE3Mi4zMC4wLjEifQ.PC3HYPJmO-Q3fY2HTHBGzJATEo9DQ6jbmqYZU0uH5f9JbYk_DzDLcc8dmoPEO-JIMOZjOcjuKfT-nqZvC1kdgD-cZ1fg3P1C5W4RCw-1D43K2PYsuM92GH-xC7G15EzLrYEZ59owiAVwdb9e4b1-oKyoiFhdykxd97TfMb2naxR3Y7pJgJIetW2DLRgSyTCgjxLrq5ikKlOreTBJZM5XE-sU340xGLPotlWiWyKv8V7Jj0Mu_39RDA6iF13aaqSxm_fnGEiteJGOM5TscjaxcJiBvU9Ld8VSfQrQl3BoLzOPZ0z22pLlArtsHLDYGFdM6_kUmulwJxLtSwgdEBaYiQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -646,7 +746,10 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "password"
+							"raw": "password",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8888/encrypt",
@@ -669,7 +772,10 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "996e9e70ec65de1b771f43e9c72f3c184d446d9eee778ec03dc276d5af4d6517"
+							"raw": "996e9e70ec65de1b771f43e9c72f3c184d446d9eee778ec03dc276d5af4d6517",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8888/decrypt",

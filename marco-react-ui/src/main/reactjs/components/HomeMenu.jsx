@@ -25,6 +25,7 @@ class HomeMenu extends Component {
 				<div className="btn-group" role="group" aria-label="Mia Menu">
 					<button type="button" className="btn btn-secondary" onClick={this.onClick.bind(this, "home")}>Home</button>
 					<button type="button" className="btn btn-secondary" onClick={this.onClick.bind(this, "dishes")}>Dishes</button>
+					<button type="button" className="btn btn-secondary" onClick={()=> window.open("/reactui/logout", "_self")}>Log Out</button>
 				</div>
 			</div>
 		);

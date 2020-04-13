@@ -47,9 +47,9 @@ public class DishesController {
 	@PostMapping()
 	public ResponseEntity<Void> insertDish(@RequestBody ApiDish newDish){
 		if(dishService.insertDish(newDish)) {
-			return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
+			return new ResponseEntity<>(HttpStatus.CREATED);
 		}
-		return new ResponseEntity<>(HttpStatus.CREATED);
+		return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
 	}
 	
 }
