@@ -17,6 +17,7 @@ import com.marco.menuservice.repositories.MenusRepo;
 import com.marco.menuservice.services.interfaces.BusinsessLogicInt;
 import com.marco.menuservice.services.interfaces.ErrorServiceInt;
 import com.marco.menuservice.services.interfaces.RestClientInt;
+import com.marco.menuservice.utils.PricesConstants;
 
 @Transactional
 public class BusinsessLogicImpl implements BusinsessLogicInt {
@@ -38,7 +39,7 @@ public class BusinsessLogicImpl implements BusinsessLogicInt {
 
         try {
             URL url = new URL(prpDishServ.getProtocol(), prpDishServ.getHost(), prpDishServ.getFindDishByName(dishName));
-            ClientResponse resp = restClient.performGetRequest(url, null, null);
+            ClientResponse resp = restClient.performGetRequest(PricesConstants.TOKEN_DISHES_REGISTRATION_ID, url, null, null);
             return resp != null && resp.statusCode() == HttpStatus.OK;
         } catch (MalformedURLException e) {
             throw errServ.buildSimpleExceptionWithStatus(HttpStatus.BAD_GATEWAY, "MENU0001", dishName);

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.security.oauth2.client.web.reactive.function.client.ServerOAuth2AuthorizedClientExchangeFilterFunction;
 import org.springframework.web.reactive.function.client.ClientResponse;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClient.RequestBodySpec;
@@ -19,12 +20,12 @@ public class RestClientImpl implements RestClientInt{
     private WebClient.Builder wsClient;
     
     @Override
-    public ClientResponse performGetRequest(URL url, Map<String, String> headers, Map<String, String> queryParameters) {
-        return performRequest(HttpMethod.GET, url, headers, queryParameters, MediaType.APPLICATION_JSON, null);
+    public ClientResponse performGetRequest(String clientRegistrationID, URL url, Map<String, String> headers, Map<String, String> queryParameters) {
+        return performRequest(HttpMethod.GET, clientRegistrationID, url, headers, queryParameters, MediaType.APPLICATION_JSON, null);
     }
 
     
-    public ClientResponse performRequest(HttpMethod method, URL url, Map<String, String> headers, Map<String, String> queryParameters, MediaType contentType, Object body) {
+    public ClientResponse performRequest(HttpMethod method, String clientRegistrationID, URL url, Map<String, String> headers, Map<String, String> queryParameters, MediaType contentType, Object body) {
 
         /*
          * Create the request and adds query parameters if provided
@@ -38,7 +39,12 @@ public class RestClientImpl implements RestClientInt{
             }
             return ub.build();
 
-        }).contentType(contentType);
+        })
+		.contentType(contentType);
+        
+        if(clientRegistrationID != null) {
+        	rbs = rbs.attributes(ServerOAuth2AuthorizedClientExchangeFilterFunction.clientRegistrationId(clientRegistrationID));
+        }
         
         /*
          * Add HTTP headers if provided

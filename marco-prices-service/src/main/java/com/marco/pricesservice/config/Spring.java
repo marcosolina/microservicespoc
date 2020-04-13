@@ -1,11 +1,9 @@
 package com.marco.pricesservice.config;
 
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.web.reactive.function.client.WebClient;
 
 import com.marco.pricesservice.servicies.implementations.BusinsessLogicImpl;
 import com.marco.pricesservice.servicies.implementations.ErrorServiceImpl;
@@ -27,13 +25,7 @@ import com.marco.pricesservice.utils.Utils;
  */
 @Configuration
 public class Spring {
-    
-    @Bean
-    @LoadBalanced
-    public WebClient.Builder getWebClientBuilder(){
-        return WebClient.builder();
-    }
-    
+	
     @Bean
     public RestClientInt getRestClientInt() {
         return new RestClientImpl();
