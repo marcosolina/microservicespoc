@@ -1,18 +1,18 @@
-marcodb = db.getSiblingDB('marcosecurity')
+reactui = db.getSiblingDB('reactui')
 
-marcodb.createCollection('resources')
+reactui.createCollection('resources')
 
-marcodb.resources.createIndex({ resource: 1 }, { unique: true })
+reactui.resources.createIndex({ resource: 1 }, { unique: true })
 
-marcodb.resources.insertMany([
+reactui.resources.insertMany([
 {
 	_id: 'app',
-	resource: '/app',
+	resource: '/home',
 	roles: ['admin', 'user']
 },
 {
 	_id: 'admin',
-	resource: '/admin',
+	resource: '/app',
 	roles: ['admin']
 }])
 

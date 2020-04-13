@@ -18,9 +18,9 @@ public class MainController {
 		return "app";
 	}
 	
-	@GetMapping(value = "/admin")
+	@GetMapping(value = "/home")
 	public String getAdmin() {
-		return "admin";
+		return "home";
 	}
 	
 	@GetMapping(value = "/logout")
