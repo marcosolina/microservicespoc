@@ -20,13 +20,13 @@
   "actionTokenGeneratedByUserLifespan": 300,
   "enabled": true,
   "sslRequired": "external",
-  "registrationAllowed": true,
+  "registrationAllowed": false,
   "registrationEmailAsUsername": false,
   "rememberMe": false,
   "verifyEmail": false,
   "loginWithEmailAllowed": false,
   "duplicateEmailsAllowed": false,
-  "resetPasswordAllowed": true,
+  "resetPasswordAllowed": false,
   "editUsernameAllowed": false,
   "bruteForceProtected": false,
   "permanentLockout": false,
@@ -38,6 +38,15 @@
   "failureFactor": 30,
   "roles": {
     "realm": [
+      {
+        "id": "57decca5-7611-4741-ae86-a2b0bd03c664",
+        "name": "SAVE",
+        "description": "Save Role",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "marco-realm",
+        "attributes": {}
+      },
       {
         "id": "fb19ca28-13d1-45ec-8e4b-d506c0591bf1",
         "name": "user",
@@ -57,12 +66,23 @@
         "attributes": {}
       },
       {
+        "id": "99701119-65c5-40bb-a8ea-55df51548100",
+        "name": "READ",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "marco-realm",
+        "attributes": {}
+      },
+      {
         "id": "ed6754dd-57ac-44fb-b54d-6d60783ad9bd",
         "name": "admin",
         "description": "Admin privileges",
         "composite": true,
         "composites": {
           "realm": [
+            "READ",
+            "DELETE",
+            "SAVE",
             "user"
           ]
         },
@@ -78,9 +98,27 @@
         "clientRole": false,
         "containerId": "marco-realm",
         "attributes": {}
+      },
+      {
+        "id": "4ac1a693-c325-486d-9d47-0bab87fa89dc",
+        "name": "DELETE",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "marco-realm",
+        "attributes": {}
       }
     ],
     "client": {
+      "reactui-service": [
+        {
+          "id": "67a711b5-ff87-4f12-b501-74c53673f704",
+          "name": "uma_protection",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "4fcdef67-2426-460e-a685-7cbf32fe632d",
+          "attributes": {}
+        }
+      ],
       "realm-management": [
         {
           "id": "3dcf929e-4ac9-424e-9606-3d72291be559",
@@ -634,6 +672,38 @@
         ],
         "prices-service": [
           "uma_protection"
+        ],
+        "account": [
+          "view-profile",
+          "manage-account"
+        ]
+      },
+      "notBefore": 0,
+      "groups": []
+    },
+    {
+      "id": "2bdba5da-7ac3-4a85-863a-ecf2de6f9748",
+      "createdTimestamp": 1586786306539,
+      "username": "service-account-reactui-service",
+      "enabled": true,
+      "totp": false,
+      "emailVerified": false,
+      "serviceAccountClientId": "reactui-service",
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": [
+        "user",
+        "uma_authorization",
+        "offline_access"
+      ],
+      "clientRoles": {
+        "reactui-service": [
+          "uma_protection"
+        ],
+        "dishes-service": [
+          "READ_DISH",
+          "DELETE_DISH",
+          "SAVE_DISH"
         ],
         "account": [
           "view-profile",
@@ -1398,6 +1468,152 @@
       }
     },
     {
+      "id": "4fcdef67-2426-460e-a685-7cbf32fe632d",
+      "clientId": "reactui-service",
+      "rootUrl": "http://localhost:8086",
+      "adminUrl": "http://localhost:8086",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "**********",
+      "redirectUris": [
+        "http://localhost:8086/*"
+      ],
+      "webOrigins": [
+        "http://localhost:8086"
+      ],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "publicClient": false,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "attributes": {
+        "saml.assertion.signature": "false",
+        "saml.multivalued.roles": "false",
+        "saml.force.post.binding": "false",
+        "saml.encrypt": "false",
+        "saml.server.signature": "false",
+        "saml.server.signature.keyinfo.ext": "false",
+        "exclude.session.state.from.auth.response": "false",
+        "saml_force_name_id_format": "false",
+        "saml.client.signature": "false",
+        "tls.client.certificate.bound.access.tokens": "false",
+        "saml.authnstatement": "false",
+        "display.on.consent.screen": "false",
+        "saml.onetimeuse.condition": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": true,
+      "nodeReRegistrationTimeout": -1,
+      "protocolMappers": [
+        {
+          "id": "9ded8463-a6b4-4fd0-a563-c701b35949a8",
+          "name": "Client ID",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usersessionmodel-note-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.session.note": "clientId",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "clientId",
+            "jsonType.label": "String"
+          }
+        },
+        {
+          "id": "a654e2a5-7c82-4bb7-8153-4e2530a7958f",
+          "name": "Client Host",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usersessionmodel-note-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.session.note": "clientHost",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "clientHost",
+            "jsonType.label": "String"
+          }
+        },
+        {
+          "id": "cc98e3bf-dfe6-493b-83ce-75acd6f9b09a",
+          "name": "Client IP Address",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usersessionmodel-note-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.session.note": "clientAddress",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "clientAddress",
+            "jsonType.label": "String"
+          }
+        }
+      ],
+      "defaultClientScopes": [
+        "web-origins",
+        "role_list",
+        "profile",
+        "roles",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "offline_access",
+        "microprofile-jwt"
+      ],
+      "authorizationSettings": {
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "Default Resource",
+            "type": "urn:reactui-service:resources:default",
+            "ownerManagedAccess": false,
+            "attributes": {},
+            "_id": "6fd5cb67-93bd-477d-ade6-d04beffc7309",
+            "uris": [
+              "/*"
+            ]
+          }
+        ],
+        "policies": [
+          {
+            "id": "4f3bc6cc-46ec-44c7-9237-dd107cdbea88",
+            "name": "Default Policy",
+            "description": "A policy that grants access only for users within this realm",
+            "type": "js",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "code": "// by default, grants any permission associated with this policy\n$evaluation.grant();\n"
+            }
+          },
+          {
+            "id": "60bc619d-2f77-4e35-866f-4055f5838c8c",
+            "name": "Default Permission",
+            "description": "A permission that applies to the default resource type",
+            "type": "resource",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "defaultResourceType": "urn:reactui-service:resources:default",
+              "applyPolicies": "[\"Default Policy\"]"
+            }
+          }
+        ],
+        "scopes": [],
+        "decisionStrategy": "UNANIMOUS"
+      }
+    },
+    {
       "id": "209c5c51-f896-4e06-9f72-f74ab8504249",
       "clientId": "realm-management",
       "name": "${client_realm-management}",
@@ -2010,7 +2226,7 @@
     "strictTransportSecurity": "max-age=31536000; includeSubDomains"
   },
   "smtpServer": {},
-  "loginTheme": "keycloak",
+  "loginTheme": "base",
   "eventsEnabled": false,
   "eventsListeners": [
     "jboss-logging"

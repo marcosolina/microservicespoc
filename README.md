@@ -55,11 +55,14 @@ Current list of implemented things:
   * Unit Tests
   * SQL init scripts
   * Multi language support
-* Keycloak - I am using Keycloak to manage users authentication and authorisation. I used the following tutorials:
-  * [Keycloak - what it is](https://www.youtube.com/watch?v=KrOd5wIkqls)
-  * [Keycloak Realm - Users Config](https://www.thomasvitale.com/keycloak-configuration-authentication-authorisation/)
-  * [Keycloak Single Sign On SSO - Client Config](https://www.thomasvitale.com/keycloak-authentication-flow-sso-client/)
-  * [Spring security with Keycloak](https://www.thomasvitale.com/spring-security-keycloak/)
+* Spring Security (Work in progress)
+  * Keycloak - I am using Keycloak to manage users authentication and authorisation. I used the following tutorials:
+    * [Keycloak - what it is](https://www.youtube.com/watch?v=KrOd5wIkqls)
+    * [Keycloak Realm - Users Config](https://www.thomasvitale.com/keycloak-configuration-authentication-authorisation/)
+    * [Keycloak Single Sign On SSO - Client Config](https://www.thomasvitale.com/keycloak-authentication-flow-sso-client/)
+    * [Spring security with Keycloak](https://www.thomasvitale.com/spring-security-keycloak/)
+* Oauth2 + Open Id Connect (Work in progress)
+* React UI (Work in progress): This service provides the UI to mange the information stored in the other micro services
 
 ### Todo
 These are the things that I plan to add when I have time:
@@ -67,7 +70,4 @@ These are the things that I plan to add when I have time:
 * Integration Tests
 * Fault tollerance
 * Resilience
-* UI
-* Spring Security
-* Oauth
 * ... anything else that it will come up in my mind :)
