@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-class DishsInsert extends Component {
+class PriceInsert extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            name: "",
-            calories: ""
+            dishName: "",
+            price: ""
 		};
     }
 
@@ -14,8 +14,8 @@ class DishsInsert extends Component {
         newValue[stateProp] = event.target.value;
 		this.setState(newValue);
     }
-    insertDish(){
-		fetch("/reactui/dishes", {
+    insertPrice(){
+		fetch("/reactui/prices", {
             method: 'POST',
 			headers: {
 				'Accept': 'application/json',
@@ -36,9 +36,9 @@ class DishsInsert extends Component {
 			<table border="1">
 				<tbody>
 					<tr>
-                        <td><input type="text" placeholder="Dish Name" value={this.state.name} onChange={this.onChangeInput.bind(this, "name")}/></td>
-                        <td><input type="text" placeholder="Calories" value={this.state.calories} onChange={this.onChangeInput.bind(this, "calories")}/></td>
-                        <td><button type="button" onClick={this.insertDish.bind(this)}>Insert</button></td>
+                        <td><input type="text" placeholder="Dish Name" value={this.state.dishName} onChange={this.onChangeInput.bind(this, "dishName")}/></td>
+                        <td><input type="text" placeholder="Price" value={this.state.price} onChange={this.onChangeInput.bind(this, "price")}/></td>
+                        <td><button type="button" onClick={this.insertPrice.bind(this)}>Insert</button></td>
                     </tr>
 				</tbody>
 			</table>
@@ -47,4 +47,4 @@ class DishsInsert extends Component {
 
 }
 
-export default DishsInsert;
+export default PriceInsert;

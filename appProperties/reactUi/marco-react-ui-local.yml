@@ -3,3 +3,5 @@ rest:
     service:
       dishes:
         protocol: http
+      prices:
+        protocol: http

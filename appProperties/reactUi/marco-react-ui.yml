@@ -22,3 +22,11 @@ rest:
         deleteDish: /dishes/api
         insertDish: /dishes/api
         updateDish: /dishes/api
+      prices:
+        protocol: https
+        host: marco-prices-service
+        findPriceByName: /prices/api
+        findAllPrices: /prices/api/all
+        deletePrice: /prices/api
+        insertPrice: /prices/api
+        updatePrice: /prices/api

@@ -6,7 +6,7 @@ spring:
       server:
         git:
           uri: https://github.com/marcosolina/microservicespoc.git #Repository that hosts the properties
-          default-label: ${GIT_REPO_BRANCH:master}
+          default-label: ${GIT_REPO_BRANCH:security_tests}
           search-paths: #list of folders to use when retrieving the properties
           - 'appProperties/dishesService/'
           - 'appProperties/ingredientsProperties/'
