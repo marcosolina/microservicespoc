@@ -25,7 +25,7 @@ class DishsInsert extends Component {
         }).then((resp) => {
 			return resp;
 		}).then((respMessage) => {
-			alert("Http Status: " + respMessage);
+			alert("Http Status: " + respMessage.status);
 		}).catch((error) => {
 			alert(error.message);
 		});

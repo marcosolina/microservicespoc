@@ -44,6 +44,17 @@
 			<artifactId>spring-security-oauth2-client</artifactId>
 		</dependency>
 		<!-- END to generate the token when I have to call a client  -->
+		
+		<!-- START Read input token -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-jose</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-resource-server</artifactId>
+		</dependency>
+		<!-- END Read Input token -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

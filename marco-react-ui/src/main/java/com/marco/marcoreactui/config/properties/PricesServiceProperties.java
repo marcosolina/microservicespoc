@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  *
  */
 @Configuration
-@ConfigurationProperties("rest.request.service.ces")
+@ConfigurationProperties("rest.request.service.prices")
 public class PricesServiceProperties {
 	private String host;
 	private String protocol;

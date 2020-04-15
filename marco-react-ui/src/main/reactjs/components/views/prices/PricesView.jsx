@@ -6,7 +6,7 @@ import {changePriceView} from '../../../redux/actions.jsx';
 import { CHANGE_PRICES_VIEW } from '../../../redux/actionTypes.jsx';
 
 const mapStateToProps = function (state) {
-	return state.dishesViewReducer;
+	return state.pricesViewReducer;
 }
 
 

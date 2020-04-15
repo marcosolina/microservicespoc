@@ -1,5 +1,8 @@
 package com.marco.marcoreactui.config.webclient;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,19 +31,32 @@ public class WebClientConfig {
 
 	@Bean
 	public ClientRegistrationRepository clientRegistrations() {
+		List<ClientRegistration> clients = new ArrayList<>();
+		
 		/*
 		 * Registering the "client" credential to use when I want to retrieve the token
 		 */
-		ClientRegistration clientRegistration = ClientRegistration
+		ClientRegistration dishes = ClientRegistration
 				.withRegistrationId(PricesConstants.TOKEN_DISHES_REGISTRATION_ID)
 				.clientId("reactui-service").clientSecret("091dab56-57af-497e-b7d3-18e8496a7049")
 				.authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
 				.clientAuthenticationMethod(ClientAuthenticationMethod.POST)
 				.tokenUri("http://localhost:8091/auth/realms/marco-realm/protocol/openid-connect/token")
 				.build();
-
+		
+		ClientRegistration prices = ClientRegistration
+				.withRegistrationId(PricesConstants.TOKEN_PRICES_REGISTRATION_ID)
+				.clientId("reactui-service").clientSecret("091dab56-57af-497e-b7d3-18e8496a7049")
+				.authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
+				.clientAuthenticationMethod(ClientAuthenticationMethod.POST)
+				.tokenUri("http://localhost:8091/auth/realms/marco-realm/protocol/openid-connect/token")
+				.build();
+		
+		
+		clients.add(dishes);
+		clients.add(prices);
 		//TODO retrieve from a database//TODO retrieve from a database
-		return new InMemoryClientRegistrationRepository(clientRegistration);
+		return new InMemoryClientRegistrationRepository(clients);
 	}
 }
  

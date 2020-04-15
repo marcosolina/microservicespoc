@@ -7,4 +7,5 @@ public class PricesConstants {
 	}
 	
 	public static final String TOKEN_DISHES_REGISTRATION_ID = "dishes-service";
+	public static final String TOKEN_PRICES_REGISTRATION_ID = "prices-service";
 }

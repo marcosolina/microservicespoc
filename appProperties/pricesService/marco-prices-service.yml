@@ -1,6 +1,14 @@
 server:
   port: 8083
   
+# Where to go to check the incoming token
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8091/auth/realms/marco-realm/protocol/openid-connect/certs    
+  
 rest:
   request:
     service:
