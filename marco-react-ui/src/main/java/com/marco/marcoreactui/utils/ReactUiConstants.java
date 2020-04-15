@@ -1,8 +1,8 @@
 package com.marco.marcoreactui.utils;
 
-public class PricesConstants {
+public class ReactUiConstants {
 
-	private PricesConstants() {
+	private ReactUiConstants() {
 		
 	}
 	

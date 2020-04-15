@@ -15,7 +15,7 @@ import org.springframework.security.oauth2.core.AuthorizationGrantType;
 import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.marco.marcoreactui.utils.PricesConstants;
+import com.marco.marcoreactui.utils.ReactUiConstants;
 
 @Configuration
 public class WebClientConfig {
@@ -37,7 +37,7 @@ public class WebClientConfig {
 		 * Registering the "client" credential to use when I want to retrieve the token
 		 */
 		ClientRegistration dishes = ClientRegistration
-				.withRegistrationId(PricesConstants.TOKEN_DISHES_REGISTRATION_ID)
+				.withRegistrationId(ReactUiConstants.TOKEN_DISHES_REGISTRATION_ID)
 				.clientId("reactui-service").clientSecret("091dab56-57af-497e-b7d3-18e8496a7049")
 				.authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
 				.clientAuthenticationMethod(ClientAuthenticationMethod.POST)
@@ -45,7 +45,7 @@ public class WebClientConfig {
 				.build();
 		
 		ClientRegistration prices = ClientRegistration
-				.withRegistrationId(PricesConstants.TOKEN_PRICES_REGISTRATION_ID)
+				.withRegistrationId(ReactUiConstants.TOKEN_PRICES_REGISTRATION_ID)
 				.clientId("reactui-service").clientSecret("091dab56-57af-497e-b7d3-18e8496a7049")
 				.authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
 				.clientAuthenticationMethod(ClientAuthenticationMethod.POST)

@@ -15,6 +15,7 @@ import com.marco.marcoreactui.dto.prices.ApiPrice;
 import com.marco.marcoreactui.dto.prices.ApiPrices;
 import com.marco.marcoreactui.services.interfaces.PricesBusinsessLogicInt;
 import com.marco.marcoreactui.services.interfaces.RestClientInt;
+import com.marco.marcoreactui.utils.ReactUiConstants;
 
 public class PricesBusinsessLogicImpl implements PricesBusinsessLogicInt {
 
@@ -35,7 +36,7 @@ public class PricesBusinsessLogicImpl implements PricesBusinsessLogicInt {
 			//TODO manage the error in a better way
 			return false;
 		}
-		ClientResponse resp = wsClient.performPostRequest(Optional.empty(), url, Optional.empty(), Optional.empty(), Optional.of(price));
+		ClientResponse resp = wsClient.performPostRequest(Optional.of(ReactUiConstants.TOKEN_PRICES_REGISTRATION_ID), url, Optional.empty(), Optional.empty(), Optional.of(price));
 		return resp.statusCode() == HttpStatus.CREATED;
 	}
 
@@ -49,7 +50,7 @@ public class PricesBusinsessLogicImpl implements PricesBusinsessLogicInt {
 			//TODO manage the error in a better way
 			return false;
 		}
-		ClientResponse resp = wsClient.performPutRequest(Optional.empty(), url, Optional.empty(), Optional.empty(), Optional.of(price));
+		ClientResponse resp = wsClient.performPutRequest(Optional.of(ReactUiConstants.TOKEN_PRICES_REGISTRATION_ID), url, Optional.empty(), Optional.empty(), Optional.of(price));
 		return resp.statusCode() == HttpStatus.NO_CONTENT;
 	}
 
@@ -63,7 +64,7 @@ public class PricesBusinsessLogicImpl implements PricesBusinsessLogicInt {
 			//TODO manage the error in a better way
 			return false;
 		}
-		ClientResponse resp = wsClient.performDeleteRequest(Optional.empty(), url, Optional.empty(), Optional.empty(), Optional.empty());
+		ClientResponse resp = wsClient.performDeleteRequest(Optional.of(ReactUiConstants.TOKEN_PRICES_REGISTRATION_ID), url, Optional.empty(), Optional.empty(), Optional.empty());
 		return resp.statusCode() == HttpStatus.NO_CONTENT;
 	}
 
@@ -77,7 +78,7 @@ public class PricesBusinsessLogicImpl implements PricesBusinsessLogicInt {
 			//TODO manage the error in a better way
 			return null;
 		}
-		ClientResponse resp = wsClient.performGetRequest(Optional.empty(), url, Optional.empty(), Optional.empty());
+		ClientResponse resp = wsClient.performGetRequest(Optional.of(ReactUiConstants.TOKEN_PRICES_REGISTRATION_ID), url, Optional.empty(), Optional.empty());
 		if(resp.statusCode() == HttpStatus.OK) {
 			return wsClient.getBodyFromResponse(resp, ApiPrice.class);
 		}
@@ -94,7 +95,7 @@ public class PricesBusinsessLogicImpl implements PricesBusinsessLogicInt {
 			//TODO manage the error in a better way
 			return null;
 		}
-		ClientResponse resp = wsClient.performGetRequest(Optional.empty(), url, Optional.empty(), Optional.empty());
+		ClientResponse resp = wsClient.performGetRequest(Optional.of(ReactUiConstants.TOKEN_PRICES_REGISTRATION_ID), url, Optional.empty(), Optional.empty());
 		if(resp.statusCode() == HttpStatus.OK) {
 			ApiPrices prices = wsClient.getBodyFromResponse(resp, ApiPrices.class);
 			return prices.getPrices();

@@ -40,7 +40,7 @@ $ /opt/jboss/keycloak/bin/standalone.sh -Dkeycloak.profile.feature.upload_script
 
 
 ### Architecture
-![Architecture](./misc/images/Microservices_diagram.png)
+![Architecture](./misc/images/Microservices_Exercise.png)
 
 Current list of implemented things:
 

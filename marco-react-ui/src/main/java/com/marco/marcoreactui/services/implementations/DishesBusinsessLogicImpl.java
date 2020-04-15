@@ -15,7 +15,7 @@ import com.marco.marcoreactui.dto.dishes.ApiDish;
 import com.marco.marcoreactui.dto.dishes.ApiDishes;
 import com.marco.marcoreactui.services.interfaces.DishesBusinsessLogicInt;
 import com.marco.marcoreactui.services.interfaces.RestClientInt;
-import com.marco.marcoreactui.utils.PricesConstants;
+import com.marco.marcoreactui.utils.ReactUiConstants;
 
 public class DishesBusinsessLogicImpl implements DishesBusinsessLogicInt {
 
@@ -36,7 +36,7 @@ public class DishesBusinsessLogicImpl implements DishesBusinsessLogicInt {
 			//TODO manage the error in a better way
 			return false;
 		}
-		ClientResponse resp = wsClient.performPostRequest(Optional.of(PricesConstants.TOKEN_DISHES_REGISTRATION_ID), url, Optional.empty(), Optional.empty(), Optional.of(dish));
+		ClientResponse resp = wsClient.performPostRequest(Optional.of(ReactUiConstants.TOKEN_DISHES_REGISTRATION_ID), url, Optional.empty(), Optional.empty(), Optional.of(dish));
 		return resp.statusCode() == HttpStatus.CREATED;
 	}
 
@@ -50,7 +50,7 @@ public class DishesBusinsessLogicImpl implements DishesBusinsessLogicInt {
 			//TODO manage the error in a better way
 			return false;
 		}
-		ClientResponse resp = wsClient.performPutRequest(Optional.of(PricesConstants.TOKEN_DISHES_REGISTRATION_ID), url, Optional.empty(), Optional.empty(), Optional.of(dish));
+		ClientResponse resp = wsClient.performPutRequest(Optional.of(ReactUiConstants.TOKEN_DISHES_REGISTRATION_ID), url, Optional.empty(), Optional.empty(), Optional.of(dish));
 		return resp.statusCode() == HttpStatus.NO_CONTENT;
 	}
 
@@ -64,7 +64,7 @@ public class DishesBusinsessLogicImpl implements DishesBusinsessLogicInt {
 			//TODO manage the error in a better way
 			return false;
 		}
-		ClientResponse resp = wsClient.performDeleteRequest(Optional.of(PricesConstants.TOKEN_DISHES_REGISTRATION_ID), url, Optional.empty(), Optional.empty(), Optional.empty());
+		ClientResponse resp = wsClient.performDeleteRequest(Optional.of(ReactUiConstants.TOKEN_DISHES_REGISTRATION_ID), url, Optional.empty(), Optional.empty(), Optional.empty());
 		return resp.statusCode() == HttpStatus.NO_CONTENT;
 	}
 
@@ -78,7 +78,7 @@ public class DishesBusinsessLogicImpl implements DishesBusinsessLogicInt {
 			//TODO manage the error in a better way
 			return null;
 		}
-		ClientResponse resp = wsClient.performGetRequest(Optional.of(PricesConstants.TOKEN_DISHES_REGISTRATION_ID), url, Optional.empty(), Optional.empty());
+		ClientResponse resp = wsClient.performGetRequest(Optional.of(ReactUiConstants.TOKEN_DISHES_REGISTRATION_ID), url, Optional.empty(), Optional.empty());
 		if(resp.statusCode() == HttpStatus.OK) {
 			return wsClient.getBodyFromResponse(resp, ApiDish.class);
 		}
@@ -95,7 +95,7 @@ public class DishesBusinsessLogicImpl implements DishesBusinsessLogicInt {
 			//TODO manage the error in a better way
 			return null;
 		}
-		ClientResponse resp = wsClient.performGetRequest(Optional.of(PricesConstants.TOKEN_DISHES_REGISTRATION_ID), url, Optional.empty(), Optional.empty());
+		ClientResponse resp = wsClient.performGetRequest(Optional.of(ReactUiConstants.TOKEN_DISHES_REGISTRATION_ID), url, Optional.empty(), Optional.empty());
 		if(resp.statusCode() == HttpStatus.OK) {
 			ApiDishes dishes = wsClient.getBodyFromResponse(resp, ApiDishes.class);
 			return dishes.getDishes();
