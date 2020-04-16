@@ -10,4 +10,4 @@ eureka:
   client:
     serviceUrl:
       #try the value from the system props, or get the fall back
-      defaultZone: ${MARCO_EUREKA_SERVER:http://http://192.168.99.102:8761/eureka:8761/eureka}
+      defaultZone: ${MARCO_EUREKA_SERVER:http://192.168.99.102:8761/eureka}

@@ -32,7 +32,7 @@ $ /opt/jboss/keycloak/bin/standalone.sh -Dkeycloak.profile.feature.upload_script
 ~~~~
 
 
-* [Login in into KeyCloak](http://http://192.168.99.102:8761/eureka:8091) with:
+* [Login in into KeyCloak](http://192.168.99.102:8091) with:
   * Username: admin
   * Password: password
   

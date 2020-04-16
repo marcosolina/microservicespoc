@@ -7,7 +7,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://http://192.168.99.102:8761/eureka:8091/auth/realms/marco-realm/protocol/openid-connect/certs    
+          jwk-set-uri: http://192.168.99.102:8091/auth/realms/marco-realm/protocol/openid-connect/certs    
   
 rest:
   request:

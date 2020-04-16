@@ -41,7 +41,7 @@ public class WebClientConfig {
 				.clientId("reactui-service").clientSecret("091dab56-57af-497e-b7d3-18e8496a7049")
 				.authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
 				.clientAuthenticationMethod(ClientAuthenticationMethod.POST)
-				.tokenUri("http://http://192.168.99.102:8761/eureka:8091/auth/realms/marco-realm/protocol/openid-connect/token")
+				.tokenUri("http://192.168.99.102:8091/auth/realms/marco-realm/protocol/openid-connect/token")
 				.build();
 		
 		ClientRegistration prices = ClientRegistration
@@ -49,7 +49,7 @@ public class WebClientConfig {
 				.clientId("reactui-service").clientSecret("091dab56-57af-497e-b7d3-18e8496a7049")
 				.authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
 				.clientAuthenticationMethod(ClientAuthenticationMethod.POST)
-				.tokenUri("http://http://192.168.99.102:8761/eureka:8091/auth/realms/marco-realm/protocol/openid-connect/token")
+				.tokenUri("http://192.168.99.102:8091/auth/realms/marco-realm/protocol/openid-connect/token")
 				.build();
 		
 		

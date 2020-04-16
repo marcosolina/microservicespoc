@@ -916,18 +916,18 @@
     {
       "id": "e5102f75-8651-4e6a-bd95-672464e80d48",
       "clientId": "dishes-service",
-      "rootUrl": "http://http://192.168.99.102:8761/eureka:8081/dishes",
-      "adminUrl": "http://http://192.168.99.102:8761/eureka:8081/dishes",
+      "rootUrl": "http://192.168.99.102:8081/dishes",
+      "adminUrl": "http://192.168.99.102:8081/dishes",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
       "redirectUris": [
-        "http://http://192.168.99.102:8761/eureka:8081/dishes/*"
+        "http://192.168.99.102:8081/dishes/*"
       ],
       "webOrigins": [
-        "http://http://192.168.99.102:8761/eureka:8081"
+        "http://192.168.99.102:8081"
       ],
       "notBefore": 0,
       "bearerOnly": true,
@@ -974,18 +974,18 @@
     {
       "id": "a36ff528-09b8-4ac7-8531-c7fa50970af0",
       "clientId": "ingridients-service",
-      "rootUrl": "http://http://192.168.99.102:8761/eureka:8082/ingredients",
-      "adminUrl": "http://http://192.168.99.102:8761/eureka:8082/ingredients",
+      "rootUrl": "http://192.168.99.102:8082/ingredients",
+      "adminUrl": "http://192.168.99.102:8082/ingredients",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
       "redirectUris": [
-        "http://http://192.168.99.102:8761/eureka:8082/ingredients/*"
+        "http://192.168.99.102:8082/ingredients/*"
       ],
       "webOrigins": [
-        "http://http://192.168.99.102:8761/eureka:8082"
+        "http://192.168.99.102:8082"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -1120,7 +1120,7 @@
     {
       "id": "08a3cbf7-ab55-47be-ba6b-23d47ededda4",
       "clientId": "marco-react-ui",
-      "rootUrl": "http://http://192.168.99.102:8761/eureka:8086",
+      "rootUrl": "http://192.168.99.102:8086",
       "adminUrl": "",
       "surrogateAuthRequired": false,
       "enabled": true,
@@ -1178,18 +1178,18 @@
     {
       "id": "694a40a1-d243-44db-9116-95f082fa71df",
       "clientId": "menu-service",
-      "rootUrl": "http://http://192.168.99.102:8761/eureka:8084/menus",
-      "adminUrl": "http://http://192.168.99.102:8761/eureka:8084/menus",
+      "rootUrl": "http://192.168.99.102:8084/menus",
+      "adminUrl": "http://192.168.99.102:8084/menus",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
       "redirectUris": [
-        "http://http://192.168.99.102:8761/eureka:8084/menus/*"
+        "http://192.168.99.102:8084/menus/*"
       ],
       "webOrigins": [
-        "http://http://192.168.99.102:8761/eureka:8084"
+        "http://192.168.99.102:8084"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -1324,18 +1324,18 @@
     {
       "id": "70403ba3-7bf9-4907-9d24-d584becced6a",
       "clientId": "prices-service",
-      "rootUrl": "http://http://192.168.99.102:8761/eureka:8083/prices",
-      "adminUrl": "http://http://192.168.99.102:8761/eureka:8083/prices",
+      "rootUrl": "http://192.168.99.102:8083/prices",
+      "adminUrl": "http://192.168.99.102:8083/prices",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
       "redirectUris": [
-        "http://http://192.168.99.102:8761/eureka:8083/prices/*"
+        "http://192.168.99.102:8083/prices/*"
       ],
       "webOrigins": [
-        "http://http://192.168.99.102:8761/eureka:8083"
+        "http://192.168.99.102:8083"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -1470,18 +1470,18 @@
     {
       "id": "4fcdef67-2426-460e-a685-7cbf32fe632d",
       "clientId": "reactui-service",
-      "rootUrl": "http://http://192.168.99.102:8761/eureka:8086",
-      "adminUrl": "http://http://192.168.99.102:8761/eureka:8086",
+      "rootUrl": "http://192.168.99.102:8086",
+      "adminUrl": "http://192.168.99.102:8086",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
       "redirectUris": [
-        "http://http://192.168.99.102:8761/eureka:8086/*"
+        "http://192.168.99.102:8086/*"
       ],
       "webOrigins": [
-        "http://http://192.168.99.102:8761/eureka:8086"
+        "http://192.168.99.102:8086"
       ],
       "notBefore": 0,
       "bearerOnly": false,
