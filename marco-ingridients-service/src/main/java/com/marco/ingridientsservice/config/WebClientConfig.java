@@ -36,7 +36,7 @@ public class WebClientConfig {
 				.clientId("ingridients-service").clientSecret("25379684-9d6e-43fc-b7df-46c656402f05")
 				.authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
 				.clientAuthenticationMethod(ClientAuthenticationMethod.POST)
-				.tokenUri("http://localhost:8091/auth/realms/marco-realm/protocol/openid-connect/token")
+				.tokenUri("http://http://192.168.99.102:8761/eureka:8091/auth/realms/marco-realm/protocol/openid-connect/token")
 				.build();
 
 		//TODO retrieve from a database//TODO retrieve from a database

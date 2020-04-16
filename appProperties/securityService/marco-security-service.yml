@@ -2,7 +2,7 @@ server:
   port: 8085
   data:
     mongodb:
-      host: localhost
+      host: http://192.168.99.102:8761/eureka
       port: 27017
       database: marcosecurity
       repositories:

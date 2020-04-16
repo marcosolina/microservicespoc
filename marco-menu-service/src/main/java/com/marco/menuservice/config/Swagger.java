@@ -20,7 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  *  <li><a href="https://www.youtube.com/watch?v=gduKpLW_vdY">How To add Swagger</a></li>
  *  <li><a href="https://www.youtube.com/watch?v=8s9I1G4tXhA">How To configure Swagger</a></li>
  *  <li><a href="https://dzone.com/articles/spring-boot-2-restful-api-documentation-with-swagg">Spring Boot 2 RESTful API Documentation With Swagger 2 Tutorial</a></li>
- *  <li><a href="http://localhost{:portnumber}/{context path}/swagger-ui.html">Swagger Page for this project (replace the place holders)</a></li>
+ *  <li><a href="http://http://192.168.99.102:8761/eureka{:portnumber}/{context path}/swagger-ui.html">Swagger Page for this project (replace the place holders)</a></li>
  * </ul>
  * 
  * @author msolina
