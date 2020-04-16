@@ -36,7 +36,7 @@ public class WebClientConfig {
 				.clientId("prices-service").clientSecret("6cb1fea2-e3c5-4c93-b141-b4cb4e046f5f")
 				.authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
 				.clientAuthenticationMethod(ClientAuthenticationMethod.POST)
-				.tokenUri("http://192.168.99.102:8091/auth/realms/marco-realm/protocol/openid-connect/token")
+				.tokenUri("http://localhost:8091/auth/realms/marco-realm/protocol/openid-connect/token")
 				.build();
 
 		//TODO retrieve from a database//TODO retrieve from a database

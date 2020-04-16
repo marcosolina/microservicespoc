@@ -40,10 +40,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://192.168.99.102:8081/dishes/api/all",
+							"raw": "http://localhost:8081/dishes/api/all",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8081",
 							"path": [
@@ -87,10 +87,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://192.168.99.102:8081/dishes/api/Pizza",
+							"raw": "http://localhost:8081/dishes/api/Pizza",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8081",
 							"path": [
@@ -134,10 +134,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://192.168.99.102:8081/dishes/api/Pizza",
+							"raw": "http://localhost:8081/dishes/api/Pizza",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8081",
 							"path": [
@@ -197,10 +197,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.99.102:8081/dishes/api",
+							"raw": "http://localhost:8081/dishes/api",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8081",
 							"path": [
@@ -252,10 +252,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.99.102:8081/dishes/api",
+							"raw": "http://localhost:8081/dishes/api",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8081",
 							"path": [
@@ -284,10 +284,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://192.168.99.102:8083/prices/api/all",
+							"raw": "http://localhost:8083/prices/api/all",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8083",
 							"path": [
@@ -311,10 +311,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://192.168.99.102:8083/prices/api/Pizza",
+							"raw": "http://localhost:8083/prices/api/Pizza",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8083",
 							"path": [
@@ -338,10 +338,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://192.168.99.102:8083/prices/api/Pizza",
+							"raw": "http://localhost:8083/prices/api/Pizza",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8083",
 							"path": [
@@ -374,10 +374,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.99.102:8083/prices/api",
+							"raw": "http://localhost:8083/prices/api",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8083",
 							"path": [
@@ -409,10 +409,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.99.102:8083/prices/api",
+							"raw": "http://localhost:8083/prices/api",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8083",
 							"path": [
@@ -453,10 +453,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.99.102:8082/ingredients/api/all",
+							"raw": "http://localhost:8082/ingredients/api/all",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8082",
 							"path": [
@@ -492,10 +492,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.99.102:8082/ingredients/api/Pizza",
+							"raw": "http://localhost:8082/ingredients/api/Pizza",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8082",
 							"path": [
@@ -528,10 +528,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.99.102:8082/ingredients/api/Pizza",
+							"raw": "http://localhost:8082/ingredients/api/Pizza",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8082",
 							"path": [
@@ -564,10 +564,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.99.102:8082/ingredients/api",
+							"raw": "http://localhost:8082/ingredients/api",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8082",
 							"path": [
@@ -608,10 +608,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.99.102:8084/menus/api/all",
+							"raw": "http://localhost:8084/menus/api/all",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8084",
 							"path": [
@@ -647,10 +647,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.99.102:8084/menus/api/Marco",
+							"raw": "http://localhost:8084/menus/api/Marco",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8084",
 							"path": [
@@ -683,10 +683,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.99.102:8084/menus/api",
+							"raw": "http://localhost:8084/menus/api",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8084",
 							"path": [
@@ -718,10 +718,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.99.102:8084/menus/api/Marco",
+							"raw": "http://localhost:8084/menus/api/Marco",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8084",
 							"path": [
@@ -752,10 +752,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.99.102:8888/encrypt",
+							"raw": "http://localhost:8888/encrypt",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8888",
 							"path": [
@@ -778,10 +778,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://192.168.99.102:8888/decrypt",
+							"raw": "http://localhost:8888/decrypt",
 							"protocol": "http",
 							"host": [
-								"192.168.99.102"
+								"localhost"
 							],
 							"port": "8888",
 							"path": [

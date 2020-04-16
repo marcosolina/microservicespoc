@@ -10,14 +10,14 @@ eureka:
   client:
     serviceUrl:
       #try the value from the system props, or get the fall back
-      defaultZone: ${MARCO_EUREKA_SERVER:http://192.168.99.102:8761/eureka}
+      defaultZone: ${MARCO_EUREKA_SERVER:http://localhost:8761/eureka}
  
 
 
 keycloak:
   realm: marco-realm # the name of the realm, required;
   resource: marco-react-ui # the client-id of the application, required;
-  auth-server-url: http://192.168.99.102:8091/auth # the base URL of the Keycloak server, required;
+  auth-server-url: http://localhost:8091/auth # the base URL of the Keycloak server, required;
   ssl-required: external # stablishes if communications with the Keycloak server must happen over HTTPS. Here, it's set to external, meaning that it's only needed for external requests (default value). In production, instead, we should set it to all. Optional;
   public-client: true # prevents the application from sending credentials to the Keycloak server (false is the default value). We want to set it to true whenever we use public clients instead of confidential. Optional;
   principal-attribute: preferred_username # the attribute with which to populate the UserPrincipal name. Optional.

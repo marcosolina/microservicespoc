@@ -3,12 +3,12 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://192.168.99.102:5432/restourantmenu
+    url: jdbc:postgresql://localhost:5432/restourantmenu
     username: '{cipher}4051c3ff0554583d3085385d9e585e4996c95388fa1d172a0c1e4c324e4258c4'
     password: '{cipher}23c2c6801e52d3803535989a4a1a2b8ce12c89b04c2107c278326e747a0db59e'
   security:
     oauth2:
       resourceserver:
         jwt: # Where to go to check the incoming token
-          jwk-set-uri: http://192.168.99.102:8091/auth/realms/marco-realm/protocol/openid-connect/certs
+          jwk-set-uri: http://localhost:8091/auth/realms/marco-realm/protocol/openid-connect/certs
   
