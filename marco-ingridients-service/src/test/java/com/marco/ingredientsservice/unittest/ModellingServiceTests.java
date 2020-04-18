@@ -13,8 +13,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import com.marco.ingridientsservice.dto.ApiDishRecipe;
 import com.marco.ingridientsservice.dto.ApiIngredient;
 import com.marco.ingridientsservice.dto.ApiRecipes;
-import com.marco.ingridientsservice.model.Ingredient;
-import com.marco.ingridientsservice.model.IngredientPk;
+import com.marco.ingridientsservice.model.sql.Ingredient;
+import com.marco.ingridientsservice.model.sql.IngredientPk;
 import com.marco.ingridientsservice.services.implementations.ModellingServiceImpl;
 
 @ExtendWith(MockitoExtension.class)

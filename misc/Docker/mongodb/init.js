@@ -59,3 +59,40 @@ pricesservice.webclients.insertMany([
 		tokenUri: "http://localhost:8091/auth/realms/marco-realm/protocol/openid-connect/token"
 	}
 ])
+
+/*
+ * Menu Service Project
+ */
+menuservice = db.getSiblingDB('menuservice')
+
+menuservice.createCollection('webclients')
+
+menuservice.webclients.insertMany([
+	{
+		_id: "dishes-service",
+		clientId: "menu-service",
+		clientSecret: "1bbd2456-5f13-4525-b920-15f15672f241",
+		authorizationGrantType: "client_credentials",
+		clientAuthenticationMethod: "post",
+		tokenUri: "http://localhost:8091/auth/realms/marco-realm/protocol/openid-connect/token"
+	}
+])
+
+
+/*
+ * Ingredients Service Project
+ */
+ingredientsservice = db.getSiblingDB('ingredientsservice')
+
+ingredientsservice.createCollection('webclients')
+
+ingredientsservice.webclients.insertMany([
+	{
+		_id: "dishes-service",
+		clientId: "ingridients-service",
+		clientSecret: "25379684-9d6e-43fc-b7df-46c656402f05",
+		authorizationGrantType: "client_credentials",
+		clientAuthenticationMethod: "post",
+		tokenUri: "http://localhost:8091/auth/realms/marco-realm/protocol/openid-connect/token"
+	}
+])

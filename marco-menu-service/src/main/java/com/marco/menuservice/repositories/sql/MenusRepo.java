@@ -1,11 +1,11 @@
-package com.marco.ingridientsservice.repositories;
+package com.marco.menuservice.repositories.sql;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.marco.ingridientsservice.model.Ingredient;
-import com.marco.ingridientsservice.model.IngredientPk;
+import com.marco.menuservice.model.sql.Menu;
+import com.marco.menuservice.model.sql.MenuPk;
 
 /**
  * This interface provides basic CRUD functions. It uses the "Spring" magic :)
@@ -26,19 +26,19 @@ import com.marco.ingridientsservice.model.IngredientPk;
  * @author msolina
  *
  */
-public interface IngredientsRepo extends CrudRepository<Ingredient, IngredientPk> {
+public interface MenusRepo extends CrudRepository<Menu, MenuPk> {
     /**
-     * It returns the list of ingredients for the specific dish
+     * It returns a list {@link Menu} that matches provided menu name
      * 
-     * @param dishName
+     * @param menuName
      * @return
      */
-    List<Ingredient> findByIdDishName(String dishName);
+    List<Menu> findByIdMenuName(String menuName);
 
     /**
-     * It deletes all the ingredients for the specific dish
+     * It deletes all the {@link Menu} that matches provided menu name
      * 
-     * @param dishName
+     * @param menuName
      */
-    void deleteByIdDishName(String dishName);
+    void deleteByIdMenuName(String menuName);
 }

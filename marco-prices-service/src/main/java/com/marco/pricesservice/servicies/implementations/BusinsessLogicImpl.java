@@ -12,8 +12,8 @@ import org.springframework.web.reactive.function.client.ClientResponse;
 
 import com.marco.pricesservice.config.properties.DishesServiceProperties;
 import com.marco.pricesservice.errors.MarcoException;
-import com.marco.pricesservice.model.Price;
-import com.marco.pricesservice.repositories.PriceRepository;
+import com.marco.pricesservice.model.sql.Price;
+import com.marco.pricesservice.repositories.sql.PriceRepository;
 import com.marco.pricesservice.servicies.interfaces.BusinsessLogicInt;
 import com.marco.pricesservice.servicies.interfaces.ErrorServiceInt;
 import com.marco.pricesservice.servicies.interfaces.RestClientInt;

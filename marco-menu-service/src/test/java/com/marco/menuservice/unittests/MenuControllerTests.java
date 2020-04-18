@@ -20,8 +20,8 @@ import com.marco.menuservice.controllers.MenuController;
 import com.marco.menuservice.dto.ApiMenu;
 import com.marco.menuservice.dto.ApiMenus;
 import com.marco.menuservice.errors.MarcoException;
-import com.marco.menuservice.model.Menu;
-import com.marco.menuservice.model.MenuPk;
+import com.marco.menuservice.model.sql.Menu;
+import com.marco.menuservice.model.sql.MenuPk;
 import com.marco.menuservice.services.interfaces.BusinsessLogicInt;
 import com.marco.menuservice.services.interfaces.ModellingServiceInt;
 

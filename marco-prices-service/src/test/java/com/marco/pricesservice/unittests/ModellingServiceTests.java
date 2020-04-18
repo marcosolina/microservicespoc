@@ -7,7 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.marco.pricesservice.dto.ApiPrice;
-import com.marco.pricesservice.model.Price;
+import com.marco.pricesservice.model.sql.Price;
 import com.marco.pricesservice.servicies.implementations.ModellingServiceImpl;
 
 @ExtendWith(MockitoExtension.class)

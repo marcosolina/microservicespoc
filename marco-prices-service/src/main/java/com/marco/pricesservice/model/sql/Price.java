@@ -1,4 +1,4 @@
-package com.marco.pricesservice.model;
+package com.marco.pricesservice.model.sql;
 
 import java.io.Serializable;
 

@@ -3,7 +3,7 @@ package com.marco.ingridientsservice.services.interfaces;
 import java.util.List;
 
 import com.marco.ingridientsservice.errors.MarcoException;
-import com.marco.ingridientsservice.model.Ingredient;
+import com.marco.ingridientsservice.model.sql.Ingredient;
 
 /**
  * This interface performs the business logic

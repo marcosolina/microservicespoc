@@ -1,4 +1,4 @@
-package com.marco.pricesservice.config;
+package com.marco.menuservice.config;
 
 import java.util.Iterator;
 import java.util.List;
@@ -11,8 +11,8 @@ import org.springframework.security.oauth2.client.registration.ClientRegistratio
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
 import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
 
-import com.marco.pricesservice.model.nosql.WebClientConfigDocument;
-import com.marco.pricesservice.repositories.nosql.WebClientsRepository;
+import com.marco.menuservice.model.nosql.WebClientConfigDocument;
+import com.marco.menuservice.repositories.nosql.WebClientsRepository;
 
 /**
  * This is my custom Client Registration Repository. I will use this class to

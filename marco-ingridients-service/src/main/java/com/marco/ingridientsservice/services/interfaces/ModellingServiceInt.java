@@ -5,7 +5,7 @@ import java.util.List;
 import com.marco.ingridientsservice.dto.ApiDishRecipe;
 import com.marco.ingridientsservice.dto.ApiIngredient;
 import com.marco.ingridientsservice.dto.ApiRecipes;
-import com.marco.ingridientsservice.model.Ingredient;
+import com.marco.ingridientsservice.model.sql.Ingredient;
 
 /**
  * Simple service to helps the controller to retrieve the data from the data

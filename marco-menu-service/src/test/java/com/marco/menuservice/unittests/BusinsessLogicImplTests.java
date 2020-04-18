@@ -19,9 +19,9 @@ import org.springframework.web.reactive.function.client.ClientResponse;
 
 import com.marco.menuservice.config.properties.DishesServiceProperties;
 import com.marco.menuservice.errors.MarcoException;
-import com.marco.menuservice.model.Menu;
-import com.marco.menuservice.model.MenuPk;
-import com.marco.menuservice.repositories.MenusRepo;
+import com.marco.menuservice.model.sql.Menu;
+import com.marco.menuservice.model.sql.MenuPk;
+import com.marco.menuservice.repositories.sql.MenusRepo;
 import com.marco.menuservice.services.implementations.BusinsessLogicImpl;
 import com.marco.menuservice.services.interfaces.RestClientInt;
 

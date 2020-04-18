@@ -1,4 +1,4 @@
-package com.marco.pricesservice.model;
+package com.marco.ingridientsservice.model.nosql;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

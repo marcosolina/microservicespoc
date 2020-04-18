@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.marco.menuservice.dto.ApiMenu;
 import com.marco.menuservice.dto.ApiMenus;
-import com.marco.menuservice.model.Menu;
+import com.marco.menuservice.model.sql.Menu;
 
 /**
  * Simple service to help the controller to retrieve the data from the data

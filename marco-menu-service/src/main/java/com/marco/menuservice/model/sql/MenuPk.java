@@ -1,4 +1,4 @@
-package com.marco.ingridientsservice.model;
+package com.marco.menuservice.model.sql;
 
 import java.io.Serializable;
 
@@ -11,18 +11,26 @@ import javax.persistence.Embeddable;
  *
  */
 @Embeddable
-public class IngredientPk implements Serializable {
+public class MenuPk implements Serializable {
     private static final long serialVersionUID = 1L;
+    private String menuName;
     private String dishName;
-    private String ingredientName;
 
-    public IngredientPk() {
+    public MenuPk() {
     }
 
-    public IngredientPk(String dishName, String ingredientName) {
+    public MenuPk(String menuName, String dishName) {
         super();
+        this.menuName = menuName;
         this.dishName = dishName;
-        this.ingredientName = ingredientName;
+    }
+
+    public String getMenuName() {
+        return menuName;
+    }
+
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
     }
 
     public String getDishName() {
@@ -31,14 +39,6 @@ public class IngredientPk implements Serializable {
 
     public void setDishName(String dishName) {
         this.dishName = dishName;
-    }
-
-    public String getIngredientName() {
-        return ingredientName;
-    }
-
-    public void setIngredientName(String ingredientName) {
-        this.ingredientName = ingredientName;
     }
 
     public static long getSerialversionuid() {
@@ -50,7 +50,7 @@ public class IngredientPk implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((dishName == null) ? 0 : dishName.hashCode());
-        result = prime * result + ((ingredientName == null) ? 0 : ingredientName.hashCode());
+        result = prime * result + ((menuName == null) ? 0 : menuName.hashCode());
         return result;
     }
 
@@ -62,16 +62,16 @@ public class IngredientPk implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        IngredientPk other = (IngredientPk) obj;
+        MenuPk other = (MenuPk) obj;
         if (dishName == null) {
             if (other.dishName != null)
                 return false;
         } else if (!dishName.equals(other.dishName))
             return false;
-        if (ingredientName == null) {
-            if (other.ingredientName != null)
+        if (menuName == null) {
+            if (other.menuName != null)
                 return false;
-        } else if (!ingredientName.equals(other.ingredientName))
+        } else if (!menuName.equals(other.menuName))
             return false;
         return true;
     }
