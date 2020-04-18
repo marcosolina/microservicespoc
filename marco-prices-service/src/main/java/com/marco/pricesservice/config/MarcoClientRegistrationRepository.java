@@ -1,4 +1,4 @@
-package com.marco.marcoreactui.config;
+package com.marco.pricesservice.config;
 
 import java.util.Iterator;
 import java.util.List;
@@ -11,8 +11,8 @@ import org.springframework.security.oauth2.client.registration.ClientRegistratio
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
 import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
 
-import com.marco.marcoreactui.model.WebClientConfigDocument;
-import com.marco.marcoreactui.repositories.WebClientsRepository;
+import com.marco.pricesservice.model.WebClientConfigDocument;
+import com.marco.pricesservice.repositories.WebClientsRepository;
 
 /**
  * This is my custom Client Registration Repository. I will use this class to
