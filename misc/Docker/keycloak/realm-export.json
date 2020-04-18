@@ -705,6 +705,11 @@
           "DELETE_DISH",
           "SAVE_DISH"
         ],
+        "prices-service": [
+          "READ_PRICE",
+          "DELETE_PRICE",
+          "SAVE_PRICE"
+        ],
         "account": [
           "view-profile",
           "manage-account"
@@ -2234,44 +2239,6 @@
   "enabledEventTypes": [],
   "adminEventsEnabled": false,
   "adminEventsDetailsEnabled": false,
-  "identityProviders": [
-    {
-      "alias": "google",
-      "internalId": "6ce4ecd3-662c-449a-a427-651bc85f3873",
-      "providerId": "google",
-      "enabled": false,
-      "updateProfileFirstLoginMode": "on",
-      "trustEmail": false,
-      "storeToken": false,
-      "addReadTokenRoleOnCreate": false,
-      "authenticateByDefault": false,
-      "linkOnly": false,
-      "firstBrokerLoginFlowAlias": "first broker login",
-      "config": {
-        "clientSecret": "**********",
-        "clientId": "dummy",
-        "useJwksUrl": "true"
-      }
-    },
-    {
-      "alias": "microsoft",
-      "internalId": "02fbda4c-2887-48c0-8e80-c56d6da81927",
-      "providerId": "microsoft",
-      "enabled": false,
-      "updateProfileFirstLoginMode": "on",
-      "trustEmail": false,
-      "storeToken": false,
-      "addReadTokenRoleOnCreate": false,
-      "authenticateByDefault": false,
-      "linkOnly": false,
-      "firstBrokerLoginFlowAlias": "first broker login",
-      "config": {
-        "clientSecret": "**********",
-        "clientId": "dummy",
-        "useJwksUrl": "true"
-      }
-    }
-  ],
   "components": {
     "org.keycloak.services.clientregistration.policy.ClientRegistrationPolicy": [
       {
