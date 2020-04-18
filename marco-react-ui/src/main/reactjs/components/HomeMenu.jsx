@@ -26,6 +26,7 @@ class HomeMenu extends Component {
 					<button type="button" className="btn btn-secondary" onClick={this.onClick.bind(this, "home")}>Home</button>
 					<button type="button" className="btn btn-secondary" onClick={this.onClick.bind(this, "dishes")}>Dishes</button>
 					<button type="button" className="btn btn-secondary" onClick={this.onClick.bind(this, "prices")}>Prices</button>
+					<button type="button" className="btn btn-secondary" onClick={this.onClick.bind(this, "ingredients")}>Ingredients</button>
 					<button type="button" className="btn btn-secondary" onClick={()=> window.open("/reactui/logout", "_self")}>Log Out</button>
 				</div>
 			</div>
