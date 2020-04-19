@@ -710,6 +710,11 @@
           "SAVE_INGRIDIENTS",
           "READ_INGRIDIENTS"
         ],
+        "menu-service": [
+          "SAVE_MENU",
+          "READ_MENU",
+          "DELETE_MENU"
+        ],
         "prices-service": [
           "DELETE_PRICE",
           "READ_PRICE",
@@ -932,7 +937,7 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "secret": "**********",
+      "secret": "4cd89a4b-c62f-4930-992b-0a6954669daa",
       "redirectUris": [
         "http://localhost:8081/dishes/*"
       ],
@@ -990,7 +995,7 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "secret": "**********",
+      "secret": "25379684-9d6e-43fc-b7df-46c656402f05",
       "redirectUris": [
         "http://localhost:8082/ingredients/*"
       ],
@@ -1194,7 +1199,7 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "secret": "**********",
+      "secret": "1bbd2456-5f13-4525-b920-15f15672f241",
       "redirectUris": [
         "http://localhost:8084/menus/*"
       ],
@@ -1340,7 +1345,7 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "secret": "**********",
+      "secret": "6cb1fea2-e3c5-4c93-b141-b4cb4e046f5f",
       "redirectUris": [
         "http://localhost:8083/prices/*"
       ],
@@ -1486,7 +1491,7 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "secret": "**********",
+      "secret": "091dab56-57af-497e-b7d3-18e8496a7049",
       "redirectUris": [
         "http://localhost:8086/*"
       ],

@@ -78,6 +78,6 @@ public class MenuController {
     @DeleteMapping("/{menuName}")
     public ResponseEntity<Void> deleteMenu(@ApiParam(value = "Name of the menu to delete", required = true) @PathVariable("menuName") String menuName) throws MarcoException {
         bli.deleteAllDishesForMenu(menuName);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
