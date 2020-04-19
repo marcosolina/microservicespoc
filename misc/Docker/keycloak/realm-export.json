@@ -692,9 +692,9 @@
       "disableableCredentialTypes": [],
       "requiredActions": [],
       "realmRoles": [
-        "user",
         "uma_authorization",
-        "offline_access"
+        "offline_access",
+        "user"
       ],
       "clientRoles": {
         "reactui-service": [
@@ -705,9 +705,14 @@
           "DELETE_DISH",
           "SAVE_DISH"
         ],
+        "ingridients-service": [
+          "DELETE_INGRIDIENTS",
+          "SAVE_INGRIDIENTS",
+          "READ_INGRIDIENTS"
+        ],
         "prices-service": [
-          "READ_PRICE",
           "DELETE_PRICE",
+          "READ_PRICE",
           "SAVE_PRICE"
         ],
         "account": [

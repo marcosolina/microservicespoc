@@ -2,7 +2,6 @@ package com.marco.marcoreactui.services.implementations;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,7 +39,7 @@ public class IngredientsBusinsessLogicImpl implements IngredientsBusinsessLogicI
 			ApiRecipes recipes = wsClient.getBodyFromResponse(resp, ApiRecipes.class);
 			return recipes.getRecipes();
 		}
-		return new ArrayList<>();
+		return null;
 	}
 
 	@Override

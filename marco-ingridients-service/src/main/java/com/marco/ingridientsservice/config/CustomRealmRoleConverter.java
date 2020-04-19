@@ -19,7 +19,7 @@ public class CustomRealmRoleConverter implements Converter<Jwt, Collection<Grant
 		 * TODO see if there is a better way to do this
 		 */
 		Map<String, Object> resource_access = (Map<String, Object>) jwt.getClaims().get("resource_access");
-		Map<String, Object> thisAppRoles = (Map<String, Object>) resource_access.get("prices-service");
+		Map<String, Object> thisAppRoles = (Map<String, Object>) resource_access.get("ingridients-service");
 		List<String> roles = (List<String>) thisAppRoles.get("roles");
 		return roles.stream().map(roleName -> "ROLE_" + roleName).map(SimpleGrantedAuthority::new)
 				.collect(Collectors.toList());

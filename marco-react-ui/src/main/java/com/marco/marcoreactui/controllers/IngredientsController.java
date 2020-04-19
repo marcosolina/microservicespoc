@@ -2,6 +2,7 @@ package com.marco.marcoreactui.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,11 +20,15 @@ import com.marco.marcoreactui.services.interfaces.IngredientsBusinsessLogicInt;
 @RequestMapping("/ingredients")
 public class IngredientsController {
 
+	@Autowired
 	private IngredientsBusinsessLogicInt service;
 	
 	@GetMapping
 	public ResponseEntity<List<ApiDishRecipe>> getRecepies(){
 		List<ApiDishRecipe> list = service.getAllRecipes();
+		if(list == null) {
+			return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
+		}
 		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
 	

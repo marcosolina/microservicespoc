@@ -27,10 +27,6 @@ class IngredientList extends Component {
         });
     }
 
-    deleteRecipe(dishName){
-		
-    }
-    
     editNewIngredient(event){
         let newRecipe = this.state.newRecipe;
         newRecipe.newIngredient = event.target.value;
@@ -50,6 +46,15 @@ class IngredientList extends Component {
         this.setState({newRecipe: newRecipe});
     }
 
+    clearNewRecipe(){
+        let newRecipe= {
+            dishName: "",
+            ingredients: [],
+            newIngredient: ""
+        };
+        this.setState({newRecipe: newRecipe});
+    }
+
     insertNewRecipe(){
 		fetch("/reactui/ingredients", {
             method: 'POST',
@@ -62,7 +67,10 @@ class IngredientList extends Component {
 			return resp;
 		}).then((respMessage) => {
             alert("Http Status: " + respMessage.status);
-            this.retrieveListOfIngredients();
+            if(respMessage.ok){
+                this.clearNewRecipe();
+                this.retrieveListOfIngredients();
+            }
 		}).catch((error) => {
 			alert(error.message);
 		});
