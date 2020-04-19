@@ -37,4 +37,10 @@ rest:
         findAllRecipes: /ingredients/api/all
         deleteRecipe: /ingredients/api
         insertRecipe: /ingredients/api
-       
+      menus:
+        protocol: https 
+        host: marco-menu-service
+        findRecipeByDishName: /menus/api
+        findAllRecipes: /menus/api/all
+        deleteRecipe: /menus/api
+        insertRecipe: /menus/api 

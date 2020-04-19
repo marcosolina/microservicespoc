@@ -1,8 +1,8 @@
 package com.marco.marcoreactui.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,38 +14,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.marco.marcoreactui.dto.menu.ApiMenu;
+import com.marco.marcoreactui.services.interfaces.MenusBusinsessLogicInt;
 
 @RestController
 @RequestMapping("/menu")
 public class MenuController {
 
-	private List<ApiMenu> list = new ArrayList<ApiMenu>();
-	
+	@Autowired
+	private MenusBusinsessLogicInt service;
+
 	@GetMapping
-	public ResponseEntity<List<ApiMenu>> getAllMenus(){
-		list = new ArrayList<ApiMenu>();
-		for(int i = 0; i < 5; i++) {
-			ApiMenu m = new ApiMenu();
-			m.setMenuName("Menu" + i);
-			for(int j = 0; j < 5; j++) {
-				m.addDishName("Dish" + j);
-			}
-			list.add(m);
+	public ResponseEntity<List<ApiMenu>> getAllMenus() {
+		List<ApiMenu> list = service.getAllMenus();
+		if (list == null) {
+			return new ResponseEntity<List<ApiMenu>>(HttpStatus.BAD_GATEWAY);
 		}
-		
+
 		return new ResponseEntity<List<ApiMenu>>(list, HttpStatus.OK);
 	}
-	
+
 	@PostMapping
-	public ResponseEntity<Void> insertNewMenu(@RequestBody ApiMenu newMenu){
-		
-		return new ResponseEntity<>(HttpStatus.CREATED);
+	public ResponseEntity<Void> insertNewMenu(@RequestBody ApiMenu newMenu) {
+		if (service.insertMenu(newMenu)) {
+			return new ResponseEntity<>(HttpStatus.CREATED);
+		}
+		return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
 	}
-	
+
 	@DeleteMapping("/{menuName}")
-	public ResponseEntity<Void> deleteMenu(@PathVariable("menuName") String menuName){
-		
-		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	public ResponseEntity<Void> deleteMenu(@PathVariable("menuName") String menuName) {
+		if (service.deleteMenu(menuName)) {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
 	}
-	
+
 }
