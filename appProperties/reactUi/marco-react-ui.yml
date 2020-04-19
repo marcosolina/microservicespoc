@@ -30,3 +30,11 @@ rest:
         deletePrice: /prices/api
         insertPrice: /prices/api
         updatePrice: /prices/api
+      ingredients:
+        protocol: https 
+        host: marco-ingredients-service
+        findRecipeByDishName: /ingredients/api
+        findAllRecipes: /ingredients/api/all
+        deleteRecipe: /ingredients/api
+        insertRecipe: /ingredients/api
+       

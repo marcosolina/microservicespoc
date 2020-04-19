@@ -4,6 +4,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 
 import com.marco.ingridientsservice.services.implementations.BusinsessLogicImpl;
 import com.marco.ingridientsservice.services.implementations.ErrorServiceImpl;
@@ -50,6 +51,13 @@ public class Spring {
     public MessageServiceInt getMessageServiceInt() {
         return new MessageServiceImpl();
     }
+    
+    @Bean
+ 	public JwtAuthenticationConverter getJwtAuthenticationConverter() {
+ 		JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
+ 		jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(new CustomRealmRoleConverter()); // delegate to custom converter
+ 		return jwtAuthenticationConverter;
+ 	}
 
     @Bean
     public MessageSource messageSource() {

@@ -4,7 +4,12 @@ class IngredientList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ingredients: []
+            ingredients: [],
+            newRecipe:{
+                dishName: "",
+                ingredients: [],
+                newIngredient: ""
+            }
         };
     }
 
@@ -22,40 +27,55 @@ class IngredientList extends Component {
         });
     }
 
-    deleteIngredient(dishName, ingredient){
+    deleteRecipe(dishName){
 		
     }
     
-    addToExisting(dishName, event){
-        let newValue = event.target.value;
-
-        let ingredients = this.state.ingredients;
-        for (var i = 0; i < ingredients.length; i++) {
-            let ing = ingredients[i];
-            if (ing.dishName === dishName) {
-                ing.newValue = newValue;
-                break;
-            }
-        };
-
-        this.setState(ingredients);
+    editNewIngredient(event){
+        let newRecipe = this.state.newRecipe;
+        newRecipe.newIngredient = event.target.value;
+        this.setState({newRecipe: newRecipe});
     }
 
-    insertIngredient(dishName, ingredient){
+    editNewDishName(event){
+        let newRecipe = this.state.newRecipe;
+        newRecipe.dishName = event.target.value;
+        this.setState({newRecipe: newRecipe});
+    }
+
+    addNewIngredient(){
+        let newRecipe = this.state.newRecipe;
+        newRecipe.ingredients.push(newRecipe.newIngredient);
+        newRecipe.newIngredient = "";
+        this.setState({newRecipe: newRecipe});
+    }
+
+    insertNewRecipe(){
 		fetch("/reactui/ingredients", {
             method: 'POST',
 			headers: {
 				'Accept': 'application/json',
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify({
-                dishName: dishName,
-                ingredientName: ingredient
-            })
+			body: JSON.stringify(this.state.newRecipe)
         }).then((resp) => {
 			return resp;
 		}).then((respMessage) => {
-			alert("Http Status: " + respMessage.status);
+            alert("Http Status: " + respMessage.status);
+            this.retrieveListOfIngredients();
+		}).catch((error) => {
+			alert(error.message);
+		});
+    }
+
+    deleteRecipe(dishName){
+		fetch("/reactui/ingredients/" + dishName, {
+            method: 'DELETE',
+        }).then((resp) => {
+			return resp;
+		}).then((respMessage) => {
+            alert("Http Status: " + respMessage.status);
+            this.retrieveListOfIngredients();
 		}).catch((error) => {
 			alert(error.message);
 		});
@@ -65,6 +85,7 @@ class IngredientList extends Component {
     render() {
 
         const ingredients = this.state.ingredients;
+        const newRecipe = this.state.newRecipe;
 
         return (
             <table border="1">
@@ -77,19 +98,40 @@ class IngredientList extends Component {
                                     <ul>
                                         {ingredient.ingredients.map(ing => {
                                             return <li key={ing}>
-                                                    {ing}
-                                                    <button type="button" className="btn btn-secondary" onClick={this.deleteIngredient.bind(this, ingredient.dishName, ing)}>Delete</button>
+                                                     {ing}
                                                     </li>
                                         })}
-                                        <li>
-                                            <input type="text" placeholder="Ingredient" value={ingredient.newValue || ''} onChange={this.addToExisting.bind(this, ingredient.dishName)}/>
-                                            <button type="button" className="btn btn-secondary" onClick={this.insertIngredient.bind(this, ingredient.dishName, ingredient.newValue)}>Add</button>
-                                        </li>
                                     </ul>
+                                </td>
+                                <td>
+                                    <button type="button" className="btn btn-secondary" onClick={this.deleteRecipe.bind(this, ingredient.dishName)}>Delete</button>
                                 </td>
                             </tr>;
                         })
                     }
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="Dish Name" value={newRecipe.dishName} onChange={this.editNewDishName.bind(this)}/>
+                        </td>
+                        <td>
+                            <ul>
+                                {
+                                    newRecipe.ingredients.map(ing => {
+                                        return <li key={ing}>
+                                            {ing}
+                                        </li>
+                                    })
+                                }
+                                <li>
+                                    <input type="text" placeholder="Ingredient" value={newRecipe.newIngredient} onChange={this.editNewIngredient.bind(this)}/>
+                                    <button type="button" className="btn btn-secondary" onClick={this.addNewIngredient.bind(this)}>Add</button>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button type="button" className="btn btn-secondary" onClick={this.insertNewRecipe.bind(this)}>Save</button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         )
