@@ -1,7 +1,7 @@
 package com.marco.pricesservice.servicies.implementations;
 
 import com.marco.pricesservice.dto.ApiPrice;
-import com.marco.pricesservice.model.Price;
+import com.marco.pricesservice.model.sql.Price;
 import com.marco.pricesservice.servicies.interfaces.ModellingServiceInt;
 
 public class ModellingServiceImpl implements ModellingServiceInt {

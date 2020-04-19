@@ -3,7 +3,7 @@ package com.marco.menuservice.services.interfaces;
 import java.util.List;
 
 import com.marco.menuservice.errors.MarcoException;
-import com.marco.menuservice.model.Menu;
+import com.marco.menuservice.model.sql.Menu;
 
 /**
  * This interface performs the business logic

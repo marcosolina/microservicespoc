@@ -1,11 +1,10 @@
-package com.marco.menuservice.repositories;
+package com.marco.pricesservice.repositories.sql;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.marco.menuservice.model.Menu;
-import com.marco.menuservice.model.MenuPk;
+import com.marco.pricesservice.model.sql.Price;
 
 /**
  * This interface provides basic CRUD functions. It uses the "Spring" magic :)
@@ -26,19 +25,20 @@ import com.marco.menuservice.model.MenuPk;
  * @author msolina
  *
  */
-public interface MenusRepo extends CrudRepository<Menu, MenuPk> {
-    /**
-     * It returns a list {@link Menu} that matches provided menu name
-     * 
-     * @param menuName
-     * @return
-     */
-    List<Menu> findByIdMenuName(String menuName);
+public interface PriceRepository extends CrudRepository<Price, String> {
 
     /**
-     * It deletes all the {@link Menu} that matches provided menu name
+     * It returns the price for the provided dish name
      * 
-     * @param menuName
+     * @param name
+     * @return An optional
      */
-    void deleteByIdMenuName(String menuName);
+    Optional<Price> findByDishName(String name);
+
+    /**
+     * It deletes the price for the provided dish name
+     * 
+     * @param name
+     */
+    void deleteByDishName(String name);
 }

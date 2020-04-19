@@ -5,7 +5,7 @@ import java.util.List;
 import com.marco.marcoreactui.dto.prices.ApiPrice;
 
 /**
- * This interface performs the business logic
+ * This interface defines the business logic for the Prices operations
  * 
  * @author msolina
  *

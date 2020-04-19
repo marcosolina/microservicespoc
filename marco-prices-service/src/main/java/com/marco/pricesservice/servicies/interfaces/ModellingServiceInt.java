@@ -1,7 +1,7 @@
 package com.marco.pricesservice.servicies.interfaces;
 
 import com.marco.pricesservice.dto.ApiPrice;
-import com.marco.pricesservice.model.Price;
+import com.marco.pricesservice.model.sql.Price;
 
 /**
  * Simple service to help the controller to retrieve the data from the data

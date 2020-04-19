@@ -1,27 +1,27 @@
-package com.marco.menuservice.model;
+package com.marco.ingridientsservice.model.sql;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * Standard JPA Entity
+ * Standard JPA entity
  * 
  * @author msolina
  *
  */
 @Entity
-@Table(name = "MENUS")
-public class Menu {
+@Table(name = "INGREDIENTS")
+public class Ingredient {
 
     @EmbeddedId
-    private MenuPk id;
+    private IngredientPk id;
 
-    public MenuPk getId() {
+    public IngredientPk getId() {
         return id;
     }
 
-    public Menu setId(MenuPk id) {
+    public Ingredient setId(IngredientPk id) {
         this.id = id;
         return this;
     }

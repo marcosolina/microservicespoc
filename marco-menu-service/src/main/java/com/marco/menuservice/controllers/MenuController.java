@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.marco.menuservice.dto.ApiMenu;
 import com.marco.menuservice.dto.ApiMenus;
 import com.marco.menuservice.errors.MarcoException;
-import com.marco.menuservice.model.Menu;
+import com.marco.menuservice.model.sql.Menu;
 import com.marco.menuservice.services.interfaces.BusinsessLogicInt;
 import com.marco.menuservice.services.interfaces.ErrorServiceInt;
 import com.marco.menuservice.services.interfaces.ModellingServiceInt;

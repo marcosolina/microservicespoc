@@ -5,3 +5,5 @@ rest:
         protocol: http
       prices:
         protocol: http
+      ingredients:
+        protocol: http 

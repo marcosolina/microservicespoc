@@ -12,8 +12,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.marco.menuservice.dto.ApiMenu;
 import com.marco.menuservice.dto.ApiMenus;
-import com.marco.menuservice.model.Menu;
-import com.marco.menuservice.model.MenuPk;
+import com.marco.menuservice.model.sql.Menu;
+import com.marco.menuservice.model.sql.MenuPk;
 import com.marco.menuservice.services.implementations.ModellingServiceImpl;
 
 @ExtendWith(MockitoExtension.class)

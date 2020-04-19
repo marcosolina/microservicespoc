@@ -1,10 +1,11 @@
-package com.marco.pricesservice.repositories;
+package com.marco.ingridientsservice.repositories.sql;
 
-import java.util.Optional;
+import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.marco.pricesservice.model.Price;
+import com.marco.ingridientsservice.model.sql.Ingredient;
+import com.marco.ingridientsservice.model.sql.IngredientPk;
 
 /**
  * This interface provides basic CRUD functions. It uses the "Spring" magic :)
@@ -25,20 +26,19 @@ import com.marco.pricesservice.model.Price;
  * @author msolina
  *
  */
-public interface PriceRepository extends CrudRepository<Price, String> {
+public interface IngredientsRepo extends CrudRepository<Ingredient, IngredientPk> {
+    /**
+     * It returns the list of ingredients for the specific dish
+     * 
+     * @param dishName
+     * @return
+     */
+    List<Ingredient> findByIdDishName(String dishName);
 
     /**
-     * It returns the price for the provided dish name
+     * It deletes all the ingredients for the specific dish
      * 
-     * @param name
-     * @return An optional
+     * @param dishName
      */
-    Optional<Price> findByDishName(String name);
-
-    /**
-     * It deletes the price for the provided dish name
-     * 
-     * @param name
-     */
-    void deleteByDishName(String name);
+    void deleteByIdDishName(String dishName);
 }

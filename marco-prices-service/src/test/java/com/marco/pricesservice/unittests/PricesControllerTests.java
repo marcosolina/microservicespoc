@@ -19,7 +19,7 @@ import com.marco.pricesservice.controllers.PricesController;
 import com.marco.pricesservice.dto.ApiPrice;
 import com.marco.pricesservice.dto.ApiPrices;
 import com.marco.pricesservice.errors.MarcoException;
-import com.marco.pricesservice.model.Price;
+import com.marco.pricesservice.model.sql.Price;
 import com.marco.pricesservice.servicies.interfaces.BusinsessLogicInt;
 import com.marco.pricesservice.servicies.interfaces.ModellingServiceInt;
 

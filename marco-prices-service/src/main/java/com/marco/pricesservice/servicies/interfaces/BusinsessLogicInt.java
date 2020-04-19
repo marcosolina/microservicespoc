@@ -3,7 +3,7 @@ package com.marco.pricesservice.servicies.interfaces;
 import java.util.List;
 
 import com.marco.pricesservice.errors.MarcoException;
-import com.marco.pricesservice.model.Price;
+import com.marco.pricesservice.model.sql.Price;
 
 /**
  * This interface performs the business logic

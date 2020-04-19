@@ -20,9 +20,9 @@ import org.springframework.web.reactive.function.client.ClientResponse;
 
 import com.marco.ingridientsservice.config.properties.DishesServiceProperties;
 import com.marco.ingridientsservice.errors.MarcoException;
-import com.marco.ingridientsservice.model.Ingredient;
-import com.marco.ingridientsservice.model.IngredientPk;
-import com.marco.ingridientsservice.repositories.IngredientsRepo;
+import com.marco.ingridientsservice.model.sql.Ingredient;
+import com.marco.ingridientsservice.model.sql.IngredientPk;
+import com.marco.ingridientsservice.repositories.sql.IngredientsRepo;
 import com.marco.ingridientsservice.services.implementations.BusinsessLogicImpl;
 import com.marco.ingridientsservice.services.interfaces.RestClientInt;
 

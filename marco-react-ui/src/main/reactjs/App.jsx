@@ -8,6 +8,7 @@ import { CHANGE_HOME_VIEW } from './redux/actionTypes.jsx';
 import HomeMenu from './components/HomeMenu.jsx';
 import DishesView from './components/views/dishes/DishesView.jsx';
 import PricesView from './components/views/prices/PricesView.jsx';
+import IngredientsView from './components/views/ingredients/IngredientsView.jsx';
 
 const mapStateToProps = function (state) {
 	return state.homePageReducer;
@@ -47,6 +48,9 @@ class App extends Component{
 			case "prices":
 				body = <PricesView/>
 				break
+			case "ingredients":
+				body = <IngredientsView/>
+				break;
 		}
 
 		return(
