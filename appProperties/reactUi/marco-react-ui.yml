@@ -10,7 +10,9 @@ spring:
       repositories:
         type: auto
         
-        
+#############################
+# Properties used when need to call the other services
+#############################      
 rest:
   request:
     service:
@@ -37,4 +39,11 @@ rest:
         findAllRecipes: /ingredients/api/all
         deleteRecipe: /ingredients/api
         insertRecipe: /ingredients/api
-       
+      menus:
+        protocol: https 
+        host: marco-menu-service
+        findMenuByName: /menus/api
+        findAllMenus: /menus/api/all
+        deleteMenu: /menus/api
+        insertMenu: /menus/api 
+        

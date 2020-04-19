@@ -1,18 +1,18 @@
-import { CHANGE_IGREDIENTS_VIEW } from '../actionTypes.jsx';
+import { CHANGE_MENU_VIEW } from '../actionTypes.jsx';
 
 const initialState = {
 
 };
 
 /**
- * Ingredients reducer used with Redux
+ * Menu view Reducer used with Redux
  * @param {*} state 
  * @param {*} action 
  */
-const ingredientsViewReducer = function (state = initialState, action) {
+const menuViewReducer = function (state = initialState, action) {
 	delete state.action;
 	switch (action.type) {
-		case CHANGE_IGREDIENTS_VIEW:
+		case CHANGE_MENU_VIEW:
 			state = { ...state, ...action.payload };
 			state.action = action.type;
 			break;
@@ -23,4 +23,4 @@ const ingredientsViewReducer = function (state = initialState, action) {
 	return state;
 }
 
-export default ingredientsViewReducer;
+export default menuViewReducer;

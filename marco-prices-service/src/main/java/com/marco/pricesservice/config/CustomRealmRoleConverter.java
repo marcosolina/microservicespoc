@@ -10,6 +10,12 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.jwt.Jwt;
 
+/**
+ * Custom Real Role Converter used to extract the roles from the JWT token
+ * 
+ * @author marco
+ *
+ */
 public class CustomRealmRoleConverter implements Converter<Jwt, Collection<GrantedAuthority>> {
 
 	@SuppressWarnings("unchecked")

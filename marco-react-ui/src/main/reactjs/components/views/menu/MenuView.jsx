@@ -1,31 +1,31 @@
 import React, { Component } from 'react';
-import IngredientList from './IngredientList.jsx';
+import MenuList from './MenuList.jsx';
 import { connect } from "react-redux";
-import {changeIngredientView} from '../../../redux/actions.jsx';
-import { CHANGE_IGREDIENTS_VIEW } from '../../../redux/actionTypes.jsx';
+import {changeMenuView} from '../../../redux/actions.jsx';
+import { CHANGE_MENU_VIEW } from '../../../redux/actionTypes.jsx';
 
 /**
- * Standard Redux function used to map the specific state
+ * Standart Redux function to map the state of this component
  * @param {*} state 
  */
 const mapStateToProps = function (state) {
-	return state.ingredientsViewReducer;
+	return state.menuViewReducer;
 }
 
 /**
- * Standard Redux function used to dispatch events
+ * Standard Redux function dispatch events
  * @param {*} dispatch 
  */
 function mapDispatchToProps(dispatch) {
   return {
-    changeIngredientView: viewName => dispatch(changeIngredientView(viewName))
+    changeMenuView: viewName => dispatch(changeMenuView(viewName))
   };
 }
 
 /**
- * This component it generates the main Ingredients view
+ * This component will provide the UI for the menu view
  */
-class IngredientView extends Component {
+class MenuView extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -41,7 +41,7 @@ class IngredientView extends Component {
 	static getDerivedStateFromProps(nextProps, prevState) {
 		if (nextProps.action) {
 			switch (nextProps.action) {
-				case CHANGE_IGREDIENTS_VIEW:
+				case CHANGE_MENU_VIEW:
 					return { viewToDisplay: nextProps.viewName };
 				default:
 					return null;
@@ -52,12 +52,11 @@ class IngredientView extends Component {
 	}
 
 	/**
-	 * It manages the click of the button
-	 * 
+	 * It manages the click event of the button
 	 * @param {*} viewName 
 	 */
 	onClick(viewName){
-		this.props.changeIngredientView(viewName);
+		this.props.changeMenuView(viewName);
 	}
 
 	render(){
@@ -65,7 +64,7 @@ class IngredientView extends Component {
 		let body = <p>Choose an option</p>;
 		switch(this.state.viewToDisplay){
 			case "list":
-				body = <IngredientList/>
+				body = <MenuList/>
 				break;
 		}
 
@@ -81,8 +80,7 @@ class IngredientView extends Component {
 		)
 	};
 }
-
 /**
- * Connecting this component to Redux
+ * It connects this component to Redux
  */
-export default connect(mapStateToProps, mapDispatchToProps)(IngredientView);
+export default connect(mapStateToProps, mapDispatchToProps)(MenuView);

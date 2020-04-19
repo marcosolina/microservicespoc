@@ -16,6 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.marco.marcoreactui.dto.prices.ApiPrice;
 import com.marco.marcoreactui.services.interfaces.PricesBusinsessLogicInt;
 
+/**
+ * Standard Spring controller to manage all the actions coming from the Prices
+ * View
+ * 
+ * @author marco
+ *
+ */
 @RestController
 @RequestMapping("/prices")
 public class PricesController {

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+/**
+ * Component used to provide the "Insert" Dish view
+ */
 class DishsInsert extends Component {
 	constructor(props) {
 		super(props);
@@ -9,11 +12,21 @@ class DishsInsert extends Component {
 		};
     }
 
+	/**
+	 * Function called when an input is changed. 
+	 * It will update the component state
+	 * @param {*} stateProp 
+	 * @param {*} event 
+	 */
     onChangeInput(stateProp, event) {
         let newValue = {};
         newValue[stateProp] = event.target.value;
 		this.setState(newValue);
-    }
+	}
+	
+	/**
+	 * It will perform the HTTP request to insert a new dish
+	 */
     insertDish(){
 		fetch("/reactui/dishes", {
             method: 'POST',

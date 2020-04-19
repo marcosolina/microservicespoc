@@ -40,46 +40,46 @@ $ /opt/jboss/keycloak/bin/standalone.sh -Dkeycloak.profile.feature.upload_script
 
 
 ### Architecture
-![Architecture](./misc/images/Microservices_Exercise.png)
+![Architecture](./misc/images/Microservices_Diagram.png)
 
 Current list of implemented things:
 
 * Postman HTTP Requests ![Postman](./misc/images/Postman.png)
-* Discovery Service ![Postman](./misc/images/Eureka.png)
+* [Discovery Service](http://localhost:8761/) ![Eureka](./misc/images/Eureka.png)
 * Postgres SQL running in a docker container
 * MongoDB running in a docker container
 * Keycloak running in a docker container
 * Configuration Service
   * Encrypted properties
-  * Properties per profiles
+  * [Properties per profiles](http://localhost:8888/marco-react-ui/default)
 * Dishes Service
-  * Swagger documentation
+  * [Swagger documentation](http://localhost:8081/dishes/swagger-ui.html)
   * Unit Tests
   * SQL init scripts
-  * Multi language support
+  * Multi language support (ITA, ENG)
 * Ingredients Service
-  * Swagger documentation
+  * [Swagger documentation](http://localhost:8082/dishes/swagger-ui.html)
   * Unit Tests
   * SQL init scripts
-  * Multi language support
+  * Multi language support (ITA, ENG)
 * Prices Service
-  * Swagger documentation
+  * [Swagger documentation](http://localhost:8083/dishes/swagger-ui.html)
   * Unit Tests
   * SQL init scripts
-  * Multi language support
+  * Multi language support (ITA, ENG)
 * Menu Service
-  * Swagger documentation
+  * [Swagger documentation](http://localhost:8084/dishes/swagger-ui.html)
   * Unit Tests
   * SQL init scripts
-  * Multi language support
-* Spring Security (Work in progress)
+  * Multi language support (ITA, ENG)
+* [Security System](http://localhost:8091/auth/)
   * Keycloak - I am using Keycloak to manage users authentication and authorisation. I used the following tutorials:
     * [Keycloak - what it is](https://www.youtube.com/watch?v=KrOd5wIkqls)
     * [Keycloak Realm - Users Config](https://www.thomasvitale.com/keycloak-configuration-authentication-authorisation/)
     * [Keycloak Single Sign On SSO - Client Config](https://www.thomasvitale.com/keycloak-authentication-flow-sso-client/)
     * [Spring security with Keycloak](https://www.thomasvitale.com/spring-security-keycloak/)
-* Oauth2 + Open Id Connect (Work in progress)
-* React UI (Work in progress): This service provides the UI to mange the information stored in the other micro services
+* Oauth2 + Open Id Connect
+* [React UI](http://localhost:8086/reactui/): This service provides the UI to mange the information stored in the other micro services. It has a very basic UI, just to play around with React JS, I don't plan to manage all the possible scenarios.
 
 ### Todo
 These are the things that I plan to add when I have time:
@@ -87,4 +87,5 @@ These are the things that I plan to add when I have time:
 * Integration Tests
 * Fault tollerance
 * Resilience
+* Move the hard coded configuration in a DB
 * ... anything else that it will come up in my mind :)

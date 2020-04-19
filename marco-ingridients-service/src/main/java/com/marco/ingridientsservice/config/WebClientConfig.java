@@ -8,16 +8,26 @@ import org.springframework.security.oauth2.client.web.OAuth2AuthorizedClientRepo
 import org.springframework.security.oauth2.client.web.reactive.function.client.ServletOAuth2AuthorizedClientExchangeFilterFunction;
 import org.springframework.web.reactive.function.client.WebClient;
 
+/**
+ * This class defines the configuration of the WebClient. I need this class in
+ * oder to request a new JWT token before sending an HTTP request to a different
+ * web service. I will retrieve the crendentials using a custom Client
+ * Registratio Repository
+ * 
+ * @author marco
+ *
+ */
 @Configuration
 public class WebClientConfig {
-	
+
 	@Bean
 	@LoadBalanced
-	public WebClient.Builder webClientBuilder(ClientRegistrationRepository clientRegistrationRepository, OAuth2AuthorizedClientRepository authorizedClientRepository) {
-		
-		ServletOAuth2AuthorizedClientExchangeFilterFunction oauth2 = new ServletOAuth2AuthorizedClientExchangeFilterFunction(clientRegistrationRepository, authorizedClientRepository);
-		return WebClient.builder()
-				.apply(oauth2.oauth2Configuration());
+	public WebClient.Builder webClientBuilder(ClientRegistrationRepository clientRegistrationRepository,
+			OAuth2AuthorizedClientRepository authorizedClientRepository) {
+
+		ServletOAuth2AuthorizedClientExchangeFilterFunction oauth2 = new ServletOAuth2AuthorizedClientExchangeFilterFunction(
+				clientRegistrationRepository, authorizedClientRepository);
+		return WebClient.builder().apply(oauth2.oauth2Configuration());
 	}
 
 	@Bean
@@ -25,4 +35,3 @@ public class WebClientConfig {
 		return new MarcoClientRegistrationRepository();
 	}
 }
- 

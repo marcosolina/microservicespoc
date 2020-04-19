@@ -10,6 +10,15 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import com.marco.marcoreactui.config.MarcoClientRegistrationRepository;
 
+/**
+ * This class defines the configuration of the WebClient. I need this class in
+ * oder to request a new JWT token before sending an HTTP request to a different
+ * web service. I will retrieve the crendentials using a custom Client
+ * Registratio Repository
+ * 
+ * @author marco
+ *
+ */
 @Configuration
 public class WebClientConfig {
 

@@ -4,6 +4,11 @@ const initialState = {
 
 };
 
+/**
+ * Prices view Reducer used with Redux
+ * @param {*} state 
+ * @param {*} action 
+ */
 const pricesViewReducer = function (state = initialState, action) {
 	delete state.action;
 	switch (action.type) {

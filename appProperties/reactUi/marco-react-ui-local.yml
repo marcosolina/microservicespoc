@@ -7,3 +7,5 @@ rest:
         protocol: http
       ingredients:
         protocol: http 
+      menus:
+        protocol: http

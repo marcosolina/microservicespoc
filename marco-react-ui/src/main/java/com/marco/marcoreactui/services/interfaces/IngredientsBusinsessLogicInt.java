@@ -12,9 +12,26 @@ import com.marco.marcoreactui.dto.ingredients.ApiDishRecipe;
  */
 public interface IngredientsBusinsessLogicInt {
 
+	/**
+	 * It returns a list of all the recipes
+	 * 
+	 * @return
+	 */
 	public List<ApiDishRecipe> getAllRecipes();
 
+	/**
+	 * It insert the definition of a new Recipe
+	 * 
+	 * @param recipe
+	 * @return
+	 */
 	public boolean insertRecipe(ApiDishRecipe recipe);
 
+	/**
+	 * It deletes the recipe of the specified dish
+	 * 
+	 * @param dishName
+	 * @return
+	 */
 	public boolean deleteRecipe(String dishName);
 }

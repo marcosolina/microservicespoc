@@ -13,46 +13,48 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.marco.marcoreactui.dto.ingredients.ApiDishRecipe;
-import com.marco.marcoreactui.services.interfaces.IngredientsBusinsessLogicInt;
+import com.marco.marcoreactui.dto.menu.ApiMenu;
+import com.marco.marcoreactui.services.interfaces.MenusBusinsessLogicInt;
+
 
 /**
- * Standard Spring controller to manage all the actions coming from the Ingredients
+ * Standard Spring controller to manage all the actions coming from the Menu
  * View
  * 
  * @author marco
  *
  */
 @RestController
-@RequestMapping("/ingredients")
-public class IngredientsController {
+@RequestMapping("/menu")
+public class MenuController {
 
 	@Autowired
-	private IngredientsBusinsessLogicInt service;
-	
+	private MenusBusinsessLogicInt service;
+
 	@GetMapping
-	public ResponseEntity<List<ApiDishRecipe>> getRecepies(){
-		List<ApiDishRecipe> list = service.getAllRecipes();
-		if(list == null) {
-			return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
+	public ResponseEntity<List<ApiMenu>> getAllMenus() {
+		List<ApiMenu> list = service.getAllMenus();
+		if (list == null) {
+			return new ResponseEntity<List<ApiMenu>>(HttpStatus.BAD_GATEWAY);
 		}
-		return new ResponseEntity<>(list, HttpStatus.OK);
+
+		return new ResponseEntity<List<ApiMenu>>(list, HttpStatus.OK);
 	}
-	
+
 	@PostMapping
-	public ResponseEntity<Void> insertIngredient(@RequestBody ApiDishRecipe newRecipe){
-		if(service.insertRecipe(newRecipe)) {
+	public ResponseEntity<Void> insertNewMenu(@RequestBody ApiMenu newMenu) {
+		if (service.insertMenu(newMenu)) {
 			return new ResponseEntity<>(HttpStatus.CREATED);
 		}
 		return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
 	}
-	
-	@DeleteMapping("/{dishName}")
-	public ResponseEntity<Void> deleteRecipe(@PathVariable String dishName){
-		if(service.deleteRecipe(dishName)) {
+
+	@DeleteMapping("/{menuName}")
+	public ResponseEntity<Void> deleteMenu(@PathVariable("menuName") String menuName) {
+		if (service.deleteMenu(menuName)) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
 	}
-	
+
 }

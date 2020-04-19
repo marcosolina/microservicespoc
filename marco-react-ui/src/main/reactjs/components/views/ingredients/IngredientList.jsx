@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+/**
+ * This component will create the view used
+ * to display the list of ingredients for the 
+ * different dishes
+ */
 class IngredientList extends Component {
     constructor(props) {
         super(props);
@@ -13,10 +18,17 @@ class IngredientList extends Component {
         };
     }
 
+    /**
+     * Standard React JS function
+     */
     componentDidMount() {
         this.retrieveListOfIngredients();
     }
 
+    /**
+     * It will perform the HTTP request to retrieve
+     * the list of dishes and their ingredients
+     */
     retrieveListOfIngredients() {
         fetch("/reactui/ingredients").then((resp) => {
             return resp.json();
@@ -27,18 +39,35 @@ class IngredientList extends Component {
         });
     }
 
+    /**
+     * Function used to update the state when 
+     * the user is providing the name of the
+     * new ingredient
+     * @param {*} event 
+     */
     editNewIngredient(event){
         let newRecipe = this.state.newRecipe;
         newRecipe.newIngredient = event.target.value;
         this.setState({newRecipe: newRecipe});
     }
 
+    /**
+     * Function used to update the state when 
+     * the user is providing the name of the
+     * new dish that he would like to provide
+     * the ingredients for
+     * @param {*} event 
+     */
     editNewDishName(event){
         let newRecipe = this.state.newRecipe;
         newRecipe.dishName = event.target.value;
         this.setState({newRecipe: newRecipe});
     }
 
+    /**
+     * It will add the new ingredient to the list
+     * of ingredients of the new dish
+     */
     addNewIngredient(){
         let newRecipe = this.state.newRecipe;
         newRecipe.ingredients.push(newRecipe.newIngredient);
@@ -46,6 +75,9 @@ class IngredientList extends Component {
         this.setState({newRecipe: newRecipe});
     }
 
+    /**
+     * It will clear the status of the new Recipe
+     */
     clearNewRecipe(){
         let newRecipe= {
             dishName: "",
@@ -55,6 +87,10 @@ class IngredientList extends Component {
         this.setState({newRecipe: newRecipe});
     }
 
+    /**
+     * It performs the HTTP request to insert the new
+     * recipe
+     */
     insertNewRecipe(){
 		fetch("/reactui/ingredients", {
             method: 'POST',
@@ -76,6 +112,11 @@ class IngredientList extends Component {
 		});
     }
 
+    /**
+     * It performs the HTTP request to delete the
+     * recipe for the specific dish
+     * @param {*} dishName 
+     */
     deleteRecipe(dishName){
 		fetch("/reactui/ingredients/" + dishName, {
             method: 'DELETE',

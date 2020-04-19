@@ -5,17 +5,29 @@ import { connect } from "react-redux";
 import {changePriceView} from '../../../redux/actions.jsx';
 import { CHANGE_PRICES_VIEW } from '../../../redux/actionTypes.jsx';
 
+/**
+ * Standard Redux function to retrieve the component 
+ * reducer
+ * @param {*} state 
+ */
 const mapStateToProps = function (state) {
 	return state.pricesViewReducer;
 }
 
 
+/**
+ * Standard Redux function to dispatch events
+ * @param {*} dispatch 
+ */
 function mapDispatchToProps(dispatch) {
   return {
     changePriceView: viewName => dispatch(changePriceView(viewName))
   };
 }
 
+/**
+ * This component generates the main price view
+ */
 class PriceView extends Component {
 	constructor(props) {
 		super(props);
@@ -24,6 +36,11 @@ class PriceView extends Component {
 		};
 	}
 
+	/**
+	 * Standard React JS function
+	 * @param {*} nextProps 
+	 * @param {*} prevState 
+	 */
 	static getDerivedStateFromProps(nextProps, prevState) {
 		if (nextProps.action) {
 			switch (nextProps.action) {
@@ -37,6 +54,10 @@ class PriceView extends Component {
 		}
 	}
 
+	/**
+	 * It manages the click of the buttons
+	 * @param {*} viewName 
+	 */
 	onClick(viewName){
 		this.props.changePriceView(viewName);
 	}
@@ -66,4 +87,7 @@ class PriceView extends Component {
 		)
 	};
 }
+/**
+ * It connects the component with Redux
+ */
 export default connect(mapStateToProps, mapDispatchToProps)(PriceView);

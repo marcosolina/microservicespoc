@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+/**
+ * This component will create the list of dishes
+ * UI
+ */
 class DishsList extends Component {
     constructor(props) {
         super(props);
@@ -8,10 +12,17 @@ class DishsList extends Component {
         };
     }
 
+    /**
+     * Standard React Function
+     */
     componentDidMount() {
         this.retrieveListOfDishes();
     }
 
+    /**
+     * It performs the HTTP request needed to load
+     * the list of available dishes
+     */
     retrieveListOfDishes() {
         fetch("/reactui/dishes").then((resp) => {
             return resp.json();
@@ -22,6 +33,12 @@ class DishsList extends Component {
         });
     }
 
+    /**
+     * Function which will update the component state when 
+     * the input field is changed
+     * @param {*} dishName 
+     * @param {*} event 
+     */
     onChangeInput(dishName, event) {
         let newValue = event.target.value;
 
@@ -37,7 +54,11 @@ class DishsList extends Component {
         this.setState(dishes);
     }
 
-
+    /**
+     * It will perform the specific HTTP requests
+     * @param {*} dishName 
+     * @param {*} httpMethod 
+     */
     execFetch(dishName, httpMethod) {
 
         let apiDish = this.state.dishes.find(dish => {

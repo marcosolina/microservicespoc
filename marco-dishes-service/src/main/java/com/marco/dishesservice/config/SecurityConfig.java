@@ -17,6 +17,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
+		
+		String[] AUTH_WHITELIST = {
+	            // -- swagger ui
+	            "/v2/api-docs",
+	            "/swagger-resources",
+	            "/swagger-resources/**",
+	            "/configuration/ui",
+	            "/configuration/security",
+	            "/swagger-ui.html",
+	            "/webjars/**"
+	    };
+		
 		/*
 		 * Standard spring security
 		 */
@@ -29,6 +41,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers(HttpMethod.POST, "/api/**").hasAnyRole("SAVE_DISH")
 			.antMatchers(HttpMethod.PUT, "/api/**").hasAnyRole("SAVE_DISH")
 			.antMatchers(HttpMethod.DELETE, "/api/**").hasAnyRole("DELETE_DISH")
+			/*
+			 * I will make public all the Swagger URLs
+			 */
+			.antMatchers(HttpMethod.GET, AUTH_WHITELIST).permitAll()
 			.anyRequest().authenticated()
 			.and()
 			/*

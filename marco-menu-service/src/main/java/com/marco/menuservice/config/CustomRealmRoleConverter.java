@@ -1,4 +1,4 @@
-package com.marco.dishesservice.config;
+package com.marco.menuservice.config;
 
 import java.util.Collection;
 import java.util.List;
@@ -21,11 +21,11 @@ public class CustomRealmRoleConverter implements Converter<Jwt, Collection<Grant
 	@SuppressWarnings("unchecked")
 	public Collection<GrantedAuthority> convert(final Jwt jwt) {
 		/*
-		 * Extracting the roles from the TOKEN TODO see if there is a better way to do
-		 * this
+		 * Extracting the roles from the TOKEN
+		 * TODO see if there is a better way to do this
 		 */
 		Map<String, Object> resource_access = (Map<String, Object>) jwt.getClaims().get("resource_access");
-		Map<String, Object> thisAppRoles = (Map<String, Object>) resource_access.get("dishes-service");
+		Map<String, Object> thisAppRoles = (Map<String, Object>) resource_access.get("menu-service");
 		List<String> roles = (List<String>) thisAppRoles.get("roles");
 		return roles.stream().map(roleName -> "ROLE_" + roleName).map(SimpleGrantedAuthority::new)
 				.collect(Collectors.toList());

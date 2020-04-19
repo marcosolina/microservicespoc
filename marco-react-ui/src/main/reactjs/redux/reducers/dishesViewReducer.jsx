@@ -4,6 +4,11 @@ const initialState = {
 
 };
 
+/**
+ * Dishes view reducer used with Redux
+ * @param {*} state 
+ * @param {*} action 
+ */
 const dishesViewReducer = function (state = initialState, action) {
 	delete state.action;
 	switch (action.type) {
