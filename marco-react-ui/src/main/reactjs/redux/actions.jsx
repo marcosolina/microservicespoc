@@ -5,6 +5,11 @@ import {
 	CHANGE_IGREDIENTS_VIEW,
 	CHANGE_MENU_VIEW} from './actionTypes.jsx';
 
+/***********************************
+ * Actions to dispatch with Redux
+ ***********************************/
+
+
 export const changeHomeView = viewName => ({
 	type: CHANGE_HOME_VIEW,
 	payload:{

@@ -2,19 +2,29 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import {changeHomeView} from '../redux/actions.jsx';
 
+/**
+ * Standard REdux function to dispatch events
+ * @param {*} dispatch 
+ */
 function mapDispatchToProps(dispatch) {
   return {
     changeHomeView: viewName => dispatch(changeHomeView(viewName))
   };
 }
 
-
+/**
+ * This component defines the Menu display in the application
+ */
 class HomeMenu extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
 	}
 
+	/**
+	 * This manages the click of the buttons
+	 * @param {*} viewName 
+	 */
 	onClick(viewName){
 		this.props.changeHomeView(viewName);
 	}
@@ -40,5 +50,7 @@ class HomeMenu extends Component {
 	}
 }
 
-
+/**
+ * It connects the component with Redux
+ */
 export default connect(null, mapDispatchToProps)(HomeMenu);

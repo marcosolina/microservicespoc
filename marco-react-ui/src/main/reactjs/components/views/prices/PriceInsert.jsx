@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+/**
+ * This component manages the insertion of a new 
+ * price
+ */
 class PriceInsert extends Component {
 	constructor(props) {
 		super(props);
@@ -9,11 +13,21 @@ class PriceInsert extends Component {
 		};
     }
 
+	/**
+	 * This updates the state of the new price
+	 * @param {*} stateProp 
+	 * @param {*} event 
+	 */
     onChangeInput(stateProp, event) {
         let newValue = {};
         newValue[stateProp] = event.target.value;
 		this.setState(newValue);
-    }
+	}
+	
+	/**
+	 * It performs the HTTP request to insert
+	 * a new price
+	 */
     insertPrice(){
 		fetch("/reactui/prices", {
             method: 'POST',

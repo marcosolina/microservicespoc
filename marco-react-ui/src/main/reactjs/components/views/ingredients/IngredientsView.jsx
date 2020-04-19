@@ -4,17 +4,27 @@ import { connect } from "react-redux";
 import {changeIngredientView} from '../../../redux/actions.jsx';
 import { CHANGE_IGREDIENTS_VIEW } from '../../../redux/actionTypes.jsx';
 
+/**
+ * Standard Redux function used to map the specific state
+ * @param {*} state 
+ */
 const mapStateToProps = function (state) {
 	return state.ingredientsViewReducer;
 }
 
-
+/**
+ * Standard Redux function used to dispatch events
+ * @param {*} dispatch 
+ */
 function mapDispatchToProps(dispatch) {
   return {
     changeIngredientView: viewName => dispatch(changeIngredientView(viewName))
   };
 }
 
+/**
+ * This component it generates the main Ingredients view
+ */
 class IngredientView extends Component {
 	constructor(props) {
 		super(props);
@@ -23,6 +33,11 @@ class IngredientView extends Component {
 		};
 	}
 
+	/**
+	 * Standard React JS function
+	 * @param {*} nextProps 
+	 * @param {*} prevState 
+	 */
 	static getDerivedStateFromProps(nextProps, prevState) {
 		if (nextProps.action) {
 			switch (nextProps.action) {
@@ -36,6 +51,11 @@ class IngredientView extends Component {
 		}
 	}
 
+	/**
+	 * It manages the click of the button
+	 * 
+	 * @param {*} viewName 
+	 */
 	onClick(viewName){
 		this.props.changeIngredientView(viewName);
 	}
@@ -61,4 +81,8 @@ class IngredientView extends Component {
 		)
 	};
 }
+
+/**
+ * Connecting this component to Redux
+ */
 export default connect(mapStateToProps, mapDispatchToProps)(IngredientView);

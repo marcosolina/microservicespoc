@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+/**
+ * This component generates the Price list view
+ */
 class PriceList extends Component {
     constructor(props) {
         super(props);
@@ -8,10 +11,17 @@ class PriceList extends Component {
         };
     }
 
+    /**
+     * This is a standard React JS function
+     */
     componentDidMount() {
         this.retrieveListOfPrices();
     }
 
+    /**
+     * It performs the HTTP request to retireve the
+     * list of prices
+     */
     retrieveListOfPrices() {
         fetch("/reactui/prices").then((resp) => {
             return resp.json();
@@ -22,6 +32,11 @@ class PriceList extends Component {
         });
     }
 
+    /**
+     * It updates the state of the specific price
+     * @param {*} dishName 
+     * @param {*} event 
+     */
     onChangeInput(dishName, event) {
         let newValue = event.target.value;
 
@@ -37,7 +52,12 @@ class PriceList extends Component {
         this.setState(prices);
     }
 
-
+    /**
+     * It performs the HTTP request to update
+     * or delete a price
+     * @param {*} dishName 
+     * @param {*} httpMethod 
+     */
     execFetch(dishName, httpMethod) {
 
         let apiPrice = this.state.prices.find(price => {

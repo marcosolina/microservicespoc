@@ -16,6 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.marco.marcoreactui.dto.ingredients.ApiDishRecipe;
 import com.marco.marcoreactui.services.interfaces.IngredientsBusinsessLogicInt;
 
+/**
+ * Standard Spring controller to manage all the actions coming from the Ingredients
+ * View
+ * 
+ * @author marco
+ *
+ */
 @RestController
 @RequestMapping("/ingredients")
 public class IngredientsController {

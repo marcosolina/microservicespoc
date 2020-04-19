@@ -10,13 +10,19 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.jwt.Jwt;
 
+/**
+ * Custom Real Role Converter used to extract the roles from the JWT token
+ * 
+ * @author marco
+ *
+ */
 public class CustomRealmRoleConverter implements Converter<Jwt, Collection<GrantedAuthority>> {
 
 	@SuppressWarnings("unchecked")
 	public Collection<GrantedAuthority> convert(final Jwt jwt) {
 		/*
-		 * Extracting the roles from the TOKEN
-		 * TODO see if there is a better way to do this
+		 * Extracting the roles from the TOKEN TODO see if there is a better way to do
+		 * this
 		 */
 		Map<String, Object> resource_access = (Map<String, Object>) jwt.getClaims().get("resource_access");
 		Map<String, Object> thisAppRoles = (Map<String, Object>) resource_access.get("dishes-service");

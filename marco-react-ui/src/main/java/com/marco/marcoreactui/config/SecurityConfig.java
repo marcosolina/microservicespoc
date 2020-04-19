@@ -100,6 +100,9 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter{
         	http.authorizeRequests().antMatchers(rd.getResource()).hasAnyRole(roles);
         }
         
+        /*
+         * TODO move the following config in a DB
+         */
         http.authorizeRequests()
         .antMatchers(HttpMethod.GET, "/dishes/**").hasRole("READ")
         .antMatchers(HttpMethod.PUT, "/dishes/**").hasRole("SAVE")

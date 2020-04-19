@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+/**
+ * This component will mange the Menu list UI
+ */
 class MenuList extends Component {
     constructor(props) {
         super(props);
@@ -13,10 +16,17 @@ class MenuList extends Component {
         };
     }
 
+    /**
+     * Standard React JS function
+     */
     componentDidMount() {
         this.retrieveListOfMenu();
     }
 
+    /**
+     * It performs the HTTP request to retrieve
+     * the list of menus
+     */
     retrieveListOfMenu() {
         fetch("/reactui/menu").then((resp) => {
             return resp.json();
@@ -27,18 +37,34 @@ class MenuList extends Component {
         });
     }
 
+    /**
+     * It update the state of the new Dish name
+     * when the user is defining a new Menu
+     * 
+     * @param {*} event 
+     */
     editNewDishName(event){
         let newMenu = this.state.newMenu;
         newMenu.newDishName = event.target.value;
         this.setState({newMenu: newMenu});
     }
 
+    /**
+     * It update the state of the new Menu name
+     * when the user is defining a new Menu
+     * 
+     * @param {*} event 
+     */
     editNewMenuName(event){
         let newMenu = this.state.newMenu;
         newMenu.menuName = event.target.value;
         this.setState({newMenu: newMenu});
     }
 
+    /**
+     * It adds the new Dish name to the 
+     * new Menu state
+     */
     addNewDishName(){
         let newMenu = this.state.newMenu;
         newMenu.dishes.push(newMenu.newDishName);
@@ -46,6 +72,9 @@ class MenuList extends Component {
         this.setState({newMenu: newMenu});
     }
 
+    /**
+     * It clears the state of the new menu definition
+     */
     clearNewMenu(){
         let newMenu ={
             menuName: "",
@@ -55,6 +84,10 @@ class MenuList extends Component {
         this.setState({newMenu: newMenu});
     }
 
+    /**
+     * It performs the HTTP request to insert the
+     * new menu definition
+     */
     insertNewMenu(){
 		fetch("/reactui/menu", {
             method: 'POST',
@@ -76,6 +109,12 @@ class MenuList extends Component {
 		});
     }
 
+    /**
+     * It performs the HTTP request to delete
+     * the specific menu definition
+     * 
+     * @param {*} menuName 
+     */
     deleteMenu(menuName){
 		fetch("/reactui/menu/" + menuName, {
             method: 'DELETE',

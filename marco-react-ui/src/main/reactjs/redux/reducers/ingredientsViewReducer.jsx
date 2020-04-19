@@ -4,6 +4,11 @@ const initialState = {
 
 };
 
+/**
+ * Ingredients reducer used with Redux
+ * @param {*} state 
+ * @param {*} action 
+ */
 const ingredientsViewReducer = function (state = initialState, action) {
 	delete state.action;
 	switch (action.type) {

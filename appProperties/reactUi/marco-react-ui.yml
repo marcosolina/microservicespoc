@@ -10,7 +10,9 @@ spring:
       repositories:
         type: auto
         
-        
+#############################
+# Properties used when need to call the other services
+#############################      
 rest:
   request:
     service:

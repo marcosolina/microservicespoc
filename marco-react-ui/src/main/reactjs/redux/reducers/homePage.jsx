@@ -4,6 +4,11 @@ const initialState = {
 
 };
 
+/**
+ * Home page menu Reducer used with Redux
+ * @param {*} state 
+ * @param {*} action 
+ */
 const homePageReducer = function (state = initialState, action) {
 	delete state.action;
 	switch (action.type) {

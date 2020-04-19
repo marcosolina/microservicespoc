@@ -11,10 +11,17 @@ import PricesView from './components/views/prices/PricesView.jsx';
 import IngredientsView from './components/views/ingredients/IngredientsView.jsx';
 import MenuView from './components/views/menu/MenuView.jsx';
 
+/**
+ * Standard Redux function to manage the store
+ * @param {*} state 
+ */
 const mapStateToProps = function (state) {
 	return state.homePageReducer;
 }
 
+/**
+ * Main class of this React JS application
+ */
 class App extends Component{
 	constructor(props) {
 		super(props);
@@ -23,6 +30,11 @@ class App extends Component{
 		}
 	}
 	
+	/**
+	 * Standard React JS function
+	 * @param {*} nextProps 
+	 * @param {*} prevState 
+	 */
 	static getDerivedStateFromProps(nextProps, prevState) {
 		if (nextProps.action) {
 			switch (nextProps.action) {
@@ -39,6 +51,10 @@ class App extends Component{
 	render(){
 
 		let body = null;
+		/*
+		 * Choosing the appropriate view 
+		 * depending on the user selection
+		 */
 		switch(this.state.viewToDisplay){
 			case "home":
 				body = <p>Choose a view</p>
@@ -66,8 +82,14 @@ class App extends Component{
 	}
 }
 
+/**
+ * Connection this component to Redux
+ */
 const ConnectedApp = connect(mapStateToProps)(App);
 
+/**
+ * Attaching this component to the DOM
+ */
 ReactDOM.render(
 	<Provider store={store}>
 		<ConnectedApp />

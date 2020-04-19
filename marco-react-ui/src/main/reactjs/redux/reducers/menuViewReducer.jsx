@@ -4,6 +4,11 @@ const initialState = {
 
 };
 
+/**
+ * Menu view Reducer used with Redux
+ * @param {*} state 
+ * @param {*} action 
+ */
 const menuViewReducer = function (state = initialState, action) {
 	delete state.action;
 	switch (action.type) {

@@ -1,3 +1,7 @@
+/************************************ 
+ * Simple constants
+ ************************************/
+
 export const CHANGE_HOME_VIEW   = "CHANGE_HOME_VIEW";
 export const CHANGE_DISHES_VIEW = "CHANGE_DISHES_VIEW";
 export const CHANGE_PRICES_VIEW = "CHANGE_PRICES_VIEW";

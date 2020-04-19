@@ -16,6 +16,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		String[] AUTH_WHITELIST = {
+	            // -- swagger ui
+	            "/v2/api-docs",
+	            "/swagger-resources",
+	            "/swagger-resources/**",
+	            "/configuration/ui",
+	            "/configuration/security",
+	            "/swagger-ui.html",
+	            "/webjars/**"
+	    };
 		/*
 		 * Standard spring security
 		 */
@@ -27,6 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers(HttpMethod.GET, "/api/**").hasAnyRole("READ_MENU")
 			.antMatchers(HttpMethod.POST, "/api/**").hasAnyRole("SAVE_MENU")
 			.antMatchers(HttpMethod.DELETE, "/api/**").hasAnyRole("DELETE_MENU")
+			.antMatchers(HttpMethod.GET, AUTH_WHITELIST).permitAll()
 			.anyRequest().authenticated()
 			.and()
 			/*

@@ -11,9 +11,27 @@ import com.marco.marcoreactui.dto.menu.ApiMenu;
  *
  */
 public interface MenusBusinsessLogicInt {
+
+	/**
+	 * It returns a list of all the available menus
+	 * 
+	 * @return
+	 */
 	public List<ApiMenu> getAllMenus();
 
+	/**
+	 * It inserts a new menu
+	 * 
+	 * @param newMenu
+	 * @return
+	 */
 	public boolean insertMenu(ApiMenu newMenu);
 
+	/**
+	 * It deletes the menu with the provided name
+	 * 
+	 * @param menuName
+	 * @return
+	 */
 	public boolean deleteMenu(String menuName);
 }

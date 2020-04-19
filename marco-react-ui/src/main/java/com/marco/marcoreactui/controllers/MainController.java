@@ -5,7 +5,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
+/**
+ * Standard Spring controller to manage the Main UI
+ * 
+ * @author marco
+ *
+ */
 @Controller
 public class MainController {
 	@GetMapping(value = "/")

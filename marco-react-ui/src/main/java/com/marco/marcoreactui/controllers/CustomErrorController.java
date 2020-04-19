@@ -8,6 +8,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * Custom Erro controller to provide a custom error page
+ * 
+ * @author marco
+ *
+ */
 @Controller
 public class CustomErrorController implements ErrorController {
 

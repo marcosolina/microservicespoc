@@ -5,6 +5,10 @@ import pricesViewReducer from './pricesViewReducer.jsx';
 import ingredientsViewReducer from './ingredientsViewReducer.jsx';
 import menuViewReducer from './menuViewReducer.jsx';
 
+/**
+ * ROOT reducer used to combine all the different
+ * reducers.
+ */
 export default combineReducers({ 
     homePageReducer,
     dishesViewReducer,

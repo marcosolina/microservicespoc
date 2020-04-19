@@ -16,6 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.marco.marcoreactui.dto.menu.ApiMenu;
 import com.marco.marcoreactui.services.interfaces.MenusBusinsessLogicInt;
 
+
+/**
+ * Standard Spring controller to manage all the actions coming from the Menu
+ * View
+ * 
+ * @author marco
+ *
+ */
 @RestController
 @RequestMapping("/menu")
 public class MenuController {
