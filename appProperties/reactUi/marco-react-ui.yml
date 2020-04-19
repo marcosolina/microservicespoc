@@ -40,7 +40,8 @@ rest:
       menus:
         protocol: https 
         host: marco-menu-service
-        findRecipeByDishName: /menus/api
-        findAllRecipes: /menus/api/all
-        deleteRecipe: /menus/api
-        insertRecipe: /menus/api 
+        findMenuByName: /menus/api
+        findAllMenus: /menus/api/all
+        deleteMenu: /menus/api
+        insertMenu: /menus/api 
+        
