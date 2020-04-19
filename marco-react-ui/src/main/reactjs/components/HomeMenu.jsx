@@ -24,9 +24,15 @@ class HomeMenu extends Component {
 			<div className="d-flex justify-content-center">
 				<div className="btn-group" role="group" aria-label="Mia Menu">
 					<button type="button" className="btn btn-secondary" onClick={this.onClick.bind(this, "home")}>Home</button>
+					&nbsp;
 					<button type="button" className="btn btn-secondary" onClick={this.onClick.bind(this, "dishes")}>Dishes</button>
+					&nbsp;
 					<button type="button" className="btn btn-secondary" onClick={this.onClick.bind(this, "prices")}>Prices</button>
+					&nbsp;
 					<button type="button" className="btn btn-secondary" onClick={this.onClick.bind(this, "ingredients")}>Ingredients</button>
+					&nbsp;
+					<button type="button" className="btn btn-secondary" onClick={this.onClick.bind(this, "menu")}>Menu</button>
+					&nbsp;
 					<button type="button" className="btn btn-secondary" onClick={()=> window.open("/reactui/logout", "_self")}>Log Out</button>
 				</div>
 			</div>

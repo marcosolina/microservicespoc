@@ -9,6 +9,7 @@ import HomeMenu from './components/HomeMenu.jsx';
 import DishesView from './components/views/dishes/DishesView.jsx';
 import PricesView from './components/views/prices/PricesView.jsx';
 import IngredientsView from './components/views/ingredients/IngredientsView.jsx';
+import MenuView from './components/views/menu/MenuView.jsx';
 
 const mapStateToProps = function (state) {
 	return state.homePageReducer;
@@ -50,6 +51,9 @@ class App extends Component{
 				break
 			case "ingredients":
 				body = <IngredientsView/>
+				break;
+			case "menu":
+				body = <MenuView/>
 				break;
 		}
 

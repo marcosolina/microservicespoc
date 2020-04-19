@@ -105,6 +105,18 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter{
         .antMatchers(HttpMethod.PUT, "/dishes/**").hasRole("SAVE")
         .antMatchers(HttpMethod.POST, "/dishes/**").hasRole("SAVE")
         .antMatchers(HttpMethod.DELETE, "/dishes/**").hasRole("DELETE")
+        .antMatchers(HttpMethod.GET, "/ingredients/**").hasRole("READ")
+        .antMatchers(HttpMethod.PUT, "/ingredients/**").hasRole("SAVE")
+        .antMatchers(HttpMethod.POST, "/ingredients/**").hasRole("SAVE")
+        .antMatchers(HttpMethod.DELETE, "/ingredients/**").hasRole("DELETE")
+        .antMatchers(HttpMethod.GET, "/prices/**").hasRole("READ")
+        .antMatchers(HttpMethod.PUT, "/prices/**").hasRole("SAVE")
+        .antMatchers(HttpMethod.POST, "/prices/**").hasRole("SAVE")
+        .antMatchers(HttpMethod.DELETE, "/prices/**").hasRole("DELETE")
+        .antMatchers(HttpMethod.GET, "/menu/**").hasRole("READ")
+        .antMatchers(HttpMethod.PUT, "/menu/**").hasRole("SAVE")
+        .antMatchers(HttpMethod.POST, "/menu/**").hasRole("SAVE")
+        .antMatchers(HttpMethod.DELETE, "/menu/**").hasRole("DELETE")
         ;
         
         /*
