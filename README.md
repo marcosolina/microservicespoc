@@ -58,17 +58,17 @@ Current list of implemented things:
   * SQL init scripts
   * Multi language support (ITA, ENG)
 * Ingredients Service
-  * [Swagger documentation](http://localhost:8082/dishes/swagger-ui.html)
+  * [Swagger documentation](http://localhost:8082/ingredients/swagger-ui.html)
   * Unit Tests
   * SQL init scripts
   * Multi language support (ITA, ENG)
 * Prices Service
-  * [Swagger documentation](http://localhost:8083/dishes/swagger-ui.html)
+  * [Swagger documentation](http://localhost:8083/prices/swagger-ui.html)
   * Unit Tests
   * SQL init scripts
   * Multi language support (ITA, ENG)
 * Menu Service
-  * [Swagger documentation](http://localhost:8084/dishes/swagger-ui.html)
+  * [Swagger documentation](http://localhost:8084/menus/swagger-ui.html)
   * Unit Tests
   * SQL init scripts
   * Multi language support (ITA, ENG)
