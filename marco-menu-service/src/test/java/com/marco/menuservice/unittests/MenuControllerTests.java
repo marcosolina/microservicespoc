@@ -88,7 +88,7 @@ public class MenuControllerTests {
         when(bli.deleteAllDishesForMenu(menuName)).thenReturn(true);
 
         ResponseEntity<Void> resp = controller.deleteMenu(menuName);
-        assertThat(resp.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(resp.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
     }
 
 }
