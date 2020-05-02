@@ -14,3 +14,6 @@ spring:
   data:
     mongodb:
       host: '{cipher}fe27171c171deb59f5acff3f3ce81b935544064fd781c588956f17c511c0ad84'
+      
+keycloak:
+  auth-server-url: '{cipher}90031fdac2cc3cde86845c1c5b66c376d214e7dc4efad4ab0fed5b62bf0fe7f255b957a818ec374948cd8ee5149449c4'
