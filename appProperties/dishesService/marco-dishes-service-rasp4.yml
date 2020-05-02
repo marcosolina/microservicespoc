@@ -1,3 +1,10 @@
 spring:
   datasource:
-    url: '{cipher}696d23db1715305477feec207a3ef5138127a5ba25088eaf28fc77bbda34aac4db2017a01084910b9d7c22cc46aaa778258d6a6b14f34007bfd07e8db56107ebf59e9a01734e21c9a75d00a47ab6e3c0'
+    url: '{chipher}696d23db1715305477feec207a3ef5138127a5ba25088eaf28fc77bbda34aac4db2017a01084910b9d7c22cc46aaa778258d6a6b14f34007bfd07e8db56107ebf59e9a01734e21c9a75d00a47ab6e3c0'
+    username: '{cipher}fcadbb721d0160439a1e1721c01caf78d04295db6c99855ec9cd5e8832f18484'
+    password: '{cipher}d69c110a90552b8ee20ca18b032eed79a956b30581d034e9ef71d124dc85e2d6'
+  security:
+    oauth2:
+      resourceserver:
+        jwt: # Where to go to check the incoming token
+          jwk-set-uri: '{cipher}383a590b4cfaec55aaf50a295cec9a5b1ae741a29bf6ac6f135346c5fd0f189648e5eb59c5417f13bfe6e9a2d9259c817074eb08eebe29c0b3e868700e6e9004bb756c73e253f84b26062cc6252280b7e6ab31687655de1206424773c94f7cff'
