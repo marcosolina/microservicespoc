@@ -4,15 +4,10 @@ server:
   error:
     whitelabel:
       enabled: false
-    
-# I am telling at spring boot where is the eureka server
-eureka:
-  client:
-    serviceUrl:
-      #try the value from the system props, or get the fall back
-      defaultZone: ${MARCO_EUREKA_SERVER:http://localhost:8761/eureka}
- 
 
+spring:
+  application:
+    name: marco-react-ui    
 
 keycloak:
   realm: marco-realm # the name of the realm, required;

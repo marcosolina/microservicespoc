@@ -1,6 +1,16 @@
+# I am telling at spring boot where is the eureka server
+eureka:
+  client:
+    serviceUrl:
+      #try the value from the system props, or get the fall back
+      defaultZone: ${MARCO_EUREKA_SERVER:http://localhost:8761/eureka}
+
 spring:
   profiles:
     active:
     - ${MARCO_REACT_UI_PROFILE:local} # Try to use the profile defined as system property. If not, "local" will be the default profile
-  application:
-    name: marco-react-ui
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-service

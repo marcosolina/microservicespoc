@@ -1,0 +1,16 @@
+rest:
+  request:
+    service:
+      dishes:
+        protocol: http
+      prices:
+        protocol: http
+      ingredients:
+        protocol: http 
+      menus:
+        protocol: http
+        
+spring:
+  data:
+    mongodb:
+      host: '{cipher}fe27171c171deb59f5acff3f3ce81b935544064fd781c588956f17c511c0ad84'

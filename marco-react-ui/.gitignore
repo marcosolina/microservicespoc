@@ -34,3 +34,4 @@ build/
 /package-lock.json
 /.mvn/
 /.DS_Store
+/bin/

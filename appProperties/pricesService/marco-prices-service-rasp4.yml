@@ -1,0 +1,19 @@
+rest:
+  request:
+    service:
+      dishes:
+        protocol: http
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt: # Where to go to check the incoming token
+          jwk-set-uri: '{cipher}383a590b4cfaec55aaf50a295cec9a5b1ae741a29bf6ac6f135346c5fd0f189648e5eb59c5417f13bfe6e9a2d9259c817074eb08eebe29c0b3e868700e6e9004bb756c73e253f84b26062cc6252280b7e6ab31687655de1206424773c94f7cff'  
+  data:
+    mongodb:
+      host: '{cipher}fe27171c171deb59f5acff3f3ce81b935544064fd781c588956f17c511c0ad84'
+  datasource:
+    url: '{cipher}27953131e518d621735d7f180a4244112740a39f3dc130bf06fbe1afff90ee67617c2fceb227db035de7d2f0fce9e5d9aff9d2b48c67cef8dbc15ea0163051123e37f2e6ac50797fe59acf3e13f182b0'
+    username: '{cipher}fcadbb721d0160439a1e1721c01caf78d04295db6c99855ec9cd5e8832f18484'
+    password: '{cipher}d69c110a90552b8ee20ca18b032eed79a956b30581d034e9ef71d124dc85e2d6'
